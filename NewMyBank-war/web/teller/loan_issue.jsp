@@ -209,25 +209,25 @@
                                                     <div class="form-group bg-top10">
                                                         <label class="control-label col-sm-4 input-sm ">අනුමත ණය මුදල :</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="nApprovedAmount" id="nApprovedAmount" value="<%=nApprovedAmount%>">
+                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="nApprovedAmount" id="nApprovedAmount" value="<%=nApprovedAmount%>" data="number" data-type="decimal">
                                                         </div>
                                                     </div>
                                                     <div class="form-group bg-top10">
                                                         <label class="control-label col-sm-4 input-sm ">නිකුත් කල මුදල :</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="nIssuedAmount" id="nIssuedAmount" value="<%=nIssuedAmount%>">
+                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="nIssuedAmount" id="nIssuedAmount" value="<%=nIssuedAmount%>" data="number" data-type="decimal">
                                                         </div>
                                                     </div>
                                                     <div class="form-group bg-top10">
                                                         <label class="control-label col-sm-4 input-sm ">නිකුත් කිරිමට ඇති ශේෂය :</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="<%=nAmount%>">
+                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="<%=nAmount%>" data="number" data-type="decimal">
                                                         </div>
                                                     </div>
                                                     <div class="form-group bg-top10" style="margin-bottom: -5px">
                                                         <label class="control-label col-sm-4 input-sm ">අයවියයුතු පොළිය :</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="">
+                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="" data="number" data-type="decimal">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,7 +262,7 @@
                                                     <div class="form-group bg-top10">
                                                         <label class="control-label col-sm-4 input-sm ">නිකුත් කල මුදල :</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="">
+                                                            <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size:17px;" placeholder="0.00" name="dDepositDate" id="dDepositDate" value="" data="number" data-type="decimal">
                                                         </div>
                                                     </div>
                                                     <div class="form-group bg-top10" hidden id="accountLabelDiv">
@@ -334,6 +334,6 @@
                                                                     }
                                                                     //---------------------------------
         </script>
-
+        <script src="../js/validate.js" type="text/javascript"></script>
     </body>
 </html>
