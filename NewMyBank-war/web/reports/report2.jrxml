@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from  Act_ChartOfAcctL5;]]>
+	</queryString>
+	<field name="nAcctLevelID5" class="java.lang.Integer"/>
+	<field name="nAcctLevelID4" class="java.lang.Integer"/>
+	<field name="cCAAcctNo_L5" class="java.lang.String"/>
+	<field name="cDescriptionSin_L5" class="java.lang.String"/>
+	<field name="cDescriptionUni_L5" class="java.lang.String"/>
+	<field name="nTBLORder_L5" class="java.math.BigDecimal"/>
+	<field name="nPNLOrder_L5" class="java.math.BigDecimal"/>
+	<field name="nNoteNo_L5" class="java.math.BigDecimal"/>
+	<field name="b9E_Account" class="java.lang.Integer"/>
+	<field name="nAcctLevelID3_old" class="java.lang.Integer"/>
+	<field name="bF10Active" class="java.lang.Integer"/>
+	<field name="bFixed" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="3" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="99" y="0" width="100" height="14"/>
+				<textElement/>
+				<text><![CDATA[cDescriptionSin_L5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="100" height="14"/>
+				<textElement/>
+				<text><![CDATA[cCAAcctNo_L5]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="109" y="0" width="260" height="13"/>
+				<textElement>
+					<font fontName="AA Amali" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDescriptionSin_L5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cCAAcctNo_L5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
