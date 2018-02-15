@@ -54,7 +54,7 @@
             String cMemberShipNo = "සාමාජික අංකය";
             String cNICNo = " ජැ.හැ. අංකය";
             String cUseName = "භාවිත නම";
-            String cFullName1="සම්පූර්ණ නම",cFullName2 = "සම්පූර්ණ නම";
+            String cFullName1 = "සම්පූර්ණ නම", cFullName2 = "සම්පූර්ණ නම";
             String cPAddLine1 = "----------ලිපිනය----------";
             String cOurAccountNo = "";
 
@@ -68,14 +68,11 @@
             String crAccNoLabel = "අංකය";
             String crCDepName = "වර්ගය";
             String crNCurBookBalance = "ශේෂය";
-            
-            
+
             if (request.getSession().getAttribute("depDepositMasterCr") != null) {
                 VFindDatabnkDepDepositMaster depositMaster = (VFindDatabnkDepDepositMaster) request.getSession().getAttribute("depDepositMasterCr");
                 crAccNo = depositMaster.getCOurAccountNo();
-                
-                
-                
+
                 if (crAccNo.length() > 5) {
                     crAccNo = crAccNo.substring(0, 2) + "-" + crAccNo.substring(2, 5) + "-" + crAccNo.substring(5);
                     System.out.println(crAccNo);
@@ -86,10 +83,7 @@
                     crAccNo = crAccNo.substring(0);
                     System.out.println(crAccNo);
                 }
-                
-                
-                
-                
+
                 crAccNoLabel = depositMaster.getCOurAccountNo();
                 crCDepName = depositMaster.getCDepName();
                 crNCurBookBalance = String.valueOf(depositMaster.getNCurBookBalance());
@@ -102,7 +96,7 @@
             if (request.getSession().getAttribute("depDepositMasterBr") != null) {
                 VFindDatabnkDepDepositMaster depositMaster = (VFindDatabnkDepDepositMaster) request.getSession().getAttribute("depDepositMasterBr");
                 brAccNo = depositMaster.getCOurAccountNo();
-                
+
                 if (brAccNo.length() > 5) {
                     brAccNo = brAccNo.substring(0, 2) + "-" + brAccNo.substring(2, 5) + "-" + brAccNo.substring(5);
                     System.out.println(brAccNo);
@@ -113,7 +107,7 @@
                     brAccNo = crAccNo.substring(0);
                     System.out.println(brAccNo);
                 }
-                
+
                 brAccNoLabel = depositMaster.getCOurAccountNo();
                 brCDepName = depositMaster.getCDepName();
                 brNCurBookBalance = String.valueOf(depositMaster.getNCurBookBalance());
@@ -168,9 +162,9 @@
                                                     <label class="control-label col-sm-4 input-sm" style="font-size: 14px;padding-left: 35px;">ගිණුම් අංකය  :</label>
                                                     <div class="col-md-7">
                                                         <div class="input-group">
-                                                            
+
                                                             <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size: 17px;" autocomplete="off" placeholder="ගිණුම් අංකය" maxlength="15" name="crAccNo" id="crAccNo" value="<%=crAccNo%>" onkeyup="changeAccountNumber1()">
-                                                                         
+
                                                             <span class="input-group-btn">
                                                                 <button class="btn btn-info btn-flat btn-sm" type="button" onclick="crBrAccountAcction()"><i class="fa fa-search"></i></button>
                                                             </span>
@@ -191,12 +185,12 @@
                                                     <label class="control-label col-sm-4 text-right" style="padding-left: 10px;">ශේෂය :</label>
                                                     <label class="control-label col-sm-8 "><%=crNCurBookBalance%></label>
                                                 </div>
-                                                
+
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-4 text-right">නම :</label>
                                                     <label class="control-label col-sm-7 "><%=cFullName1%></label>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -250,22 +244,22 @@
                                                         <div class="row">
                                                             <div class="col-sm-8" style="margin-top: 25px;">
                                                                 <div class="form-group">
-                                                                                  
+
                                                                     <!--<form action="../GetterMoneyTransactionServelet?searchingType=" method="post" name="accForm" onsubmit="validateGetAccountNo(this); return false;">-->
-                                                                        
+
                                                                     <label class="control-label col-sm-4 input-sm" style="font-size: 14px" >බැරවන ගිණුම් අංකය:</label>
                                                                     <div class="col-md-7">
                                                                         <div class="input-group">
                                                                             <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" style="font-size: 17px;" autocomplete="off" placeholder="ගිණුම් අංකය" maxlength="15" name="brAccNo" id="brAccNo" value="<%=brAccNo%>" onkeyup="changeAccountNumber2()">
-                                                                            
+
                                                                             <span class="input-group-btn">
                                                                                 <button class="btn btn-info btn-flat btn-sm" type="button" onclick="brBrAccountAcction()"><i class="fa fa-search"></i></button>
                                                                             </span>
                                                                         </div>
                                                                     </div>
-                                                                            
+
                                                                     <!--</form>-->
-                                                                            
+
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-4">
@@ -279,8 +273,8 @@
                                                                     <label class="control-label col-sm-4 text-right">නම :</label>
                                                                     <label class="control-label col-sm-8 "><%=cFullName2%></label>
                                                                 </div>  
-                                                                
-                                                                
+
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -292,7 +286,7 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label col-sm-4 input-sm" style="font-size: 14px">හුවමරුවන මුදල :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size: 17px" name="nMinParticipant">
+                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size: 17px" name="nMinParticipant" data="number" data-type="decimal">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -392,7 +386,7 @@
                                                                                         document.getElementById("crAccNo").value = aN;
 
                                                                                     }
-                                                                                    
+
                                                                                     function changeAccountNumber2() {
                                                                                         var aN = document.getElementById("brAccNo").value;
 
@@ -426,5 +420,5 @@
                                                                                         return aN;
                                                                                     }
     </script>
-
+    <script src="../js/validate.js" type="text/javascript"></script>
 </html>
