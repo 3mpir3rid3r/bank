@@ -425,7 +425,7 @@
                                                                                                 <embed src="/home/mmh/savingsReport.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf" />
                                                                                                 </object>-->
                                                 
-                                                <iframe id="frm" src="../marksGraph.jsp?rep_id=1&nDepTrnID=<%= nDepTrnID%>" frameborder="0" width="100%" style="height: 272px;"></iframe>
+                                                <iframe id="frm" src="../marksGraph.jsp?rep_id=<% if(id==1){%>1<%}else{%>2<%}%>&nDepTrnID=<%= nDepTrnID%>" frameborder="0" width="100%" style="height: 272px;"></iframe>
                                                 
                                                 
                                                 <!--                                                <object style="width:100%;" data="http://localhost:8080/NewMyBank-war/TestServlet" type="application/pdf">
