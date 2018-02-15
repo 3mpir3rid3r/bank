@@ -47,54 +47,14 @@ public class saveImageServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String filename = new SimpleDateFormat("yyyyMMdd-hhmmss").format(new Date()) + ".png";
-            String result = "/home/mmh/NetBeansProjects/bank/NewMyBank-war/web/images/customer/" + filename;
+            String result = getServletContext().getRealPath("/images/customer/") + "/" + filename;
             InputStream in = null;
             FileOutputStream fos = null;
-
-//            DiskFileItemFactory factory = new DiskFileItemFactory();
-//            factory.setRepository(new File("/home/mmh/NetBeansProjects/bankOriginal/NewMyBank-war/web/images/customer/"));
-//            ServletFileUpload upload = new ServletFileUpload(factory);
-//            upload.setSizeMax(maxFileSize);
-//
-//            isMultipart = ServletFileUpload.isMultipartContent(request);
-//
-//            System.out.println("A");
-//            if (!isMultipart) {
-//
-//                List fileItems;
-//                try {
-//                    fileItems = upload.parseRequest(request);
-//                    Iterator i = fileItems.iterator();
-//                    System.out.println("A");
-//
-//                    while (i.hasNext()) {
-//                        System.out.println("A");
-//                        FileItem fi = (FileItem) i.next();
-//                        if (!fi.isFormField()) {
-//                            // Get the uploaded file parameters
-//                            String fieldName = fi.getFieldName();
-//                            String fileName = fi.getName();
-//                            String contentType = fi.getContentType();
-//                            boolean isInMemory = fi.isInMemory();
-//                            long sizeInBytes = fi.getSize();
-//
-//                            // Write the file
-//                            if (fileName.lastIndexOf("\\") >= 0) {
-//                                file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\")));
-//                            } else {
-//                                file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\") + 1));
-//                            }
-//                            fi.write(file);
-//                            out.print("Done");
-//                        }
-//                        System.out.println("A");
-//
-//                    }
-//                } catch (Exception ex) {
-//                    Logger.getLogger(saveNic.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-            System.out.println(result);
+            System.out.println(getServletContext().getRealPath("/images/customer/"));
+            File f = new File(getServletContext().getRealPath("/images/customer/"));
+            if (!f.exists()) {
+                f.mkdirs();
+            }
             try {
                 HttpServletRequestWrapper wrappedRequest = new HttpServletRequestWrapper(request);
                 InputStream is = wrappedRequest.getInputStream();

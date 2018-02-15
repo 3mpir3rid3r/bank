@@ -1330,7 +1330,8 @@
                     url: form.attr('action'),
                     async: true,
                     data: form.serialize(),
-                    contentType: "multipart/form-data",
+//                    contentType: "multipart/form-data",
+                    contentType: "",
                     processData: false,
                     success: function (msg) {
                         alert("File has been uploaded successfully");
