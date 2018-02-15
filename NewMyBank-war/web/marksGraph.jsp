@@ -31,10 +31,12 @@
         if(rep_id==1){
             rep_name="Cash_Deposit_Slip.jrxml";
             params = new HashMap();
-            System.out.println("hhhhhhhhhhhhhhhhhggggggggggg   "+Integer.parseInt(request.getParameter("nDepTrnID").toString()));
             params.put("DepTrnID", Integer.parseInt(request.getParameter("nDepTrnID").toString()));
-        }else{
-            System.out.println("yuuuuu2222");
+        }else if(rep_id==2){
+            rep_name="Cash_Withdrawal_Slip.jrxml";
+            params = new HashMap();
+            System.out.println("7777776655555");
+            params.put("DepTrnID", Integer.parseInt(request.getParameter("nDepTrnID").toString()));
         }
         
         

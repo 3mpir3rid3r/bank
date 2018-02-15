@@ -102,7 +102,7 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         if (nPaymentValString.isEmpty()) {
             check = true;
         } else {
-            nPaymentVal = BigDecimal.valueOf(Double.parseDouble(nPaymentValString));
+            nPaymentVal = BigDecimal.valueOf(Double.parseDouble(nPaymentValString.replaceAll(",", "")));
             bddt.setNPaymentVal(nPaymentVal);
         }
         String moneyDepType = request.getParameter("moneyDepType");
