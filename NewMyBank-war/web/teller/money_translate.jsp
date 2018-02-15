@@ -188,7 +188,7 @@
                                                     <label class="control-label col-sm-8 "><%=crCDepName%></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="control-label col-sm-4 text-right">ශේෂය :</label>
+                                                    <label class="control-label col-sm-4 text-right" style="padding-left: 10px;">ශේෂය :</label>
                                                     <label class="control-label col-sm-8 "><%=crNCurBookBalance%></label>
                                                 </div>
                                                 
