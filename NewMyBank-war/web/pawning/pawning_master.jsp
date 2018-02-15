@@ -1273,14 +1273,21 @@
                     document.getElementById('userImage').src = canvas.toDataURL('image/png');
                 });
             }, false);
+
             function send() {
                 var canvasServer = document.getElementById("canvas");
                 var context = canvasServer.getContext("2d");
                 var imageDataURL = canvasServer.toDataURL('image/png');
                 $.post('../saveImageServlet', imageDataURL, function (responseText) {
-                    document.getElementById('pic').value = responseText;
+                    if (responseText !== "fail") {
+                        document.getElementById('pic').value = responseText;
+                        alert("File has been uploaded successfully");
+                    } else {
+                        alert("Failed to upload file");
+                    }
                 });
             }
+
             $('input[type="number"]').keypress(function onlyNumbersWithDot(e) {
                 var charCode;
                 if (e.keyCode > 0) {

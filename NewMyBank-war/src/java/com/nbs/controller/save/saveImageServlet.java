@@ -27,12 +27,6 @@ import org.apache.commons.io.IOUtils;
  */
 public class saveImageServlet extends HttpServlet {
 
-    private boolean isMultipart;
-    private String filePath;
-    private int maxFileSize = 50 * 1024;
-    private int maxMemSize = 4 * 1024;
-    private File file;
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -50,7 +44,7 @@ public class saveImageServlet extends HttpServlet {
             String result = getServletContext().getRealPath("/images/customer/") + "/" + filename;
             InputStream in = null;
             FileOutputStream fos = null;
-            System.out.println(getServletContext().getRealPath("/images/customer/"));
+            System.out.println(result + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
             File f = new File(getServletContext().getRealPath("/images/customer/"));
             if (!f.exists()) {
                 f.mkdirs();
@@ -68,6 +62,7 @@ public class saveImageServlet extends HttpServlet {
                 fos.write(decodedData);
                 out.write(filename);
             } catch (IOException e) {
+                out.write("fail");
                 e.printStackTrace();
             } finally {
                 if (in != null) {

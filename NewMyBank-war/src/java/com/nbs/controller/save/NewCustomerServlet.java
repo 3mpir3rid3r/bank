@@ -338,10 +338,10 @@ public class NewCustomerServlet extends HttpServlet {
             v_nMemAreaID = request.getParameter("nMemAreaID");
 
             CustomerSaveEntity cse = new CustomerSaveEntity();
-            if (new File("/home/mmh/NetBeansProjects/bank/NewMyBank-war/web/images/customer/" + v_cNICNo + ".png").exists()) {
-                new File("/home/mmh/NetBeansProjects/bank/NewMyBank-war/web/images/customer/" + v_cNICNo + ".png").delete();
+            if (new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png").exists()) {
+                new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png").delete();
             }
-//            FileUtils.moveFile(new File("/home/mmh/NetBeansProjects/bank/NewMyBank-war/web/images/customer/" + request.getParameter("userImage")), new File("/home/mmh/NetBeansProjects/bank/NewMyBank-war/web/images/customer/" + v_cNICNo + ".png"));
+            FileUtils.moveFile(new File(getServletContext().getRealPath("/images/customer/") + "/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png"));
             if ("0".equals(v_nCustomerCategoryID)) {
                 cse.setCustcat("0");
                 request.setAttribute("error", cse);
