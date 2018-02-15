@@ -36,7 +36,7 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         BnkDepDepositTransaction bddt = new BnkDepDepositTransaction();
         boolean check = false;
-        System.out.println("6661111111111111111111111111111");
+        
         String nDepTrnIDString = "0";
         Long nDepTrnID = Long.parseLong(nDepTrnIDString);
         bddt.setNDepTrnID(nDepTrnID);

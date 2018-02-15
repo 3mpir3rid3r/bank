@@ -488,10 +488,10 @@
                                     <div class="alert alert-success alert-dismissable">
                                         <i class="fa fa-check"></i>
                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                        <h4><b>Alert!</b> Success alert preview. This alert is dismissable.</h4>
+                                        <h4><b>Alert!</b> Success alert preview.</h4>
                                     </div>
                                     <div class="callout callout-info">
-                                        <h2>Pass potha mudranaya kirimata Awashayada ?</h2>
+                                        <h2>පාස් පොත මුද්‍රණය කිරීමට අවශ්‍යද ?</h2>
                                         <div>
                                             <button type="submit" class="btn btn-warning" onclick="">No</button>
                                             <button type="submit" class="btn btn-primary" onclick="showPassBook()()">Yes</button>
@@ -520,14 +520,14 @@
                                                         <div class="col-md-3">
                                                             <div class="radio">
                                                                 <label>
-                                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                                    Mudranaya Kala
+                                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="checkRadio();" >
+                                                                    මුද්‍රණය කළ<input type="button" onclick="checkRadio();" value="uuuiiiiiii">
                                                                 </label>
                                                             </div>
                                                             <div class="radio">
                                                                 <label>
-                                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                                    Mudranaya Nokala
+                                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onclick="checkRadio();">
+                                                                    මුද්‍රණය නොකළ
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -537,7 +537,7 @@
                                                                     <div class="checkbox">
                                                                         <label>
                                                                             <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                                            Arambaka Mudala Mudranayata
+                                                                            ආරම්භක මුදල මුද්‍රණයට
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -743,6 +743,14 @@
                                                     }
                                                 });
                                             }
+                                        }
+                                        
+                                        $('#optionsRadios1').on("cahange",function (){
+                                            alert();
+                                        })
+                                        
+                                        function checkRadio(){alert("2323")
+                                            alert("okk "+idRadio)
                                         }
                                         //---------------------------------
     </script>

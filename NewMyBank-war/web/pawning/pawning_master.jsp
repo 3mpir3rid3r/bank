@@ -303,7 +303,7 @@
                     <div class="row bg-searchheight bg-top">
                         <div class="col-md-12 bg-searchheight bg-pad" >
                             <form action="../PawningMasterServlet?key=0" method="post" name="ff" onsubmit="accept(this);
-                                    return false">
+                                    return true">
                                 <input type="hidden" value="0" id="tAdd" name="tAdd">
                                 <div class="row" >
                                     <div class="col-md-12 bg-pad"  >
@@ -1232,7 +1232,7 @@
 
                 var isOk = confirm("ගනුදෙණුව නිවැරදි බව තහවුරු කරන්න");
                 if (isOk === true) {
-                    isOk = confirm("මෙය තහවුරු කල පසු දත්තයන් කිසිදු ආකාරයකින් වෙනස් කල නොහක.තහවුරු කරන්න");
+                    isOk = confirm("මෙය තහවුරු කල පසු දත්තයන් කිසිදු ආකාරයකින් වෙනස් කල නොහැක.තහවුරු කරන්න");
                     if (isOk) {
                         document.forms["acptForm"].submit();
                     }

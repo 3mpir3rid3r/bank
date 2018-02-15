@@ -9,11 +9,9 @@ import com.nbs.common.CrDrTable;
 import com.nbs.dao.BnkCustomerMasterDaoLocalrLocal;
 import com.nbs.dao.BnkPwnPawnMasterArticlesDaoLocal;
 import com.nbs.dao.BnkPwnPawnMasterDaoLocal;
-import com.nbs.dao.TestLocal;
 import com.nbs.model.ActSectionsSub;
 import com.nbs.model.BnkPwnPawnMaster;
 import com.nbs.model.BnkPwnPawnMasterArticles;
-import com.nbs.model.BnkRefBankBranch;
 import com.nbs.model.GenUser;
 import java.io.File;
 import java.io.IOException;
@@ -331,7 +329,8 @@ public class PawningMasterServlet extends HttpServlet {
 //	String v_cAuthOfficer 
 //	String v_cInputBy                     
                         int pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
-
+                                System.out.println("ooooooooppp22     "+pkOfMaster);
+                        
                         List<CrDrTable> cdts = (List<CrDrTable>) request.getSession().getAttribute("tlist");
                         List<BnkPwnPawnMasterArticles> articleses = new ArrayList<>();
                         BnkPwnPawnMasterArticles articles;
@@ -360,7 +359,7 @@ public class PawningMasterServlet extends HttpServlet {
                         if (pkOfMaster != 0) {
                             redirectorCount = 2;
                         }
-                        FileUtils.moveFile(new File(getServletContext().getRealPath("/") + "/web/images/customer/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/") + "/web/images/customer/" + cNICNo + ".png"));
+//                        FileUtils.moveFile(new File(getServletContext().getRealPath("/") + "/web/images/customer/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/") + "/web/images/customer/" + cNICNo + ".png"));
                     }
                 }
             }
