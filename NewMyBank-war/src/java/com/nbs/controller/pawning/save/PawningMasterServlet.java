@@ -360,7 +360,10 @@ public class PawningMasterServlet extends HttpServlet {
                         if (pkOfMaster != 0) {
                             redirectorCount = 2;
                         }
-                        FileUtils.moveFile(new File(getServletContext().getRealPath("/") + "/web/images/customer/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/") + "/web/images/customer/" + cNICNo + ".png"));
+                        if (new File(getServletContext().getRealPath("/images/customer/") + "/" + cNICNo + ".png").exists()) {
+                            new File(getServletContext().getRealPath("/images/customer/") + "/" + cNICNo + ".png").delete();
+                        }
+                        FileUtils.moveFile(new File(getServletContext().getRealPath("/images/customer/") + "/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/images/customer/") + "/" + cNICNo + ".png"));
                     }
                 }
             }
