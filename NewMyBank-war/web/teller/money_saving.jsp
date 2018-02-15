@@ -318,43 +318,43 @@
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm">බිල් අංකය 1:</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo" id="cReceiptNo" value="<%=cReceiptNo%>">
+                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo" id="cReceiptNo" value="<%=cReceiptNo%>" data="number" data-type="number">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm">බිල් අංකය 2:</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo2" id="cReceiptNo2" value="<%=cReceiptNo2%>">
+                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo2" id="cReceiptNo2" value="<%=cReceiptNo2%>" data="number" data-type="number">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm">ශේෂය :</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nCurBookBalance" id="nCurBookBalance" value="<%=nCurBookBalance%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nCurBookBalance" id="nCurBookBalance" value="<%=nCurBookBalance%>" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm"> රැදවු මුදල :</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nHoldedAmount" id="nHoldedAmount" value="<%=nHoldedAmount%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nHoldedAmount" id="nHoldedAmount" value="<%=nHoldedAmount%>" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm">බැර නොවු පොළිය :</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25"  name="nNotCreditIntBalance" id="nNotCreditIntBalance" value="<%=nNotCreditIntBalance%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25"  name="nNotCreditIntBalance" id="nNotCreditIntBalance" value="<%=nNotCreditIntBalance%>" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm"> ගත හැකි මුදල :</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nAvailableBalance" id="nAvailableBalance" value="<%=nAvailableBalance%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" disabled placeholder="0.0" style="font-size:17px;" maxlength="25" name="nAvailableBalance" id="nAvailableBalance" value="<%=nAvailableBalance%>" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-4 input-sm"><b><%=moneyTypeName%> :</b></label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:large;color: blue" maxlength="30" name="nPaymentVal" id="nPaymentVal" value="<%=nPaymentVal%>">
+                                                        <input type="text" class="form-control text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:large;color: blue" maxlength="30" name="nPaymentVal" id="nPaymentVal" value="<%=nPaymentVal%>" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                             </div>
@@ -747,6 +747,6 @@
                                         }
                                         //---------------------------------
     </script>
-    
+    <script src="../js/validate.js" type="text/javascript"></script>
 
 </html>
