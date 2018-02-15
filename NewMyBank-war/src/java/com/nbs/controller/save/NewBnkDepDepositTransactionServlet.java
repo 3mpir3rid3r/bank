@@ -138,12 +138,11 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         
         if (check) {
             request.getSession().setAttribute("bddt", bddt);
-            System.out.println("aaaaaa   awaaa");
             response.sendRedirect("teller/money_saving.jsp?successMsg=0&moneyDepType" + moneyDepType);
         } else {
             
             int i=bnkTransactionsDao.insertBnkDepDepositTransaction(bddt);
-            System.out.println("aaaaaa   ssssssssss ttt ="+i);
+            bddt.setNDepTrnID(Long.parseLong(i+""));
             request.getSession().setAttribute("bddt", bddt);
 //            request.getSession().removeAttribute("depDepositMaster");
             response.sendRedirect("teller/money_saving.jsp?successMsg=1&moneyDepType" + moneyDepType);
