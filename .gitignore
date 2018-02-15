@@ -1,3 +1,8 @@
 /nbproject/private/
 /NewMyBank-ejb/nbproject/private/
 /NewMyBank-war/nbproject/private/
+/NewMyBank-ejb/build/
+/NewMyBank-ejb/dist/
+/build/
+/NewMyBank-war/build/
+/NewMyBank-war/dist/
