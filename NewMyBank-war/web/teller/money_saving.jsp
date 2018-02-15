@@ -716,7 +716,6 @@
                                             var nAvailableBalance = document.getElementById("nAvailableBalance");
                                             var mDepId = document.getElementById("mDepId").value;
                                             
-                                            
                                             if(nAccountNo==""){
                                                 bootbox.alert("<b>ගිණුම් අංකය ඇතුලත් කරන්න.</b>", function () {
                                                 });
@@ -727,7 +726,7 @@
                                                 bootbox.alert("<b>මුදල පුරවන්න</b>", function () {
                                                 });
                                             } else if (mDepId === "2") {
-                                                if (parseFloat(nPaymentVal.value) > parseFloat(nAvailableBalance.value)) {
+                                                if (parseFloat(nPaymentVal.value.toString().replace(',','')) > parseFloat(nAvailableBalance.value.toString().replace(',',''))) {
                                                     bootbox.alert("<b>මෙම ගණුදෙණුව සිදු කිරීමට ප්‍රමාණවත් ශේෂයක් නොමැත.ගිණුම නැවත පරීක්ෂා කරන්න.</b>", function () {
                                                     });
                                                 } else {
