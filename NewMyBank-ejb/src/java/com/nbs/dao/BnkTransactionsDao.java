@@ -28,7 +28,7 @@ public class BnkTransactionsDao implements BnkTransactionsDaoLocal {
     private DataSource con;
 
     @Override
-    public void insertBnkDepDepositTransaction(BnkDepDepositTransaction bddt) {
+    public int insertBnkDepDepositTransaction(BnkDepDepositTransaction bddt) {
 
         try {
             System.out.println( "....start");
@@ -74,10 +74,11 @@ public class BnkTransactionsDao implements BnkTransactionsDaoLocal {
 //            CallableStatement cs2 = con.getConnection().prepareCall("{call ssp_Act_Journal_Confirm(?)}");
 //            cs2.setInt(1,intJournalHDID);
 //            cs2.executeQuery();
-            
+            return cs.getInt(15);
         } catch (SQLException ex) {
             Logger.getLogger(BnkTransactionsDao.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return 0;
     }
 
     @Override

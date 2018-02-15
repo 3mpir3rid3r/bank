@@ -17,7 +17,7 @@ import javax.ejb.Local;
 @Local
 public interface BnkTransactionsDaoLocal {
     
-    void insertBnkDepDepositTransaction(BnkDepDepositTransaction bddt);
+    int insertBnkDepDepositTransaction(BnkDepDepositTransaction bddt);
     
     long insertBnkLonLoanTransactions(BnkLonLoanTransactions bllt);
     

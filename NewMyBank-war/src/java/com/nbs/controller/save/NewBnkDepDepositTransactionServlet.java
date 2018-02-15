@@ -141,9 +141,9 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
             System.out.println("aaaaaa   awaaa");
             response.sendRedirect("teller/money_saving.jsp?successMsg=0&moneyDepType" + moneyDepType);
         } else {
-            System.out.println("aaaaaa   ssssssssss  ="+bddt.getNDepTrnID());
             
-            bnkTransactionsDao.insertBnkDepDepositTransaction(bddt);
+            int i=bnkTransactionsDao.insertBnkDepDepositTransaction(bddt);
+            System.out.println("aaaaaa   ssssssssss ttt ="+i);
             request.getSession().setAttribute("bddt", bddt);
 //            request.getSession().removeAttribute("depDepositMaster");
             response.sendRedirect("teller/money_saving.jsp?successMsg=1&moneyDepType" + moneyDepType);
