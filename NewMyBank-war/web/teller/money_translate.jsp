@@ -88,6 +88,7 @@
                 crCDepName = depositMaster.getCDepName();
                 crNCurBookBalance = String.valueOf(depositMaster.getNCurBookBalance());
                 cFullName1 = depositMaster.getCFullName();
+                
             }
             String brAccNo = "";
             String brAccNoLabel = "අංකය";
