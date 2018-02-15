@@ -318,7 +318,7 @@
                                                 <div class="form-group" style="margin-top:-10px">
                                                     <label class="control-label col-sm-4 input-sm">බිල් අංකය 1:</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo" id="cReceiptNo" value="<%=cReceiptNo%>" data="number" data-type="number">
+                                                        <input required type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" placeholder="0" style="font-size:17px;" maxlength="25" name="cReceiptNo" id="cReceiptNo" value="<%=cReceiptNo%>" data="number" data-type="number">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top:-10px">
