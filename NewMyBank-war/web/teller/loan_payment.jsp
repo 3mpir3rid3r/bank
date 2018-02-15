@@ -305,11 +305,11 @@
                                             </div>
                                             <label class="col-sm-2 text-right input-sm">බිල් අංකය :</label>
                                             <div class="col-md-2">
-                                                <input style="height: 30px;" type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="cReceiptNo" id="cReceiptNo"> 
+                                                <input style="height: 30px;" type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="cReceiptNo" id="cReceiptNo" data="number" data-type="number"> 
                                             </div>
                                             <label class="col-sm-2 text-right input-sm">භා. බිල් අංකය :</label>
                                             <div class="col-md-2">
-                                                <input style="height: 30px;" type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="cReceiptNo2" id="cReceiptNo2">
+                                                <input style="height: 30px;" type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="cReceiptNo2" id="cReceiptNo2" data="number" data-type="number">
                                             </div>
                                         </div>
                                     </div>
@@ -326,7 +326,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nTotRecvStationary%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00"  name="nPaidStationary" id="nPaidStationary">
+                                                <input type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00"  name="nPaidStationary" id="nPaidStationary" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -334,7 +334,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13" ><%=nTotRecvPostage%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="nPaidPostage" id="nPaidPostage">
+                                                <input type="text" class="form-control input-sm text-right box-field convertSinhalaIskolaPotha" placeholder="0.00" name="nPaidPostage" id="nPaidPostage" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -342,7 +342,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nTotRecvCaurtFees%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidCaurtFees" id="nPaidCaurtFees">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidCaurtFees" id="nPaidCaurtFees" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -350,7 +350,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nTotRecvArbitrationFees%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidArbitrationFees" id="nPaidArbitrationFees">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidArbitrationFees" id="nPaidArbitrationFees" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -358,7 +358,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nToDateTotIntersest%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidIntValue" id="nPaidIntValue">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidIntValue" id="nPaidIntValue" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -366,7 +366,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nToDatePanaltyIntValue%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidPenaltyValue" id="nPaidPenaltyValue">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidPenaltyValue" id="nPaidPenaltyValue"data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -374,7 +374,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"  style="padding-top: 3px;">0.00</label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -382,7 +382,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"  style="padding-top: 3px;">0.00</label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -390,7 +390,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nToDateDueInstallment%></label>
                                             <label class="control-label col-sm-2 input-sm f-size13"><%=nToDateDueCapital%></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidCapitalVal" id="nPaidCapitalVal">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" name="nPaidCapitalVal" id="nPaidCapitalVal" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                         <div class="form-group" style="margin-top:-15px;">
@@ -403,7 +403,7 @@
                                             <label class="control-label col-sm-2 input-sm f-size13"></label>
                                             <label class="control-label col-sm-2 input-sm f-size13" style="padding-top: 3px;">0.00</label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00">
+                                                <input type="text" class="form-control input-sm text-right box-field" placeholder="0.00" data="number" data-type="decimal">
                                             </div>
                                         </div>
                                     </div>
@@ -418,32 +418,32 @@
                                         <div class="row">
 
                                             <label class="col-sm-4 input-sm text-right f-size13 bg-top10" >නිකුත් කළ මුදල :</label>
-                                            <label class="col-sm-3 input-sm text-left f-size13 bg-top10"  ><%=nIssuedAmount%></label>
+                                            <label class="col-sm-3 input-sm text-left f-size13 bg-top10"  data="number" data-type="decimal"><%=nIssuedAmount%></label>
                                             <label class="col-sm-3 input-sm text-right f-size13 bg-top10" >ඉතිරිය :</label>
-                                            <label class="col-sm-2 input-sm text-left f-size13 bg-top10"  ><%=nBalanceToIssue%></label>
+                                            <label class="col-sm-2 input-sm text-left f-size13 bg-top10"  data="number" data-type="decimal"><%=nBalanceToIssue%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label" >පොළී අනුපාතය :</label>
                                             <label class="col-sm-3 input-sm text-left box-label" ><%=nEffectiveInt%></label>
                                             <label class="col-sm-3 input-sm text-right box-label">වාරිකය මුදල :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nInstallmentAmountAdj%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nInstallmentAmountAdj%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label" >අයවී ඇති මුදල :</label>
-                                            <label class="col-sm-3 input-sm text-left box-label" ><%=nTotRecvCapital%></label>
+                                            <label class="col-sm-3 input-sm text-left box-label" data="number" data-type="decimal"><%=nTotRecvCapital%></label>
                                             <label class="col-sm-3 input-sm text-right box-label" >වාරික :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nTotRecvInstallment%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nTotRecvInstallment%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label" >අයවිය යුතු මුදල :</label>
-                                            <label class="col-sm-3 input-sm text-left box-label" ><%=nShouldRecvCapital%></label>
+                                            <label class="col-sm-3 input-sm text-left box-label" data="number" data-type="decimal"><%=nShouldRecvCapital%></label>
                                             <label class="col-sm-3 input-sm text-right box-label" >වාරික :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nShouldRecvInstallment%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nShouldRecvInstallment%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label" >අයවී ඇති පොළිය :</label>
-                                            <label class="col-sm-3 input-sm text-left box-label" ><%=nTotRecvInterest%></label>
+                                            <label class="col-sm-3 input-sm text-left box-label" data="number" data-type="decimal"><%=nTotRecvInterest%></label>
                                             <label class="col-sm-3 input-sm text-right box-label">අයවිය යුතු පොළිය :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nShouldRecvInterest%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nShouldRecvInterest%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label">ගෙවීමට ඇති මුදල :</label>
-                                            <label class="col-sm-3 input-sm text-left box-label" ><%=nLonBalanceAmount%></label>
+                                            <label class="col-sm-3 input-sm text-left box-label" data="number" data-type="decimal"><%=nLonBalanceAmount%></label>
                                             <label class="col-sm-3 input-sm text-right box-label">වාරික :</label>
                                             <label class="col-sm-2 input-sm text-left box-label" ><%=nLonBalanceInstallment%></label>
 
@@ -453,21 +453,21 @@
                                             <label class="col-sm-2 input-sm text-left box-label" ><%=dLastIntPayDate%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label">හිඟ වාරික මුදල :</label>
-                                            <label class="col-sm-3 input-sm text-left box-label" ><%=nToDateDueCapital%></label>
+                                            <label class="col-sm-3 input-sm text-left box-label" data="number" data-type="decimal"><%=nToDateDueCapital%></label>
                                             <label class="col-sm-3 input-sm text-right box-label">වාරික :</label>
                                             <label class="col-sm-2 input-sm text-left box-label"><%=nToDateDueInstallment%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label">පොළිය :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nToDateIntValueRound%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nToDateIntValueRound%></label>
                                             <label class="col-sm-1 input-sm text-right box-label" ></label>
-                                            <label class="col-sm-3 input-sm text-right box-label" >හිඟ පොළිය :</label>
+                                            <label class="col-sm-3 input-sm text-right box-label" data="number" data-type="decimal">හිඟ පොළිය :</label>
                                             <label class="col-sm-2 input-sm text-left box-label" ><%=nToDateTotIntersest%></label>
 
                                             <label class="col-sm-4 input-sm text-right box-label">දඩ පොළි මුදල :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nToDatePanaltyIntSubjectAmount%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nToDatePanaltyIntSubjectAmount%></label>
                                             <label class="col-sm-1 input-sm text-right box-label" ></label>
                                             <label class="col-sm-3 input-sm text-right box-label" >දඩ පොළී :</label>
-                                            <label class="col-sm-2 input-sm text-left box-label" ><%=nToDatePanaltyIntValue%></label>
+                                            <label class="col-sm-2 input-sm text-left box-label" data="number" data-type="decimal"><%=nToDatePanaltyIntValue%></label>
 
                                         </div>
                                     </div>
@@ -497,7 +497,7 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-4 input-sm text-right" style="font-size: 14px">මුදල :</label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control input-sm text-right" placeholder="0.00" name="nPaymentVal" id="nPaymentVal" style="font-size: 14px">
+                                                        <input type="text" class="form-control input-sm text-right" placeholder="0.00" name="nPaymentVal" id="nPaymentVal" style="font-size: 14px" data="number" data-type="decimal">
                                                     </div>
                                                 </div>
                                             </div>
@@ -630,6 +630,6 @@
                                                             }
                                                         }
         </script>
-
+        <script src="../js/validate.js" type="text/javascript"></script>
     </body>
 </html>
