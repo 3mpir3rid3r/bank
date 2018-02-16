@@ -329,8 +329,7 @@ public class PawningMasterServlet extends HttpServlet {
 //	String v_cAuthOfficer 
 //	String v_cInputBy                     
                         int pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
-                                System.out.println("ooooooooppp22     "+pkOfMaster);
-                        
+                               
                         List<CrDrTable> cdts = (List<CrDrTable>) request.getSession().getAttribute("tlist");
                         List<BnkPwnPawnMasterArticles> articleses = new ArrayList<>();
                         BnkPwnPawnMasterArticles articles;
