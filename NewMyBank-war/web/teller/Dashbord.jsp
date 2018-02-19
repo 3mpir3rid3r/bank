@@ -526,7 +526,7 @@
                                                             <div class="info-box">
                                                                 <span class="info-box-icon bg-blue-gradient"><i class="fa fa-user"></i></span>
                                                                 <div class="info-box-content">
-                                                                    <span class="info-box-number text-black">සියලුම    ගණුදෙණු</span>
+                                                                    <span class="info-box-number text-black">සියලුම ගණුදෙණු</span>
                                                                 </div>
                                                             </div>
                                                         </div>
