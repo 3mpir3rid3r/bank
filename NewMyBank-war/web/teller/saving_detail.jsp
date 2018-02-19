@@ -427,13 +427,13 @@
                                                                         <div class="form-group bg-top" >
                                                                             <label class="col-md-12" style="font-size: 14px">ගිණුම් අංකය :</label>
                                                                             <div class="col-md-12">
-                                                                                <input required="" type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="cOurAccountNo" name="cOurAccountNo" value="<%=cOurAccountNo%>" placeholder="ගිණුම් අංකය" style="font-size: 14px" >
+                                                                                <input required="" type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="cOurAccountNo" name="cOurAccountNo" value="<%=cOurAccountNo%>" placeholder="ගිණුම් අංකය" style="font-size: 14px" data="validate" data-type="number">
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-md-12" style="font-size: 14px">අනු අංකය :</label>
                                                                             <div class="col-md-12">
-                                                                                <input required="" type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cSerialNo" name="cSerialNo" value="<%=cSerialNo%>" placeholder="0" style="font-size: 14px" >
+                                                                                <input data="validate" data-type="number" required="" type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cSerialNo" name="cSerialNo" value="<%=cSerialNo%>" placeholder="0" style="font-size: 14px" >
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -448,13 +448,13 @@
                                                                     <div class="form-group bg-top" >
                                                                         <label class="col-md-12" style="font-size: 14px">පොළී අනුපාතය :</label>
                                                                         <div class="col-md-12">
-                                                                            <input required="" type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nEffectiveInt" name="nEffectiveInt" value="<%=nEffectiveInt%>" placeholder="පොළී අනුපාතය" style="font-size: 14px" >
+                                                                            <input data="validate" data-type="decimal" required="" type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nEffectiveInt" name="nEffectiveInt" value="<%=nEffectiveInt%>" placeholder="පොළී අනුපාතය" style="font-size: 14px" >
                                                                         </div>
                                                                     </div>                                               
                                                                     <div class="form-group bg-top">
                                                                         <label class="col-md-12" style="font-size: 14px">ලෙජර් අංකය :</label>
                                                                         <div class="col-md-12">
-                                                                            <input required="" type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLedgerBookNo" name="nLedgerBookNo" value="<%=nLedgerBookNo%>" placeholder="0" style="font-size: 14px" min="0" >
+                                                                            <input data="validate" data-type="number" required="" type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLedgerBookNo" name="nLedgerBookNo" value="<%=nLedgerBookNo%>" placeholder="0" style="font-size: 14px" min="0" >
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -493,19 +493,19 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">මූලික තැම්පත් මුදල :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" id="nFDIntialiDeposit" name="nFDIntialiDeposit" value="<%=nFDIntialiDeposit%>" placeholder="0.00" style="font-size:14px;" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" id="nFDIntialiDeposit" name="nFDIntialiDeposit" value="<%=nFDIntialiDeposit%>" placeholder="0.00" style="font-size:14px;" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">පොළී අනුපතය :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" value="<%=nEffectiveInt%>" placeholder="0.0" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" value="<%=nEffectiveInt%>" placeholder="0.0" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">කාලසීමාව :</label>
                                                                     <div class="col-md-3">
-                                                                        <input type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDPeriod" name="nFDPeriod" value="<%=nFDPeriod%>" placeholder="0" style="font-size:14px;" min="0" >
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDPeriod" name="nFDPeriod" value="<%=nFDPeriod%>" placeholder="0" style="font-size:14px;" min="0" >
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <select class="form-control input-sm convertSinhalaIskolaPotha" id="nFDPeriodTypeID" name="nFDPeriodTypeID" style="font-size: 14px" >
@@ -526,13 +526,13 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">කලපිරුනු පසු මුදල :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" id="nFDMaturityValue" name="nFDMaturityValue" value="<%=nFDMaturityValue%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" id="nFDMaturityValue" name="nFDMaturityValue" value="<%=nFDMaturityValue%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">ගිවිසුම් අංකය :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="cFDAgreementNo" name="cFDAgreementNo" value="<%=cFDAgreementNo%>" placeholder="0" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="cFDAgreementNo" name="cFDAgreementNo" value="<%=cFDAgreementNo%>" placeholder="0" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -608,7 +608,7 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">වාර :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDIntCalMethodValue" name="nFDIntCalMethodValue" value="<%=nFDIntCalMethodValue%>" placeholder="0" style="font-size:14px;" min="0" >
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDIntCalMethodValue" name="nFDIntCalMethodValue" value="<%=nFDIntCalMethodValue%>" placeholder="0" style="font-size:14px;" min="0" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
@@ -626,7 +626,7 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-5 input-sm" style="font-size:14px;">වාර :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDIntCRMethodValue" name="nFDIntCRMethodValue" value="<%=nFDIntCRMethodValue%>" placeholder="0" style="font-size:14px;" min="0" >
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" id="nFDIntCRMethodValue" name="nFDIntCRMethodValue" value="<%=nFDIntCRMethodValue%>" placeholder="0" style="font-size:14px;" min="0" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top" >
@@ -712,7 +712,7 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-3 input-sm">රැඳවු මුදල :</label>
                                                                     <div class="col-md-9">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nHoldedAmount" id="nHoldedAmount" value="<%=nHoldedAmount%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nHoldedAmount" id="nHoldedAmount" value="<%=nHoldedAmount%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
@@ -741,7 +741,7 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-3 input-sm">රැඳවු මුදල :</label>
                                                                     <div class="col-md-9">
-                                                                        <input type="text" class="form-control input-sm text-right" name="nHoldedAmountInt" id="nHoldedAmountInt" value="<%=nHoldedAmountInt%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right" name="nHoldedAmountInt" id="nHoldedAmountInt" value="<%=nHoldedAmountInt%>" placeholder="0.00" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
@@ -797,43 +797,43 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm ">හරවන මුදල :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nInstDRValue" id="nInstDRValue" value="<%=nInstDRValue%>" placeholder="0.00" style="font-size:14px;" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nInstDRValue" id="nInstDRValue" value="<%=nInstDRValue%>" placeholder="0.00" style="font-size:14px;" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm">පවත්නා ශේෂය :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm ">බැර නොවු ශේෂය :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm">බැර නොවු පොළීය :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" maxlength="25" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size:14px;" maxlength="25" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm ">ඉදිරියට ඇති මාස ගණන :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" name="nTDDepositPeriod" id="nTDDepositPeriod" value="<%=nTDDepositPeriod%>" placeholder="0" style="font-size:14px;" >
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" name="nTDDepositPeriod" id="nTDDepositPeriod" value="<%=nTDDepositPeriod%>" placeholder="0" style="font-size:14px;" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm">ගිවිසුම් ගත තැම්පත් මුදල :</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nTDAgreedAmount" id="nTDAgreedAmount" value="<%=nTDAgreedAmount%>" placeholder="0.00" style="font-size:14px;" >
+                                                                        <input type="text" data="validate" data-type="decimal" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="nTDAgreedAmount" id="nTDAgreedAmount" value="<%=nTDAgreedAmount%>" placeholder="0.00" style="font-size:14px;" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-4 input-sm ">ගෙවීම සෑම දින :</label>
                                                                     <div class="col-md-6"> 
-                                                                        <input type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" name="nTDPaymentDay" id="nTDPaymentDay" value="<%=nTDPaymentDay%>" placeholder="0" style="font-size:14px;" >
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm text-left convertSinhalaIskolaPotha" name="nTDPaymentDay" id="nTDPaymentDay" value="<%=nTDPaymentDay%>" placeholder="0" style="font-size:14px;" >
                                                                     </div>
                                                                     <label class="col-sm-2 input-sm">වරක්</label>
                                                                 </div>
@@ -957,11 +957,11 @@
                                                                 <div class="form-group bg-top">
                                                                     <label class="control-label col-sm-2 input-sm">බැර නොවූ පොලි :</label>
                                                                     <div class="col-md-3">
-                                                                        <input type="text" class="convertSinhalaIskolaPotha form-control input-sm text-right" placeholder="0.0" style="font-size:large;" maxlength="25">
+                                                                        <input type="text" data="validate" data-type="decimal" class="convertSinhalaIskolaPotha form-control input-sm text-right" placeholder="0.0" style="font-size:large;" maxlength="25">
                                                                     </div>
                                                                     <label class="control-label col-sm-2 input-sm">බැර නොවූ පොලි :</label>
                                                                     <div class="col-md-5">
-                                                                        <input type="text" class=" convertSinhalaIskolaPotha form-control input-sm text-right" placeholder="0.0" style="font-size:large;" maxlength="25">
+                                                                        <input type="text" data="validate" data-type="decimal" class=" convertSinhalaIskolaPotha form-control input-sm text-right" placeholder="0.0" style="font-size:large;" maxlength="25">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group bg-top">
@@ -974,8 +974,8 @@
                                                                         <input type="text" class="convertSinhalaIskolaPotha form-control input-sm text-center" placeholder="dd/mm/yyyy"  style="font-size:large;">
                                                                     </div>
                                                                     <div class="col-md-2">
-                                                                        <button type="submit" class="btn btn-primary btn-sm" onclick="#">New</button>
-                                                                        <button type="submit" class="btn btn-primary btn-sm" onclick="#">Save</button>
+                                                                        <button type="submit" class="btn btn-primary btn-sm" >New</button>
+                                                                        <button type="submit" class="btn btn-primary btn-sm" >Save</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1064,7 +1064,7 @@
                                                         <div class="panel panel-default">
                                                             <div class="panel-body bg-color" style="height: 40px;">
                                                                 <div class="pull-right bg-top">
-                                                                    <button type="submit" class="btn btn-primary btn-sm" onclick="#">ගනුදෙනු කරුවන් ඇතුල් කිරීම</button>
+                                                                    <button type="submit" class="btn btn-primary btn-sm" >ගනුදෙනු කරුවන් ඇතුල් කිරීම</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1176,19 +1176,19 @@
     <script src="../js/validate.js" type="text/javascript"></script>
     <script type="text/javascript" >
 
-                                                                        //-----------Action Function-------------
+                                                            //-----------Action Function-------------
 
-                                                                        function crBrAccountAcction() {
-                                                                            window.location = "view_depositmaster.jsp?tellerIndexKey=mTCR";
-                                                                        }
+                                                            function crBrAccountAcction() {
+                                                                window.location = "view_depositmaster.jsp?tellerIndexKey=mTCR";
+                                                            }
 
-                                                                        function brBrAccountAcction() {
-                                                                            window.location = "view_depositmaster.jsp?tellerIndexKey=mTBR";
-                                                                        }
-                                                                        if (<%=view%>) {
-                                                                            $('#name').html('ගිණුම් අංකය');
-                                                                        }
-                                                                        //---------------------------------------
+                                                            function brBrAccountAcction() {
+                                                                window.location = "view_depositmaster.jsp?tellerIndexKey=mTBR";
+                                                            }
+                                                            if (<%=view%>) {
+                                                                $('#name').html('ගිණුම් අංකය');
+                                                            }
+                                                            //---------------------------------------
 
     </script>
 

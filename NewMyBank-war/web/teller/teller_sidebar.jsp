@@ -165,10 +165,9 @@
                 <li><a href="#" style="margin-left: 0px;font-size: 13px;"><i class="fa fa-angle-double-right"></i>දෛනික ගණුදෙණු</a></li>
             </ul>
         </li>
-        
-        <li style="background-color: #f9f9f9" id="moneyDepType111">
-            <a href="view_AllTransactions.jsp?tellerIndexKey=mTBR" onclick="passMoneySaving(this)">
-                <i class="fa fa-plus-circle small"></i><span  style="color: green;font-size: 13px;">All Transactions</span>
+        <li id="commonLegger">
+            <a href="./view_AllTransactions.jsp?tellerIndexKey=mTBR">
+                <i class="fa fa-plus-circle small"></i></i><span style="font-size: 13px;">සියලුම ගණුදෙණු</span>
             </a>
         </li>
 

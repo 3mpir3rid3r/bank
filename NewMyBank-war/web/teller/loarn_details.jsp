@@ -142,7 +142,7 @@
 //                        if (request.getSession().getAttribute("nextBtnCheck") != null) {
 //                            nextBtnCheck = (String) request.getSession().getAttribute("nextBtnCheck");
 //                        }
-%>
+                    %>
 
                     <div class="row bg-searchheight bg-top">
                         <div class="col-md-12 bg-searchheight">
@@ -347,19 +347,19 @@
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">ණය අංකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cLonAccountNo" name="cLonAccountNo" disabled>                                        
+                                                                                <input data="validate" data-type="number" type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cLonAccountNo" name="cLonAccountNo" disabled>                                        
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">ලෙජර අංකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLedgerBookNo" name="nLedgerBookNo" disabled>                                        
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLedgerBookNo" name="nLedgerBookNo" disabled>                                        
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">අනු අංකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cSerialNo" name="cSerialNo" disabled>                                                                              
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cSerialNo" name="cSerialNo" disabled>                                                                              
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
@@ -377,32 +377,32 @@
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">ඉල්ලුම් කල මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nApplyedAmount" name="nApplyedAmount" disabled>                                                                                 
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nApplyedAmount" name="nApplyedAmount" disabled>                                                                                 
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">අනුමත කල මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nApprovedAmount" name="nApprovedAmount" disabled>                                                                                 
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nApprovedAmount" name="nApprovedAmount" disabled>                                                                                 
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">රක්ෂණ මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nInsuredAmount" name="nInsuredAmount" disabled>                                                                                 
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nInsuredAmount" name="nInsuredAmount" disabled>                                                                                 
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">රඳවා ගන්නා මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nReservedAmount" name="nReservedAmount" disabled>                                                                                 
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nReservedAmount" name="nReservedAmount" disabled>                                                                                 
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">පොළී අනුපාතය :</label>
                                                                             <div class="col-md-8">
                                                                                 <div class="input-group">
-                                                                                    <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="Amount" id="nEffectiveInt" name="nEffectiveInt" disabled>
+                                                                                    <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="Amount" id="nEffectiveInt" name="nEffectiveInt" disabled>
                                                                                     <span class="input-group-addon input-sm">%</span>
                                                                                 </div>                                                                                
                                                                             </div>
@@ -411,7 +411,7 @@
                                                                             <label class="col-sm-4 input-sm text-left" style="font-size: 13px">දඩ පොළී අනුපාතය :</label>
                                                                             <div class="col-md-8">
                                                                                 <div class="input-group">
-                                                                                    <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="Amount" id="nPanaltyInt" name="nPanaltyInt" disabled>
+                                                                                    <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="Amount" id="nPanaltyInt" name="nPanaltyInt" disabled>
                                                                                     <span class="input-group-addon input-sm">%</span>
                                                                                 </div>                                                                                
                                                                             </div>
@@ -422,7 +422,7 @@
                                                                         <div class="form-group bg-top"> 
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">අංකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="cBoardApprovalNo" name="cBoardApprovalNo" disabled>     
+                                                                                <input type="text" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="cBoardApprovalNo" name="cBoardApprovalNo" disabled>     
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top"> 
@@ -466,7 +466,7 @@
                                                                                 </select>                                                                                   
                                                                             </div>
                                                                             <div class="col-md-2 bg-pad">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonPeriod" name="nLonPeriod" onkeyup="onChangeNLPTypeIDLabel()" onchange="onChangeNLPTypeIDLabel()" disabled>                                                                                 
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonPeriod" name="nLonPeriod" onkeyup="onChangeNLPTypeIDLabel()" onchange="onChangeNLPTypeIDLabel()" disabled>                                                                                 
                                                                             </div>
                                                                             <label class="col-sm-1 input-sm text-right" id="nLPTypeIDLabel"></label>
                                                                             <label class="col-sm-1 input-sm text-right">ක්</label>
@@ -483,7 +483,7 @@
                                                                                 </select>                                                                                   
                                                                             </div>
                                                                             <div class="col-md-2 bg-pad">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonPaymentFreeTime" name="nLonPaymentFreeTime" onkeypress="onChangeNLPFTypeIDLabel()" onchange="onChangeNLPFTypeIDLabel()" disabled>                                                                                 
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonPaymentFreeTime" name="nLonPaymentFreeTime" onkeypress="onChangeNLPFTypeIDLabel()" onchange="onChangeNLPFTypeIDLabel()" disabled>                                                                                 
                                                                             </div>
                                                                             <label class="col-sm-1 input-sm text-right" id="nLPFTypeIDLabel"></label>
                                                                             <label class="col-sm-1 input-sm text-right">ක්</label>
@@ -543,7 +543,7 @@
                                                                         <div class="form-group bg-top"> 
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">ස්ථිර පොළියක් නම් පොළී මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nFixedInterestValue" name="nFixedInterestValue" disabled>     
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nFixedInterestValue" name="nFixedInterestValue" disabled>     
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top"> 
@@ -558,7 +558,7 @@
                                                                                 </select>                                                                                   
                                                                             </div>
                                                                             <div class="col-md-2 bg-pad">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonInstallmentPayTime" name="nLonInstallmentPayTime" onkeypress="onChahgeNLIPTypeIDLabel()" onchange="onChahgeNLIPTypeIDLabel()" disabled>                                                                                 
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonInstallmentPayTime" name="nLonInstallmentPayTime" onkeypress="onChahgeNLIPTypeIDLabel()" onchange="onChahgeNLIPTypeIDLabel()" disabled>                                                                                 
                                                                             </div>
                                                                             <label class="col-sm-1 input-sm text-left" style="font-size: 13px" id="nLIPTypeIDLabel"></label>
                                                                             <label class="col-sm-1 input-sm text-left" style="font-size: 13px">වරක්</label>
@@ -566,29 +566,29 @@
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">වාරික මුදල :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmount" name="nInstallmentAmount" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmount" name="nInstallmentAmount" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">සැකසු වාරිකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmountAdj" name="nInstallmentAmountAdj" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmountAdj" name="nInstallmentAmountAdj" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">අවසාන වාරිකය :</label>
                                                                             <div class="col-md-8">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmountLast" name="nInstallmentAmountLast" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nInstallmentAmountLast" name="nInstallmentAmountLast" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-4 input-sm text-right" style="font-size: 13px">කල්පසු වීමට දින ගණන :</label>
                                                                             <div class="col-md-2">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nDueDaysAfter" name="nDueDaysAfter" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nDueDaysAfter" name="nDueDaysAfter" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-left" style="font-size: 13px">අයවන දිනය :</label>
                                                                             <div class="col-md-4">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nDeductDay" name="nDeductDay" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nDeductDay" name="nDeductDay" disabled>                                                                                   
                                                                             </div>
                                                                         </div>                                                                    
                                                                     </div>
@@ -603,51 +603,51 @@
                                                                         <div class="form-group">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">නිකුත් කළ මුදල :</label>
                                                                             <div class="col-md-4 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nIssuedAmount" name="nIssuedAmount" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nIssuedAmount" name="nIssuedAmount" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">ඉතිරිය :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nBalanceToIssue" name="nBalanceToIssue" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nBalanceToIssue" name="nBalanceToIssue" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">අයවී ඇති මුදල :</label>
                                                                             <div class="col-md-4 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvCapital" name="nTotRecvCapital" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvCapital" name="nTotRecvCapital" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">වාරික :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvInstallment" name="nTotRecvInstallment" disabled>                                                                                   
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvInstallment" name="nTotRecvInstallment" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">අයවිය යුතු මුදල :</label>
                                                                             <div class="col-md-4 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvCapital" name="nShouldRecvCapital" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvCapital" name="nShouldRecvCapital" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">වාරික :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvInstallment" name="nShouldRecvInstallment" disabled>                                                                                   
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvInstallment" name="nShouldRecvInstallment" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">අයවී ඇති පොළිය :</label>
                                                                             <div class="col-md-3">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvInterest" name="nTotRecvInterest" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nTotRecvInterest" name="nTotRecvInterest" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">අයවිය යුතු පොළිය :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvInterest" name="nShouldRecvInterest" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nShouldRecvInterest" name="nShouldRecvInterest" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">ගෙවීමට ඇති මුදල :</label>
                                                                             <div class="col-md-4 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonBalanceAmount" name="nLonBalanceAmount" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonBalanceAmount" name="nLonBalanceAmount" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">වාරික :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonBalanceInstallment" name="nLonBalanceInstallment" disabled>                                                                                   
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nLonBalanceInstallment" name="nLonBalanceInstallment" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
@@ -663,23 +663,23 @@
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">හිඟ වාරික මුදල :</label>
                                                                             <div class="col-md-4 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateDueCapital" name="nToDateDueCapital" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateDueCapital" name="nToDateDueCapital" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">වාරික :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateDueInstallment" name="nToDateDueInstallment" disabled>                                                                                   
+                                                                                <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateDueInstallment" name="nToDateDueInstallment" disabled>                                                                                   
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group bg-top">
                                                                             <label class="col-sm-3 input-sm text-right" style="font-size: 13px">පොළිය :</label>
                                                                             <div class="col-md-3 bg-pad">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateIntValueRound" name="nToDateIntValueRound" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateIntValueRound" name="nToDateIntValueRound" disabled>                                                                                   
                                                                             </div>
                                                                             <label class="col-sm-1 input-sm text-right" style="font-size: 13px"></label>
                                                                             <input type="hidden" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateDueDays" name="nToDateDueDays"/>                                                                                   
                                                                             <label class="col-sm-2 input-sm text-right" style="font-size: 13px">හිඟ පොළිය :</label>
                                                                             <div class="col-md-3" style="padding-left: 0px">
-                                                                                <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateTotIntersest" name="nToDateTotIntersest" disabled>                                                                                   
+                                                                                <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha" id="nToDateTotIntersest" name="nToDateTotIntersest" disabled>                                                                                   
                                                                             </div>
                                                                         </div>                                                                   
                                                                     </div>
@@ -794,7 +794,7 @@
                                                                 <div class="row">
                                                                     <label class="col-sm-6 input-sm text-red">සෑම මාසයකම ණය අයකරගැනීමේ දිනය </label>
                                                                     <div class="col-md-6">
-                                                                        <input type="number" class="form-control input-sm convertSinhalaIskolaPotha">
+                                                                        <input type="number" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -950,7 +950,7 @@
                                                                                         return false;">
                                                                                     <div class ="input-group">
                                                                                         <input type="hidden" name="accMifValue" id="accMifValue" value="loanMIFNumber" />
-                                                                                        <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="පා.ලි අංකය" id="accMifNumer" autocomplete="off" name="accMifNumer" value="<%=accMifNumer%>" onkeydown="accMIFCursorKeyDown(event)" style="font-size: 15px;font-weight: bold">
+                                                                                        <input type="text" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="පා.ලි අංකය" id="accMifNumer" autocomplete="off" name="accMifNumer" value="<%=accMifNumer%>" onkeydown="accMIFCursorKeyDown(event)" style="font-size: 15px;font-weight: bold">
                                                                                         <span class="input-group-btn">
                                                                                             <button class="btn btn-info btn-flat btn-sm" type="submit"><i class="fa fa-search"></i></button>
                                                                                         </span>
@@ -958,7 +958,7 @@
                                                                                     </div>
                                                                                 </form>
                                                                             </td>
-                                                                            <td style="padding: 0px"><input type="text" class="form-control input-sm" id="loanGarnterName" name="loanGarnterName" value="<%=loanGarnterName%>" placeholder="නම" style="font-size: 15px;font-weight: bold"></td>
+                                                                            <td style="padding: 0px"><input type="text" data="validate" data-type="letterS  "class="form-control input-sm" id="loanGarnterName" name="loanGarnterName" value="<%=loanGarnterName%>" placeholder="නම" style="font-size: 15px;font-weight: bold"></td>
                                                                             <td style="padding: 0px;width: 150px">
                                                                                 <select class="form-control input-sm convertSinhalaIskolaPotha" id="type" name="type">
                                                                                     <option value="Garrenter1">Garrenter 1</option>
@@ -1108,7 +1108,7 @@
                                                                             <div class="row">
                                                                                 <label class="col-sm-1 input-sm">ඔප්පු අංකය </label>
                                                                                 <div class="col-md-2">                                                                                       
-                                                                                    <input type="text" class="form-control input-sm convertSinhalaIskolaPotha">
+                                                                                    <input type="text" data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha">
                                                                                 </div>                                                                               
                                                                                 <label class="col-sm-1 input-sm"> ලියාපදිංචි දිනය </label>
                                                                                 <div class="col-md-2">                                                                                       
@@ -1116,7 +1116,7 @@
                                                                                 </div>                                                                               
                                                                                 <label class="col-sm-2 input-sm">උකස් වටිනාකම </label>
                                                                                 <div class="col-md-4">                                                                                       
-                                                                                    <input type="text" class="form-control input-sm convertSinhalaIskolaPotha">
+                                                                                    <input type="text" data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha">
                                                                                 </div>                                                                               
                                                                             </div>
                                                                         </div>
@@ -1126,7 +1126,7 @@
                                                                             <div class="row">
                                                                                 <label class="col-sm-1 input-sm">ඔප්පුවේ නම  </label>
                                                                                 <div class="col-md-5">                                                                                       
-                                                                                    <input type="text" class="form-control input-sm convertSinhalaIskolaPotha">
+                                                                                    <input type="text" data="validate" data-type="letterS" class="form-control input-sm convertSinhalaIskolaPotha">
                                                                                 </div>                                                                               
 
                                                                                 <label class="col-sm-2 input-sm">උකස් නිදහස් කළ දිනය</label>
