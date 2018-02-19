@@ -409,7 +409,7 @@
                                                             <div class="col-sm-4">
                                                                 <div class="input-group">
                                                                     <input autocomplete="off" required class="form-control input-sm text-right convertSinhalaIskolaPotha" onkeydown="findDetails(event);
-                                                                            searchTypeChanger();" placeholder="ජා.හැ.අංකය" type="text" maxlength="12" id="cNICNo" name="cNICNo"  value="<%=cNICNo%>" data-toggle="popover" title="BirthDay" data-content="B'day is" data="validate" data-type="birthday">
+                                                                            searchTypeChanger(event);" placeholder="ජා.හැ.අංකය" type="text" maxlength="11" id="cNICNo" name="cNICNo"  value="<%=cNICNo%>" data-toggle="popover" title="BirthDay" data-content="B'day is" data="validate" data-type="birthday">
                                                                     <span class="input-group-btn" >
                                                                         <button class="btn btn-info btn-flat btn-sm" type="button" onclick="idSearch(event)"><i class="fa fa-search"></i></button>
                                                                         <button class="btn-sm btn-success btn-flat btn" type="button" onclick="getBirthDay();">B'day</button>
@@ -1200,10 +1200,8 @@
 
                 window.location = '../PawningMasterServlet?key=delete&deleteAll=1';
             }
-            function searchTypeChanger() {
-
-                var ev = window.event;
-                if (ev.keyCode === 38 | ev.keyCode === 40) {
+            function searchTypeChanger(e) {
+                if (e.keyCode === 38 | e.keyCode === 40) {
                     var lblValue = document.getElementById("lblChangName").value;
                     if (lblValue === "1") {
                         document.getElementById("cNICNo").setAttribute("placeholder", "තැන්පත් අංකය");

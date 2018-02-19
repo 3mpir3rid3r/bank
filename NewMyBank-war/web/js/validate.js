@@ -33,8 +33,9 @@ $(document).ready(function () {
         $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
     });
     $('[data-toggle="popover"]').popover({
-        placement: 'right',
-        trigger: 'focus'
+        placement: 'bottom',
+        trigger: 'focus',
+        html: 'true'
     });
 });
 $("*[data=validate]").keydown(function (e) {
@@ -82,25 +83,26 @@ $("*[data=validate]").keyup(function () {
             $(this).val($(this).val().toString().toUpperCase());
             break;
         case "birthday":
-            var cNICNo = $(this).val();
-            if (cNICNo.length === 12) {
+            var elem = $(this);
+            var cNICNo = elem.val();
+                if (cNICNo.length === 11) {
                 cNICNo = cNICNo.toString().substring(2);
+                cNICNo = cNICNo + "v";
             }
             if (cNICNo === "") {
-                var popover = $(this).attr('data-content', "B'day is..").data('bs.popover');
+                var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
                 popover.setContent();
             } else if (!isNaN(cNICNo.substr(0, 8)) && (cNICNo.charAt(9) === "v" || cNICNo.charAt(9) === "V")) {
                 url = "../NicGenarator";
+                var a = "asd";
                 $.post(url,
                         {nicNo: cNICNo},
                         function (res) {
-                            a = res;
-                            console.log(res);
-                             $(this).attr('data-content', res).data('bs.popover').setContent();
+                            var popover = elem.attr('data-content', res).data('bs.popover');
+                            popover.setContent();
                         });
-
             } else {
-                var popover = $(this).attr('data-content', "B'day is..").data('bs.popover');
+                var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
                 popover.setContent();
             }
             break;
@@ -117,13 +119,4 @@ function numberWithCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
-//    var num = "";
-//    while (nStr.length > 2) {
-//        num = nStr.toString().substring(nStr.length - 3) + "," + num;
-//        nStr = nStr.toString().substring(0, nStr.length - 3);
-//    }
-//    num = nStr + "," + num;
-//    num = num.replace(/.$/, "");
-//    num = num.replace(/^\,/, "");
-//    return num;
 } 
