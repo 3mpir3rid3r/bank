@@ -4,6 +4,7 @@
     Author     : mmh
 --%>
 
+<%@page import="org.apache.poi.ss.usermodel.Picture"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.nbs.model.BnkCustomerMaster"%>
 <%@page import="com.nbs.model.BnkRefMemberAreasGroups"%>
@@ -98,12 +99,12 @@
         int groupSet = 0;
         String cifno = "00000000", issueDate = null, cUseName = "", cUseNameAma = "", cInitials = "", cLastName = "", cFullName = "";
         String dDateOfBirth = null, dJoineDate = null, dMemberShipDate = null;
-        String cNICNo = "icon", cMotherMadName = "";
+        String cNICNo = "", cMotherMadName = "";
         String cPAddLine1 = "", cPAddLine2 = "", cPAddLine3 = "", cPAddLine4 = "", cPTelNo1 = "";
         String cBAddLine1 = "", cBAddLine2 = "", cBAddLine3 = "", cBAddLine4 = "", cBTelNo1 = "";
         String member_num = "";
         BigDecimal nMemberShipFee = BigDecimal.ZERO;
-        String cPEmail = "", cBEmail = "";
+        String cPEmail = "", cBEmail = "", picture = "icon";
 
         if (request.getParameter("id") != null) {
             String custIdString = request.getParameter("id");
@@ -153,6 +154,7 @@
                 nMemPositionIDSet = b.getNMemPositionID();
                 nMemStatusIDSet = b.getNMemStatusID();
                 areaSet = b.getNMemAreaID();
+                picture = b.getCPictureFileName();
             }
         }
 
@@ -253,20 +255,20 @@
                                                         </select>
                                                     </div>                                                        
                                                     <div class="col-md-8">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" onkeyup="conUperCase('cUseName');">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" onkeyup="conUperCase('cUseName');" data="validate" data-type="letterS">
                                                     </div>
                                                 </div>   
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම :</label>
                                                     <div class="col-md-10">
                                                         <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%=cFullName%>" onclick="this.style.borderColor = ''" onkeyup="conUperCase('cFullName');
-                                                                breakDownFullName(this);" >
+                                                                breakDownFullName(this);" data="validate" data-type="letterS">
                                                     </div> 
                                                 </div> 
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම(සි) :</label>
                                                     <div class="col-md-10">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaAmali" name="cFullNameSin" id="cFullNameSin" value="<%=cUseNameAma%>" onclick="this.style.borderColor = ''" onkeyup="keyup1(event, 'cFullNameSin')" >
+                                                        <input required type="text" class="form-control input-sm convertSinhalaAmali" name="cFullNameSin" id="cFullNameSin" value="<%=cUseNameAma%>" onclick="this.style.borderColor = ''" onkeyup="keyup1(event, 'cFullNameSin')" data="validate" data-type="letterSS">
                                                     </div>
                                                 </div> 
                                                 <div class="form-group bg-top">
@@ -308,7 +310,7 @@
                                                     <div class="col-md-12">
                                                         <!--<canvas id="canvas" style="width: 120px;height: 130px"></canvas>-->
                                                         <center>
-                                                            <input type="image" id="userImage" class="img-thumbnail" src="../images/customer/<%=cNICNo%>.png" style="width: 170px;height: 150px">
+                                                            <input type="image" id="userImage" class="img-thumbnail" src="../images/customer/<%=picture%>.png" style="width: 170px;height: 150px">
                                                         </center>
                                                     </div>
                                                 </div>
@@ -343,11 +345,7 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right">ජා.හැ.අංකය :</label>
                                             <div class="col-md-3" style="padding-right: 5px;">
-                                                <%if (cNICNo == "icon") {%>
                                                 <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" onkeyup="conUperCase('cNICNo');" data="validate" data-type="birthday">
-                                                <% } else {%>
-                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="<%=cNICNo%>" onkeyup="conUperCase('cNICNo');">
-                                                <% }%>
                                             </div>
                                             <label class="col-sm-2 input-sm text-right" style="padding-left: 5px;">උපන් දිනය :</label>
                                             <div class="col-md-4">
@@ -432,7 +430,7 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right">මවගේ වාසගම :</label>
                                             <div class="col-md-9">
-                                                <input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="<%=cMotherMadName%>" onkeyup="conUperCase('cMotherMadName');">
+                                                <input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="<%=cMotherMadName%>" onkeyup="conUperCase('cMotherMadName');" data="validate" data-type="letterS">
                                             </div>
                                         </div> 
                                     </div>
@@ -460,17 +458,17 @@
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 3</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" value="<%=cPAddLine3%>" onkeyup="conUperCase('cPAddLine3');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" value="<%=cPAddLine3%>" onkeyup="conUperCase('cPAddLine3');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 4</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine4" id="cPAddLine4" value="<%=cPAddLine4%>" onkeyup="conUperCase('cPAddLine4');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine4" id="cPAddLine4" value="<%=cPAddLine4%>" onkeyup="conUperCase('cPAddLine4');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">දුරකථන අංකය </label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPTelNo1" id="cPTelNo1" value="<%=cPTelNo1%>"></td>
+                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPTelNo1" id="cPTelNo1" value="<%=cPTelNo1%>" data="validate" data-type="number" maxlength="10"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
@@ -483,32 +481,32 @@
                                             <table>
                                                 <tr>
                                                     <td style="width: 175px"><label class="control-label input-sm">ලිපිනය 1</label></td>
-                                                    <td style="width: 650px"><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine1" id="cBAddLine1" value="<%=cBAddLine1%>" onkeyup="conUperCase('cBAddLine1');"></td>
+                                                    <td style="width: 650px"><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine1" id="cBAddLine1" value="<%=cBAddLine1%>" onkeyup="conUperCase('cBAddLine1');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 2</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine2" id="cBAddLine2" value="<%=cBAddLine2%>" onkeyup="conUperCase('cBAddLine2');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine2" id="cBAddLine2" value="<%=cBAddLine2%>" onkeyup="conUperCase('cBAddLine2');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 3</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine3" id="cBAddLine3" value="<%=cBAddLine3%>" onkeyup="conUperCase('cBAddLine3');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine3" id="cBAddLine3" value="<%=cBAddLine3%>" onkeyup="conUperCase('cBAddLine3');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 4</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine4" id="cBAddLine4" value="<%=cBAddLine4%>" onkeyup="conUperCase('cBAddLine4');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine4" id="cBAddLine4" value="<%=cBAddLine4%>" onkeyup="conUperCase('cBAddLine4');"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">දුරකථන අංකය </label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" value="<%=cBTelNo1%>"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" value="<%=cBTelNo1%>" data="validate" data-type="number" maxlength="10"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ඊ මේල් </label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="email" name="cBEmail" id="cBEmail" value="<%=cBEmail%>"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="email" name="cBEmail" id="cBEmail" value="<%=cBEmail%>"></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -517,7 +515,25 @@
                                                 <div class="row">
                                                     <label class="col-sm-3 input-sm">සාමාජික අංකය</label>
                                                     <div class="col-md-9">
-                                                        <input required type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="cMemberShipNo" id="cMemberShipNo" value="<%=member_num%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" name="cMemberShipNo" id="cMemberShipNo" value="<%=member_num%>" data="validate" data-type="number">
+                                                    </div>                                                        
+                                                </div>
+                                            </div>
+                                            <div class="form-group  " style=";margin-left: 10px;margin-right: 10px">
+                                                <div class="row">
+                                                    <label class="col-sm-3 bg-top input-sm">ප්‍රාදේශිකය</label>
+                                                    <div class="col-md-9 bg-top">
+                                                        <select class="form-control input-sm convertSinhalaIskolaPotha " name="nMemAreaID" id="nMemAreaID">
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
+                                                            <%
+                                                                List<BnkRefMemberAreas> al4 = (List<BnkRefMemberAreas>) request.getSession().getAttribute("BnkRefMemberAreas");
+                                                                for (BnkRefMemberAreas c4 : al4) {
+                                                            %>
+                                                            <option class=" input-sm" value="<%=c4.getNMemAreaID()%>"><label class="control-label"><%=c4.getCMemAreaName()%></label></option>
+                                                            <%
+                                                                }
+                                                            %>
+                                                        </select>                                                        
                                                     </div>                                                        
                                                 </div>
                                             </div>
@@ -525,7 +541,7 @@
                                                 <div class="row">
                                                     <label class="col-sm-3 bg-top input-sm">කණ්ඩායමේ නම</label>
                                                     <div class="col-md-9 bg-top">
-                                                        <select required class="form-control input-sm convertSinhalaIskolaPotha" id="nMemAreaGroupID" name="nMemAreaGroupID">
+                                                        <select class="form-control input-sm convertSinhalaIskolaPotha" id="nMemAreaGroupID" name="nMemAreaGroupID">
                                                             <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberAreasGroups> al6 = (List<BnkRefMemberAreasGroups>) request.getSession().getAttribute("BnkRefMemberAreasGroups");
@@ -543,7 +559,7 @@
                                                 <div class="row">
                                                     <label class="col-sm-3 bg-top input-sm">තනතුර</label>
                                                     <div class="col-md-9 bg-top">
-                                                        <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nMemPositionID" id="nMemPositionID">
+                                                        <select class="form-control input-sm convertSinhalaIskolaPotha" name="nMemPositionID" id="nMemPositionID">
                                                             <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberPosition> al3 = (List<BnkRefMemberPosition>) request.getSession().getAttribute("BnkRefMemberPosition");
@@ -561,7 +577,7 @@
                                                 <div class="row">
                                                     <label class="col-sm-3 bg-top input-sm">තත්වය</label>
                                                     <div class="col-md-9 bg-top">
-                                                        <select required class="form-control input-sm convertSinhalaIskolaPotha" id="nMemStatusID" name="nMemStatusID">
+                                                        <select class="form-control input-sm convertSinhalaIskolaPotha" id="nMemStatusID" name="nMemStatusID">
                                                             <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberStatus> al5 = (List<BnkRefMemberStatus>) request.getSession().getAttribute("BnkRefMemberStatus");
@@ -575,37 +591,19 @@
                                                     </div>                                                        
                                                 </div>
                                             </div>
-                                            <div class="form-group  " style=";margin-left: 10px;margin-right: 10px">
+                                            <div class="form-group" style=";margin-left: 10px;margin-right: 10px">
                                                 <div class="row">
                                                     <label class="col-sm-3 bg-top input-sm">සාමාජික දිනය</label>
                                                     <div class="col-md-4 bg-top">
-                                                        <input required type="date" class="form-control input-sm convertSinhalaIskolaPotha" name="dMemberShipDate" id="dMemberShipDate" value="<%=dMemberShipDate%>">
+                                                        <input type="date" class="form-control input-sm convertSinhalaIskolaPotha" name="dMemberShipDate" id="dMemberShipDate" value="<%=dMemberShipDate%>">
                                                         <script>
                                                             document.getElementById("dMemberShipDate").value = '<%= dMemberShipDate%>';
                                                         </script>
                                                     </div>
                                                     <label class="col-sm-3 bg-top input-sm" >සාමාජික මුදල  </label>
                                                     <div class="col-md-2 bg-top" >
-                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" name="nMemberShipFee" id="nMemberShipFee" value="<%=nMemberShipFee%>">
+                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" name="nMemberShipFee" id="nMemberShipFee" value="<%=nMemberShipFee%>" data="validate" data-type="decimal">
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group  " style=";margin-left: 10px;margin-right: 10px">
-                                                <div class="row">
-                                                    <label class="col-sm-3 bg-top input-sm">ප්‍රාදේශිකය</label>
-                                                    <div class="col-md-9 bg-top">
-                                                        <select  required class="form-control input-sm convertSinhalaIskolaPotha " name="nMemAreaID" id="nMemAreaID">
-                                                            <option value="0"><label class="control-label">-N/A-</label></option>
-                                                            <%
-                                                                List<BnkRefMemberAreas> al4 = (List<BnkRefMemberAreas>) request.getSession().getAttribute("BnkRefMemberAreas");
-                                                                for (BnkRefMemberAreas c4 : al4) {
-                                                            %>
-                                                            <option class=" input-sm" value="<%=c4.getNMemAreaID()%>"><label class="control-label"><%=c4.getCMemAreaName()%></label></option>
-                                                            <%
-                                                                }
-                                                            %>
-                                                        </select>                                                        
-                                                    </div>                                                        
                                                 </div>
                                             </div>
                                         </div>                                             
@@ -980,14 +978,8 @@
                                         var canvasServer = document.getElementById("canvas");
                                         var context = canvasServer.getContext("2d");
                                         var imageDataURL = canvasServer.toDataURL('image/png');
-                                        alert(imageDataURL);
-
                                         if (imageDataURL !== null) {
-                                            alert("hhjjhjh");
                                             $.post('../saveImageServlet', imageDataURL, function (responseText) {
-
-                                                alert("fffff");
-                                                alert(responseText);
                                                 document.getElementById('pic').value = responseText;
                                                 return true;
                                             });

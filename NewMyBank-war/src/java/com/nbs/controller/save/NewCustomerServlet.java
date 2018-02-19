@@ -16,7 +16,6 @@ import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.sql.Date;
 import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -292,7 +291,7 @@ public class NewCustomerServlet extends HttpServlet {
 
             String v_cMemberShipNo = "", v_nMemAreaGroupID = "0", v_nMemPositionID = "0", v_nMemStatusID = "0", v_dMemberShipDate = "null", v_nMemberShipFee = "", v_nMemAreaID = "";
 
-            String v_cPEmail = "", v_cBEmail = "", v_cFullNameAma = "";
+            String v_cPEmail = "", v_cBEmail = "", v_cFullNameAma = "", v_cPictureFileName = "";
 
             v_nCustomerCategoryID = request.getParameter("nCustomerCategoryID");
             v_nTitleID = request.getParameter("nTitleID");
@@ -303,7 +302,7 @@ public class NewCustomerServlet extends HttpServlet {
             v_cFullNameAma = request.getParameter("cFullNameSin");
             v_bFeMale = request.getParameter("bFeMale");
             v_dDateOfBirth = request.getParameter("dDateOfBirth");
-
+            v_cPictureFileName = request.getParameter("userImage");
             v_cNICNo = request.getParameter("cNICNo");
             v_dNICIssuedDate = request.getParameter("issueddate");
             v_nCivilStatusID = request.getParameter("nCivilStatusID");
@@ -338,129 +337,125 @@ public class NewCustomerServlet extends HttpServlet {
             v_nMemAreaID = request.getParameter("nMemAreaID");
 
             CustomerSaveEntity cse = new CustomerSaveEntity();
-            if (new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png").exists()) {
-                new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png").delete();
-            }
-            FileUtils.moveFile(new File(getServletContext().getRealPath("/images/customer/") + "/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/images/customer/") + "/" + v_cNICNo + ".png"));
             if ("0".equals(v_nCustomerCategoryID)) {
                 cse.setCustcat("0");
                 request.setAttribute("error", cse);
                 request.getRequestDispatcher("teller/customer_details.jsp").forward(request, response);
             } else if ("0".equals(v_nTitleID)) {
-                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID);
+                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cUseName)) {
-                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName=" + v_cUseName);
+                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName=" + v_cUseName + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cInitials)) {
-                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName=" + v_cUseName + "&v_cInitials=" + v_cInitials);
+                response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName=" + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cLastName)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
-                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName);
+                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cFullName)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
-                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName);
+                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if (!("0".equals(v_bFeMale) || "1".equals(v_bFeMale))) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
-                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale);
+                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_dDateOfBirth)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
-                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth);
+                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("null".equals(v_cNICNo)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
-                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo);
+                        + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("null".equals(v_dNICIssuedDate)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate);
+                        + v_dNICIssuedDate + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nCivilStatusID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID);
+                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nNationalityID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID);
+                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nReligionID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID);
+                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("null".equals(v_dJoineDate)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate);
+                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cMotherMadName)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
-                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName);
+                        + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cPAddLine1)) {
                 if ("".equals(v_cPAddLine2)) {
                     if ("".equals(v_cPAddLine3)) {
                         response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                                 + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                                 + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
-                                + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4);
+                                + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cPictureFileName=" + v_cPictureFileName);
                     }
                 }
             } else if ("".equals(v_cPTelNo1)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
-                        + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cPTelNo1=" + v_cPTelNo1);
+                        + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cPTelNo1=" + v_cPTelNo1 + "&v_cPictureFileName=" + v_cPictureFileName);
 //            } else if ("".equals(v_cBAddLine1)) {
 //                if ("".equals(v_cBAddLine2)) {
 //                    if ("".equals(v_cBAddLine3)) {
 //                        response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
 //                                + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
 //                                + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
-//                                + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4+"&v_cBAddLine1="+v_cBAddLine1+"&v_cBAddLine2="+v_cBAddLine2+"&v_cBAddLine3="+v_cBAddLine3+"&v_cBAddLine4="+v_cBAddLine4);
+//                                + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4+"&v_cBAddLine1="+v_cBAddLine1+"&v_cBAddLine2="+v_cBAddLine2+"&v_cBAddLine3="+v_cBAddLine3+"&v_cBAddLine4="+v_cBAddLine4 + "&v_cPictureFileName=" + v_cPictureFileName);
 //                    }
 //                }
             } else if ("".equals(v_cBTelNo1)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
-                        + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4 + "&v_cBTelNo1=" + v_cBTelNo1);
+                        + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4 + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_cMemberShipNo)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nMemAreaGroupID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nMemPositionID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nMemStatusID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("null".equals(v_dMemberShipDate)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("".equals(v_nMemberShipFee)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate + "&v_nMemberShipFee=" + v_nMemberShipFee);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate + "&v_nMemberShipFee=" + v_nMemberShipFee + "&v_cPictureFileName=" + v_cPictureFileName);
             } else if ("0".equals(v_nMemAreaID)) {
                 response.sendRedirect("teller/customer_details.jsp?mg=error&v_nCustomerCategoryID=" + v_nCustomerCategoryID + "&v_nTitleID=" + v_nTitleID + "&v_cUseName="
                         + v_cUseName + "&v_cInitials=" + v_cInitials + "&v_cLastName=" + v_cLastName + "&v_cFullName=" + v_cFullName + "&v_bFeMale=" + v_bFeMale + "&v_dDateOfBirth=" + v_dDateOfBirth + "&v_cNICNo=" + v_cNICNo + "&issueddate="
                         + v_dNICIssuedDate + "&v_nCivilStatusID=" + v_nCivilStatusID + "&v_nNationalityID=" + v_nNationalityID + "&v_nReligionID=" + v_nReligionID + "&v_dJoineDate=" + v_dJoineDate + "&v_cMotherMadName=" + v_cMotherMadName + "&v_cPAddLine1="
                         + v_cPAddLine1 + "&v_cPAddLine2=" + v_cPAddLine2 + "&v_cPAddLine3=" + v_cPAddLine3 + "&v_cPAddLine4=" + v_cPAddLine4 + "&v_cBAddLine1=" + v_cBAddLine1 + "&v_cBAddLine2=" + v_cBAddLine2 + "&v_cBAddLine3=" + v_cBAddLine3 + "&v_cBAddLine4=" + v_cBAddLine4
-                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate + "&v_nMemberShipFee=" + v_nMemberShipFee + "&v_nMemAreaID=" + v_nMemAreaID);
+                        + "&v_cBTelNo1=" + v_cBTelNo1 + "&v_cMemberShipNo=" + v_cMemberShipNo + "&v_nMemAreaGroupID=" + v_nMemAreaGroupID + "&v_nMemPositionID=" + v_nMemPositionID + "&v_nMemStatusID=" + v_nMemStatusID + "&v_dMemberShipDate=" + v_dMemberShipDate + "&v_nMemberShipFee=" + v_nMemberShipFee + "&v_nMemAreaID=" + v_nMemAreaID + "&v_cPictureFileName=" + v_cPictureFileName);
             } else {
 
                 GenUser genUser = (GenUser) request.getSession().getAttribute("user");
@@ -516,7 +511,7 @@ public class NewCustomerServlet extends HttpServlet {
                     bcm.setNMemberShipFee(BigDecimal.valueOf(Double.parseDouble(v_nMemberShipFee)));
 
                     bcm.setCAddBy(genUser.getCUserName());
-//	bcm.setcPictureFileName		VARCHAR(50), 
+                    bcm.setCPictureFileName(v_cPictureFileName);
 //	bcm.setcSignatureFileName		VARCHAR(50), 
 //	bcm.setcSigPath2			VARCHAR(50), 
 //	bcm.setcSigPath3			VARCHAR(50),  
@@ -573,6 +568,7 @@ public class NewCustomerServlet extends HttpServlet {
                     bcm.setNMemPositionID(Short.valueOf(v_nMemPositionID));
                     bcm.setNMemberShipFee(BigDecimal.valueOf(Double.parseDouble(v_nMemberShipFee)));
                     bcm.setCAddBy(genUser.getCUserName());
+                    bcm.setCPictureFileName(v_cPictureFileName);
 
                     BnkCustomerMasterDao.saveNewCustomerMaster(bcm);
                     System.out.println(v_cNICNo);

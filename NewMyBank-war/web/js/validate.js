@@ -48,6 +48,7 @@ $("*[data=validate]").keydown(function (e) {
     var type = $(this).attr("data-type");
     switch (type) {
         case "letterS":
+        case "letterSS":
             console.log(e.keyCode);
             if ((48 <= e.keyCode && e.keyCode <= 57) || (96 <= e.keyCode && e.keyCode <= 105) || 144 <= e.keyCode || 59 == e.keyCode) {
                 e.preventDefault();
