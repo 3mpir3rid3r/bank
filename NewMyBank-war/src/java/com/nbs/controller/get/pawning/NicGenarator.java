@@ -56,7 +56,7 @@ public class NicGenarator extends HttpServlet {
             if (monthAndDate.equals("00-00")) {
                 monthAndDate = "<label style=\"color: red\">" + monthAndDate + "</label>";
             }
-            out.print("<div class=\"row\">B'Day : " + year + "-" + monthAndDate + "<br>" + "Sex : " + sex + "<br>" + "Age : " + age + "</div>");
+            out.print("B'Day : " + year + "-" + monthAndDate + "<br>" + "Sex : " + sex + "<br>" + "Age : " + age    );
 
         } catch (ParseException ex) {
             Logger.getLogger(NicGenarator.class.getName()).log(Level.SEVERE, null, ex);

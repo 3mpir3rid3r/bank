@@ -509,7 +509,6 @@ public class NewCustomerServlet extends HttpServlet {
                     bcm.setNMemStatusID(Short.valueOf(v_nMemStatusID));
                     bcm.setNMemPositionID(Short.valueOf(v_nMemPositionID));
                     bcm.setNMemberShipFee(BigDecimal.valueOf(Double.parseDouble(v_nMemberShipFee)));
-
                     bcm.setCAddBy(genUser.getCUserName());
                     bcm.setCPictureFileName(v_cPictureFileName);
 //	bcm.setcSignatureFileName		VARCHAR(50), 

@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
     $('*[data-type="birthday"]').each(function () {
         $(this).attr("data-toggle", "popover");
-        $(this).attr("title", "BirthDay");
+        $(this).attr("title", "BirthDay Calculator");
         $(this).attr("data-content", "B'day is..");
     });
     $('*[data-type="decimal"]').each(function () {

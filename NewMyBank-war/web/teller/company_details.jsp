@@ -75,8 +75,8 @@
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
-                                                    <label class="control-label col-sm-4  ">ආයතන අංකය :</label>
-                                                    <div class="col-sm-8">
+                                                    <label class="control-label col-sm-5  ">ආයතන අංකය :</label>
+                                                    <div class="col-sm-7">
                                                         <div class="input-group">
                                                             <input class="form-control input-sm" type="text" value="000000" disabled="">
                                                             <span class="input-group-btn">
@@ -86,14 +86,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ආයතනයේ නම :</label>
-                                                    <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" required="" name="cFullName" id="cFullName">
+                                                    <label class="control-label col-sm-5  ">ආයතනයේ නම :</label>
+                                                    <div class="col-md-7">
+                                                        <input data="validate" data-type="letterS" class="form-control input-sm convertSinhalaIskolaPotha" type="text" required="" name="cFullName" id="cFullName">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4 input-sm">ආයතනයේ ස්භාවය :</label>
-                                                    <div class="col-md-8">
+                                                    <label class="control-label col-sm-5 ">ආයතනයේ ස්භාවය :</label>
+                                                    <div class="col-md-7">
                                                         <select class="form-control input-sm convertSinhalaIskolaPotha" name="cCompanyNature" id="cCompanyNature" required="">
                                                             <option>-තෝරන්න-</option>
                                                             <option value="1">abc</option>
@@ -101,33 +101,33 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ලියාපදිංචි අංකය :</label>
-                                                    <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="nRegisteredNo" id="nRegisteredNo" required="">
+                                                    <label class="control-label col-sm-5 ">ලියාපදිංචි අංකය :</label>
+                                                    <div class="col-md-7">
+                                                        <input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="nRegisteredNo" id="nRegisteredNo" required="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ලියාපදින්චි දිනය :</label>
-                                                    <div class="col-md-8">
+                                                    <label class="control-label col-sm-5 ">ලියාපදින්චි දිනය :</label>
+                                                    <div class="col-md-7">
                                                         <input class="form-control input-sm convertSinhalaIskolaPotha" type="date" required="" name="dRegisteredDate" id="dRegisteredDate">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">වරිපනම් අංකය :</label>
-                                                    <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="nVat" id="nVat" required="">
+                                                    <label class="control-label col-sm-5  ">වරිපනම් අංකය :</label>
+                                                    <div class="col-md-7">
+                                                        <input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="nVat" id="nVat" required="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ප්‍රධානියාගේ නම :</label>
-                                                    <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMasterName" id="cMasterName" value="">
+                                                    <label class="control-label col-sm-5  ">ප්‍රධානියාගේ නම :</label>
+                                                    <div class="col-md-7">
+                                                        <input data="validate" data-type="letterS" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMasterName" id="cMasterName" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ජ : හැ : අංකය:</label>
-                                                    <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="nNicNo" name="nNicNo" required="">
+                                                    <label class="control-label col-sm-5  ">ජ : හැ : අංකය:</label>
+                                                    <div class="col-md-7">
+                                                        <input data="validate" data-type="birthday" class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="nNicNo" name="nNicNo" required="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,23 +159,23 @@
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4  ">දුරකථන අංකය 1 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="cPTelNo1" name="cPTelNo1" required="">
+                                                        <input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="cPTelNo1" name="cPTelNo1" required="" maxlength="10">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4  ">දුරකථන අංකය 2 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" required="">
+                                                        <input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" required="" maxlength="10"  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4 ">ෆැක්ස් අංකය :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" required="">
+                                                        <input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" required="" maxlength="10">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
-                                                    <label class="control-label col-sm-4  ">ඉ-මේල් :</label>
+                                                    <label class="control-label col-sm-4  ">ඊ-මේල් :</label>
                                                     <div class="col-md-8">
                                                         <input class="form-control input-sm convertSinhalaIskolaPotha" type="email" name="cEmail" id="cEmail" required="">
                                                     </div>
@@ -219,6 +219,7 @@
     <script src="../js/jquery.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
+    <script src="../js/validate.js" type="text/javascript"></script>
     <script type="text/javascript">
 //            $("body").toggleClass("fixed");
                                                                     fix_sidebar();
