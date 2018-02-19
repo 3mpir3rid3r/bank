@@ -44,7 +44,6 @@ public class saveImageServlet extends HttpServlet {
             String result = getServletContext().getRealPath("/images/customer/") + "/" + filename;
             InputStream in = null;
             FileOutputStream fos = null;
-            System.out.println(result + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
             File f = new File(getServletContext().getRealPath("/images/customer/"));
             if (!f.exists()) {
                 f.mkdirs();
