@@ -29,13 +29,19 @@ $(document).ready(function () {
             $(this).attr("style", "border-bottom-color: red;");
         }
     });
+    $('*[data-type="birthday"]').each(function () {
+        $(this).attr("data-toggle", "popover");
+        $(this).attr("title", "BirthDay");
+        $(this).attr("data-content", "B'day is..");
+    });
     $('*[data-type="decimal"]').each(function () {
         $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
     });
     $('[data-toggle="popover"]').popover({
         placement: 'bottom',
         trigger: 'focus',
-        html: 'true'
+        html: 'true',
+        container: 'body'
     });
 });
 $("*[data=validate]").keydown(function (e) {
@@ -85,7 +91,7 @@ $("*[data=validate]").keyup(function () {
         case "birthday":
             var elem = $(this);
             var cNICNo = elem.val();
-                if (cNICNo.length === 11) {
+            if (cNICNo.length === 11) {
                 cNICNo = cNICNo.toString().substring(2);
                 cNICNo = cNICNo + "v";
             }

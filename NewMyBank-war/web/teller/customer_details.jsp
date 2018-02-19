@@ -218,7 +218,7 @@
                                                             List<BnkRefCustomerCategory> list = (List<BnkRefCustomerCategory>) request.getSession().getAttribute("BnkRefCustomerCategory");
                                                         %>
                                                         <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nCustomerCategoryID" id="nCustomerCategoryID" onchange="this.style.borderColor = ''">
-                                                            <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 for (BnkRefCustomerCategory cl : list) {
                                                             %>
@@ -242,7 +242,7 @@
                                                             List<GenRefCustomerTittle> al = (List<GenRefCustomerTittle>) request.getSession().getAttribute("GenRefCustomerTittle");
                                                         %>
                                                         <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nTitleID" id="nTitleID" onchange="this.style.borderColor = ''">
-                                                            <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 for (GenRefCustomerTittle c : al) {
                                                             %>
@@ -272,11 +272,11 @@
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">මුලකුරු :</label>
                                                     <div class="col-md-2">
-                                                        <input required type="text" class="form-control input-sm bg-pad convertSinhalaIskolaPotha" name="cInitials" id="cInitials" value="<%=cInitials%>" onclick="this.style.borderColor = ''">
+                                                        <input readonly  type="text" class="form-control input-sm bg-pad convertSinhalaIskolaPotha" name="cInitials" id="cInitials" value="<%=cInitials%>" onclick="this.style.borderColor = ''">
                                                     </div>
                                                     <label class="col-sm-2 input-sm text-right">අවසාන නම :</label>
                                                     <div class="col-md-3">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cLastName" id="cLastName" value="<%=cLastName%>" onclick="this.style.borderColor = ''">
+                                                        <input readonly type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cLastName" id="cLastName" value="<%=cLastName%>" onclick="this.style.borderColor = ''">
                                                     </div>
                                                     <!--<label class="col-sm-1 input-sm text-right">ස්ත්‍රී/පුරුෂ :</label>-->
                                                     <div class="col-md-3" style="margin-top: -5px">
@@ -324,7 +324,7 @@
                                                         <button class="btn btn-success btn-sm col-sm-12" onclick="$('#myCam').modal('show')" type="button"><span class="fa fa-camera">Upload</span></button><hr style="">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input class="btn btn-success btn-sm col-sm-12" type="button" onclick="alert(document.getElementById('canvas').value; )" value="Sign">
+                                                        <input class="btn btn-success btn-sm col-sm-12" type="button" onclick="alert(document.getElementById('canvas').value)" value="Sign">
                                                     </div>
                                                 </div>
                                             </div><!-- /.box-body -->
@@ -344,12 +344,12 @@
                                             <label class="col-sm-3 input-sm text-right">ජා.හැ.අංකය :</label>
                                             <div class="col-md-3" style="padding-right: 5px;">
                                                 <%if (cNICNo == "icon") {%>
-                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" onkeyup="conUperCase('cNICNo');">
+                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" onkeyup="conUperCase('cNICNo');" data="validate" data-type="birthday">
                                                 <% } else {%>
                                                 <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="<%=cNICNo%>" onkeyup="conUperCase('cNICNo');">
                                                 <% }%>
                                             </div>
-                                            <label class="col-sm-2 input-sm text-right">උපන් දිනය :</label>
+                                            <label class="col-sm-2 input-sm text-right" style="padding-left: 5px;">උපන් දිනය :</label>
                                             <div class="col-md-4">
                                                 <input required type="date" class="form-control input-sm convertSinhalaIskolaPotha" id="dDateOfBirth" name="dDateOfBirth" value="<%=dDateOfBirth%>" onclick="this.style.borderColor = ''">
                                                 <script>
@@ -370,7 +370,7 @@
                                             <label class="col-sm-3 input-sm text-right">විවාහ/අවිවාහක :</label>
                                             <div class="col-md-9">
                                                 <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nCivilStatusID" id="nCivilStatusID">
-                                                    <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                    <option value="0"><label class="control-label">-N/A-</label></option>
 
                                                     <%
                                                         List<GenRefCivilStatus> al1 = (List<GenRefCivilStatus>) request.getSession().getAttribute("GenRefCivilStatus");
@@ -387,7 +387,7 @@
                                             <label class="col-sm-3 input-sm text-right">ජාතිය :</label>
                                             <div class="col-md-9">
                                                 <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nNationalityID" id="nNationalityID">
-                                                    <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                    <option value="0"><label class="control-label">-N/A-</label></option>
                                                     <%
                                                         List<GenRefNationality> al2 = (List<GenRefNationality>) request.getSession().getAttribute("GenRefNationality");
                                                         for (GenRefNationality c2 : al2) {
@@ -403,7 +403,7 @@
                                             <label class="col-sm-3 input-sm text-right">ආගම :</label>
                                             <div class="col-md-9">
                                                 <select required  class="form-control input-sm convertSinhalaIskolaPotha" name="nReligionID" id="nReligionID">
-                                                    <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                    <option value="0"><label class="control-label">-N/A-</label></option>
                                                     <%
                                                         List<GenRefReligion> al21 = (List<GenRefReligion>) request.getSession().getAttribute("GenRefReligion");
                                                         for (GenRefReligion c2 : al21) {
@@ -412,11 +412,11 @@
                                                     <%
                                                         }
                                                     %>
-                                                
+
                                                 </select>
-                                                    <script>
-                                                        $("#nReligionID option:first").attr('selected','selected');
-                                                    </script>
+                                                <script>
+                                                    $("#nReligionID option:first").attr('selected', 'selected');
+                                                </script>
 
                                             </div>
                                         </div>
@@ -526,7 +526,7 @@
                                                     <label class="col-sm-3 bg-top input-sm">කණ්ඩායමේ නම</label>
                                                     <div class="col-md-9 bg-top">
                                                         <select required class="form-control input-sm convertSinhalaIskolaPotha" id="nMemAreaGroupID" name="nMemAreaGroupID">
-                                                            <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberAreasGroups> al6 = (List<BnkRefMemberAreasGroups>) request.getSession().getAttribute("BnkRefMemberAreasGroups");
                                                                 for (BnkRefMemberAreasGroups c6 : al6) {
@@ -544,7 +544,7 @@
                                                     <label class="col-sm-3 bg-top input-sm">තනතුර</label>
                                                     <div class="col-md-9 bg-top">
                                                         <select required class="form-control input-sm convertSinhalaIskolaPotha" name="nMemPositionID" id="nMemPositionID">
-                                                            <!--<option><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberPosition> al3 = (List<BnkRefMemberPosition>) request.getSession().getAttribute("BnkRefMemberPosition");
                                                                 for (BnkRefMemberPosition c3 : al3) {
@@ -562,7 +562,7 @@
                                                     <label class="col-sm-3 bg-top input-sm">තත්වය</label>
                                                     <div class="col-md-9 bg-top">
                                                         <select required class="form-control input-sm convertSinhalaIskolaPotha" id="nMemStatusID" name="nMemStatusID">
-                                                            <!--<option><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberStatus> al5 = (List<BnkRefMemberStatus>) request.getSession().getAttribute("BnkRefMemberStatus");
                                                                 for (BnkRefMemberStatus c5 : al5) {
@@ -595,7 +595,7 @@
                                                     <label class="col-sm-3 bg-top input-sm">ප්‍රාදේශිකය</label>
                                                     <div class="col-md-9 bg-top">
                                                         <select  required class="form-control input-sm convertSinhalaIskolaPotha " name="nMemAreaID" id="nMemAreaID">
-                                                            <!--<option value="0"><label class="control-label">-තෝරන්න-</label></option>-->
+                                                            <option value="0"><label class="control-label">-N/A-</label></option>
                                                             <%
                                                                 List<BnkRefMemberAreas> al4 = (List<BnkRefMemberAreas>) request.getSession().getAttribute("BnkRefMemberAreas");
                                                                 for (BnkRefMemberAreas c4 : al4) {
@@ -976,16 +976,16 @@
 //                                    var context = canvas.getContext('2d');
 
                                     function send() {
-                                        
+
                                         var canvasServer = document.getElementById("canvas");
                                         var context = canvasServer.getContext("2d");
                                         var imageDataURL = canvasServer.toDataURL('image/png');
                                         alert(imageDataURL);
-                                        
+
                                         if (imageDataURL !== null) {
                                             alert("hhjjhjh");
                                             $.post('../saveImageServlet', imageDataURL, function (responseText) {
-                                                
+
                                                 alert("fffff");
                                                 alert(responseText);
                                                 document.getElementById('pic').value = responseText;

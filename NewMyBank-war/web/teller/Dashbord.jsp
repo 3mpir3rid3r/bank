@@ -454,6 +454,37 @@
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
+                                            <h4 ><strong>පොදු ලෙජරය</strong></h4>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <a class="dash" href="../teller/common_legger.jsp">
+                                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                                            <div class="info-box">
+                                                                <span class="info-box-icon bg-blue-gradient"><i class="fa fa-user"></i></span>
+                                                                <div class="info-box-content">
+                                                                    <span class="info-box-number text-black">පොදු ලෙජරය</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                                        
+                                                        
+                                                        
+                    <div class="row bg-top">
+                        <div class="col-md-12 bg-pad">
+                            <div class="box box-info bg-color">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
                                             <h4 ><strong>වාර්තා</strong></h4>
                                             <hr>
                                             <div class="row">
@@ -464,6 +495,38 @@
                                                                 <span class="info-box-icon bg-blue-gradient"><i class="fa fa-user"></i></span>
                                                                 <div class="info-box-content">
                                                                     <span class="info-box-number text-black">දෛනික ගණුදෙණු</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                                        
+                                                        
+                                                        
+                                                        
+                    <div class="row bg-top">
+                        <div class="col-md-12 bg-pad">
+                            <div class="box box-info bg-color">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 ><strong>සියලුම ගනුදෙනු</strong></h4>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <a class="dash" href="./view_AllTransactions.jsp?tellerIndexKey=mTBR">
+                                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                                            <div class="info-box">
+                                                                <span class="info-box-icon bg-blue-gradient"><i class="fa fa-user"></i></span>
+                                                                <div class="info-box-content">
+                                                                    <span class="info-box-number text-black">සියලුම    ගණුදෙණු</span>
                                                                 </div>
                                                             </div>
                                                         </div>
