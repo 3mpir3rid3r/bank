@@ -287,7 +287,7 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label col-sm-4 input-sm" style="font-size: 14px">හුවමරුවන මුදල :</label>
                                                                     <div class="col-md-7">
-                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size: 17px" name="nMinParticipant" data="number" data-type="decimal">
+                                                                        <input type="text" class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="0.00" style="font-size: 17px" name="nMinParticipant" data="validate" data-type="decimal">
                                                                     </div>
                                                                 </div>
                                                             </div>

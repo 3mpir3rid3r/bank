@@ -51,13 +51,13 @@ public class NicGenarator extends HttpServlet {
             String[] dateMonth = monthAndDate.split("-");
             byte monthNo = Byte.parseByte(dateMonth[0]);
             byte dayNo = Byte.parseByte(dateMonth[1]);
-            
-            String age = getAge(year, monthNo, dayNo);
-            if(monthAndDate.equals("00-00")){
-                monthAndDate ="<label style=\"color: red\">"+monthAndDate+"</label>";
-            }
 
-            out.print("B'Day : "+year + "-" + monthAndDate+"<br>"+"Sex : "+sex+"<br>"+"Age : "+age);
+            String age = getAge(year, monthNo, dayNo);
+            if (monthAndDate.equals("00-00")) {
+                monthAndDate = "<label style=\"color: red\">" + monthAndDate + "</label>";
+            }
+            out.print("B'Day : " + year + "-" + monthAndDate + "<br>" + "Sex : " + sex + "<br>" + "Age : " + age);
+
 
         } catch (ParseException ex) {
             Logger.getLogger(NicGenarator.class.getName()).log(Level.SEVERE, null, ex);
@@ -106,12 +106,12 @@ public class NicGenarator extends HttpServlet {
     /**
      *
      * @author ACHCHUTHAN
-     * @return 
+     * @return
      */
 //    http://www.achchuthan.org/
 //    these methods are written by  Achchuthan Yogarajah
     public int getYear() {
-        
+
         if (Integer.parseInt(id.substring(0, 2)) <= 25) {
             return (2000 + Integer.parseInt(id.substring(0, 2)));
         } else {
@@ -142,18 +142,18 @@ public class NicGenarator extends HttpServlet {
                 days = days - month[i];
             }
         }
-        
-        String month ="";
-        if(Integer.toString(mo).length()==1){
-           month = "0"+Integer.toString(mo);
-        }else{
-            month =Integer.toString(mo);
+
+        String month = "";
+        if (Integer.toString(mo).length() == 1) {
+            month = "0" + Integer.toString(mo);
+        } else {
+            month = Integer.toString(mo);
         }
-        String day ="";
-        if(Integer.toString(da).length()==1){
-           day = "0"+Integer.toString(da);
-        }else{
-            day =Integer.toString(da);
+        String day = "";
+        if (Integer.toString(da).length() == 1) {
+            day = "0" + Integer.toString(da);
+        } else {
+            day = Integer.toString(da);
         }
         return month + "-" + day;
 
@@ -188,7 +188,7 @@ public class NicGenarator extends HttpServlet {
         int difInMonths = eDate.get(Calendar.MONTH) - sDate.get(Calendar.MONTH);
         int difInDays = eDate.get(Calendar.DATE) - sDate.get(Calendar.DATE);
 
-        return difInYears + "  Years  " + difInMonths + "  Months  " + difInDays+"  Days  ";
+        return difInYears + "  Years  " + difInMonths + "  Months  " + difInDays + "  Days  ";
     }
 
 }
