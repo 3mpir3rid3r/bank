@@ -49,6 +49,11 @@ $("*[data=number]").keydown(function (e) {
                     e.preventDefault();
                 }
                 break;
+            case "weight":
+                if (e.keyCode === 110 && $(this).val().indexOf('.') !== -1) {
+                    e.preventDefault();
+                }
+                break;
         }
         return;
     }
