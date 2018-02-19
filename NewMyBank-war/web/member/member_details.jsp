@@ -314,29 +314,29 @@
                                                         </select>
                                                     </div>                                                        
                                                     <div class="col-md-8" >
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%= master.getCUseName()%>" onclick="this.style.borderColor = ''">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%= master.getCUseName()%>" onclick="this.style.borderColor = ''" data="validate" data-type="letterS">
                                                     </div>
                                                 </div>
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම :</label>
                                                     <div class="col-md-10">
-                                                        <input  required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%= master.getCFullName()%>" onkeyup ="breakDownFullName();">
+                                                        <input  required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%= master.getCFullName()%>" onkeyup ="breakDownFullName();" data="validate" data-type="letterS">
                                                     </div> 
                                                 </div> 
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම(සි) :</label>
                                                     <div class="col-md-10">
-                                                        <input  type="text" class="form-control input-sm convertSinhalaAmali" name="cFullNameSin" id="cFullNameSin" value="<%= master.getCFullName()%>" onclick="this.style.borderColor = ''">
+                                                        <input  type="text" class="form-control input-sm convertSinhalaAmali" name="cFullNameSin" id="cFullNameSin" value="<%= master.getCFullName()%>" onclick="this.style.borderColor = ''" data="validate" data-type="letterSS">
                                                     </div>
                                                 </div> 
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">මුලකුරු :</label>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control input-sm bg-pad convertSinhalaIskolaPotha" name="cInitials" id="cInitials" value="<%= master.getCInitials()%>" onclick="this.style.borderColor = ''">
+                                                        <input readonly="" type="text" class="form-control input-sm bg-pad convertSinhalaIskolaPotha" name="cInitials" id="cInitials" value="<%= master.getCInitials()%>" onclick="this.style.borderColor = ''">
                                                     </div>
                                                     <label class="col-sm-2 input-sm text-right">අවසාන නම :</label>
                                                     <div class="col-md-3">
-                                                        <input type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cLastName" id="cLastName" value="<%= master.getCLastName()%>" onclick="this.style.borderColor = ''">
+                                                        <input readonly="" type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cLastName" id="cLastName" value="<%= master.getCLastName()%>" onclick="this.style.borderColor = ''">
                                                     </div>
                                                     <!--<label class="col-sm-1 input-sm text-right">ස්ත්‍රී/පුරුෂ :</label>-->
                                                     <div class="col-md-3" style="margin-top: -5px">
@@ -407,7 +407,7 @@
                                         <div class="form-group bg-top" >
                                             <label class="col-sm-3 input-sm text-right">ජා.හැ.අංකය :</label>
                                             <div class="col-md-3" style="padding-right: 10px;">
-                                                <input class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="<%= master.getCNICNo()%>">
+                                                <input class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="<%= master.getCNICNo()%>" data="validate" data-type="birthday">
                                             </div>
                                             <label class="col-sm-2 input-sm text-right">උපන් දිනය:</label>
                                             <%
@@ -511,13 +511,13 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right ">රැකියාව :</label>
                                             <div class="col-md-9">
-                                                <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cOccupation" id="cOccupation" value="<%= master.getCOcupation()%>">
+                                                <input data="validate" data-type="letterS" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cOccupation" id="cOccupation" value="<%= master.getCOcupation()%>">
                                             </div>
                                         </div> 
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right"> :</label>
                                             <div class="col-md-9">
-                                                <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="">
+                                                <input data="validate" data-type="letterS" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="">
                                             </div>
                                         </div> 
                                     </div>
@@ -555,7 +555,7 @@
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">දුරකථන අංකය </label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPTelNo1" id="cPTelNo1" value="<%= master.getCPTelNo1()%>"></td>
+                                                    <td><input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPTelNo1" id="cPTelNo1" value="<%= master.getCPTelNo1()%>"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
@@ -588,7 +588,7 @@
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">දුරකථන අංකය </label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" value="<%= master.getCBTelNo1()%>"></td>
+                                                    <td><input data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBTelNo1" id="cBTelNo1" value="<%= master.getCBTelNo1()%>"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
@@ -602,7 +602,7 @@
                                             <table>
                                                 <tr>
                                                     <td style="width: 175px"><label class="control-label text-right input-sm" >පැරණි අංකය</label></td>
-                                                    <td style="width: 650px"><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="coldNum" id="coldNum" value="<%= master.getCMemberShipNo()%>"></td>
+                                                    <td style="width: 650px"><input  data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="coldNum" id="coldNum" value="<%= master.getCMemberShipNo()%>"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
@@ -664,12 +664,12 @@
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">සාමාජික මුදල </label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha text-right" type="number" name="cMemberFee" id="cMemberFee" value="<%= master.getNMemberShipFee()%>"></td>
+                                                    <td><input  data="validate" data-type="decimal" class="form-control input-sm convertSinhalaIskolaPotha text-right" type="number" name="cMemberFee" id="cMemberFee" value="<%= master.getNMemberShipFee()%>"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">කොටස් </label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha text-right" type="number" name="cNumbers" id="cNumbers" value="<%= master.getNNoOfShares()%>"></td>
+                                                    <td><input  data="validate" data-type="number" class="form-control input-sm convertSinhalaIskolaPotha text-right" type="number" name="cNumbers" id="cNumbers" value="<%= master.getNNoOfShares()%>"></td>
                                                 </tr>
                                             </table>
                                         </div>                                             
@@ -704,6 +704,7 @@
     <script src="../js/jquery.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
+    <script src="../js/validate.js" type="text/javascript"></script>
     <script>
                                     var custCatSet = document.getElementById("custCatSet").value;
                                     var nTitleIDset = document.getElementById("nTitleIDset").value;
