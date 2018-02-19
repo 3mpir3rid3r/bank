@@ -451,11 +451,11 @@
                                                         <div class="form-group">
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 1 :</label>
                                                             <div class="col-md-4">
-                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" />
+                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" data="number" data-type="number"/>
                                                             </div> 
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 2 :</label>
                                                             <div class="col-md-4">
-                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" />
+                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" data="number" data-type="number" />
                                                             </div> 
                                                         </div> 
                                                     </div>
@@ -558,7 +558,7 @@
                                                                                 }%>
                                                                         </select>
                                                                     </th>
-                                                                    <th> <input type="text" class="form-control input-sm col-lg-6 input-sm convertSinhalaIskolaPotha number" name="col3" id="col3" /></th>
+                                                                    <th> <input type="text" class="form-control input-sm col-lg-6 input-sm convertSinhalaIskolaPotha number" name="col3" id="col3" data="number" data-type="number"/></th>
                                                                     <th> 
                                                                         <!--                                                            <div class="input-group">-->
                                                                         <input type="text" class="form-control input-sm col-lg-6 input-sm convertSinhalaIskolaPotha"  onkeypress="enterSubmit(event)" name="col4" id="col4"/>
@@ -617,44 +617,44 @@
                                                     <div class="col-md-4">
                                                         <input required  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="භාණ්ඩ බර" name="nTotWgtArt" value="<%= nTotWgtArt%>" id="nTotWgtArt" onkeyup="setTotWeightGold();
                                                                 checkTableData();" onclick="setTotWeightGold();
-                                                                        checkTableData();" />
+                                                                        checkTableData();"  data="number" data-type="weight"/>
                                                     </div> 
                                                     <label class="col-sm-2 input-sm text-right">ශුද්ධ රන් බර :</label>
                                                     <div class="col-md-4">
-                                                        <input required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="ශුද්ධ රන් බර" value="<%= nTotWgtGold%>" name="nTotWgtGold" id="nTotWgtGold" onkeyup="calPrice()" />
+                                                        <input required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="ශුද්ධ රන් බර" value="<%= nTotWgtGold%>" name="nTotWgtGold" id="nTotWgtGold" onkeyup="calPrice()"  data="number" data-type="weight"/>
                                                     </div> 
                                                 </div><div id="hiddenBrDiv1"> <br></div>
                                                 <div id="hiddenDataDiv2" class="form-group">
 
                                                     <label class="col-sm-2 input-sm text-right">1 g 1ක වටිනාකම :</label>
                                                     <div class="col-md-4">
-                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="1g 1ක වටිනාකම" value="<%= nOneGramAssessedValue%>" name="nOneGramAssessedValue" id="nOneGramAssessedValue" onkeyup="calPrice()" />
+                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="1g 1ක වටිනාකම" value="<%= nOneGramAssessedValue%>" name="nOneGramAssessedValue" id="nOneGramAssessedValue" onkeyup="calPrice()"  data="number" data-type="decimal"/>
                                                     </div> 
                                                     <label class="col-sm-2 input-sm text-right">වෙළදපල වටිනාකම :</label>
                                                     <div class="col-md-4">
-                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="වෙළදපල වටිනාකම" value="<%= nTotMkrtValue%>" name="nTotMkrtValue" id="nTotMkrtValue" maxlength="10" onclick="setMaxPriceForAdv();" onkeyup="setMaxPriceForAdv();"/>
+                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="වෙළදපල වටිනාකම" value="<%= nTotMkrtValue%>" name="nTotMkrtValue" id="nTotMkrtValue" maxlength="10" onclick="setMaxPriceForAdv();" onkeyup="setMaxPriceForAdv();" data="number" data-type="decimal"/>
                                                     </div>
                                                 </div><div id="hiddenBrDiv2"> <br></div>
                                                 <div id="hiddenDataDiv3" class="form-group">
                                                     <label class="col-sm-2 input-sm text-right">තක්සේරු මුදල :</label>
                                                     <div class="col-md-4">
-                                                        <input  disabled type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="තක්සේරු මුදල" value="<%= nTotAssessedValue%>" name="nTotAssessedValue"  id="nTotAssessedValue"/>
+                                                        <input  disabled type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="තක්සේරු මුදල" value="<%= nTotAssessedValue%>" name="nTotAssessedValue"  id="nTotAssessedValue" data="number" data-type="decimal"/>
                                                     </div> 
                                                     <label class="col-sm-2 input-sm text-right">නිකුත්කල ණය මුදල :</label>
                                                     <div class="col-md-4">
                                                         <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="නිකුත්කල ණය මුදල" value="<%= nTotAdvAmount%>" name="nTotAdvAmount" id="nTotAdvAmount" maxlength="10" onclick="setMaxPriceForAdv();
                                                                 checkTableData();" onkeyup="setMaxPriceForAdv();
-                                                                        checkTableData();"/>
+                                                                        checkTableData();" data="number" data-type="decimal"/>
                                                     </div> 
                                                 </div> <div id="hiddenBrDiv3"> <br></div>
                                                 <div id="hiddenDataDiv4" class="form-group">
                                                     <label class="col-sm-2 input-sm text-right">පොළි අනුපාතය :</label>
                                                     <div class="col-md-4">
-                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="පොළි අනුපාතය" value="<%= nActualInt%>" name="nActualInt" id="nActualInt"/>
+                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="පොළි අනුපාතය" value="<%= nActualInt%>" name="nActualInt" id="nActualInt" data="number" data-type="decimal"/>
                                                     </div> 
                                                     <label class="col-sm-2 input-sm text-right">එකග වූ පොළි අනුපාතය :</label>
                                                     <div class="col-md-4">
-                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="එකග වූ පොළි අනුපාතය" value="<%=  nAgreedInt%>" name="nAgreedInt" id="nAgreedInt"/>                                                        
+                                                        <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number"  placeholder="එකග වූ පොළි අනුපාතය" value="<%=  nAgreedInt%>" name="nAgreedInt" id="nAgreedInt" data="number" data-type="decimal"/>                                                        
                                                     </div> 
                                                 </div> <div id="hiddenBrDiv4"> <br></div>
                                                 <div id="hiddenDataDiv5" class="form-group">
@@ -697,7 +697,7 @@
                                                         </select>                                                                                   
                                                     </div>
                                                     <div class="col-md-1 bg-pad">
-                                                        <input required type="number" class="form-control input-sm number" id="nPwnPeriod" value="<%= nPwnPeriod%>" name="nPwnPeriod" onkeyup="onChangeNLPTypeIDLabel()" onchange="onChangeNLPTypeIDLabel()"  min="1">                                                                                 
+                                                        <input required type="number" class="form-control input-sm number" id="nPwnPeriod" value="<%= nPwnPeriod%>" name="nPwnPeriod" onkeyup="onChangeNLPTypeIDLabel()" onchange="onChangeNLPTypeIDLabel()"  min="1" data="number" data-type="number">                                                                                 
                                                     </div>
                                                     <label class="col-sm-1 input-sm text-left" id="nLPTypeIDLabel">දින 365 ක්</label>
                                                     <!--<label class="col-sm-1 input-sm text-right">ක්</label>-->
@@ -709,7 +709,7 @@
                                                 <div  id="hiddenDataDiv6" class="form-group">
                                                     <label class="col-sm-2 input-sm text-right">කුයිතාන්සි අංකය :</label>
                                                     <div class="col-md-4">
-                                                        <input required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" value="<%= cReceiptNo%>" placeholder="කුයිතාන්සි අංකය" name="cReceiptNo" id="cReceiptNo"/>
+                                                        <input required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" value="<%= cReceiptNo%>" placeholder="කුයිතාන්සි අංකය" name="cReceiptNo" id="cReceiptNo" data="number" data-type="number"/>
                                                     </div> 
                                                     <label class="col-sm-2 input-sm text-right">කාරණාව :</label>
                                                     <div class="col-md-4">
@@ -726,7 +726,7 @@
 
                                                     <label class="col-sm-2 input-sm text-right">දැනට ශේෂය :</label>
                                                     <div class="col-md-4">
-                                                        <input onkeypress='return ((event.which == 190) && (event.which < 48 || event.which > 57))' type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number " placeholder="දැනට ශේෂය" value="<%= nBalAmount%>" name="nBalAmount" id="nBalAmount"/>
+                                                        <input onkeypress='return ((event.which == 190) && (event.which < 48 || event.which > 57))' type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha text-right number " placeholder="දැනට ශේෂය" value="<%= nBalAmount%>" name="nBalAmount" id="nBalAmount" data="number" data-type="decimal"/>
                                                     </div> 
                                                 </div><div id="hiddenBrDiv7"> <br></div>
                                                 <div id="hiddenDataDiv8" class="form-group"> 
@@ -1088,8 +1088,10 @@
             function calPrice() {
                 var nTotWgtGold = document.getElementById('nTotWgtGold').value;
                 var nOneGramAssessedValue = document.getElementById('nOneGramAssessedValue').value;
+                nTotWgtGold.toString().split(',').join("");
+                nOneGramAssessedValue.toString().replace('/^\,/g','');
+                    console.log(nTotWgtGold + "  " + nOneGramAssessedValue);
                 var tot = parseFloat(nTotWgtGold) * parseFloat(nOneGramAssessedValue);
-
                 if (isNaN(tot)) {
                     tot = 0;
                 }
