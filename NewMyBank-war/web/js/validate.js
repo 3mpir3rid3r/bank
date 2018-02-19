@@ -65,7 +65,7 @@ $("*[data=validate]").keydown(function (e) {
                         break;
                     case "decimal":
                     case "weight":
-                        if (e.keyCode === 110 || e.keyCode === 190 && $(this).val().indexOf('.') !== -1) {
+                        if ((e.keyCode === 110 || e.keyCode === 190) && $(this).val().indexOf('.') !== -1) {
                             e.preventDefault();
                         }
                         break;
