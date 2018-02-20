@@ -325,9 +325,4 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
         return bankBranchs;
     }
 
-    @Override
-    public int getId(String typeId) {
-        System.out.println("AAAAAAAAAAA");
-        return 0;
-    }
 }
