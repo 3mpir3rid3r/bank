@@ -325,8 +325,8 @@
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <label  class="control-label" id="fontSize"></label>
-                                                                <select required="" class="form-control input-sm" id="BnkPwnPawnTypesID" name="BnkPwnPawnTypesID">
-                                                                    <option value="" style="display:none;"></option>
+                                                                <select required class="form-control input-sm" id="BnkPwnPawnTypesID" name="BnkPwnPawnTypesID" onchange="setTicketID()">
+                                                                    <option value="0" style="display:none;"></option>
 
                                                                     <% List<BnkPwnPawnTypes> list = (List<BnkPwnPawnTypes>) request.getSession().getAttribute("pawntypecombo");
                                                                         if (list != null) {
@@ -348,7 +348,7 @@
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <label  class="control-label" id="fontSize"></label>
-                                                                <input class="form-control input-sm convertSinhalaIskolaPotha" placeholder="උකස් කුයිතාන්සි අංකය" type="text" disabled="">
+                                                                <input id="ticketNumber" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="උකස් කුයිතාන්සි අංකය" type="text" disabled="">
                                                             </div><div class="col-lg-3">
                                                                 <label  class="control-label" id="fontSize"></label>
                                                                 <input class="form-control input-sm convertSinhalaIskolaPotha" type="date" value="<%= session.getAttribute("storeLoggedDate")%>" name="currentDate" id="currentDate">
@@ -1353,6 +1353,12 @@
                     error: function (msg) {
                         alert("Failed to upload file");
                     }
+                });
+            }
+            function setTicketID() {
+                var val = $("#BnkPwnPawnTypesID").val();
+                $.post("../getPwnTiktNumber?type=" + val, function (data) {
+                    $("#ticketNumber").val(data);
                 });
             }
         </script>

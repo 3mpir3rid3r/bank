@@ -35,13 +35,12 @@
         }else if(rep_id==2){
             rep_name="Cash_Withdrawal_Slip.jrxml";
             params = new HashMap();
-            System.out.println("7777776655555");
             params.put("DepTrnID", Integer.parseInt(request.getParameter("nDepTrnID").toString()));
         }
         
         
         Class.forName("com.mysql.jdbc.Driver");//nbsERP_Dankotuwa
-        conn = DriverManager.getConnection("jdbc:mysql://192.168.1.254:3306/nbsERP_Dankotuwa?user=root&password=123");
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.1.249:3306/nbsERP_Dankotuwa?user=root&password=123");
 
         //Loading Jasper Report File from Local file system
         

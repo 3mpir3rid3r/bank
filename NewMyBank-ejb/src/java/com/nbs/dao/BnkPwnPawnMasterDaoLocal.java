@@ -57,4 +57,6 @@ public interface BnkPwnPawnMasterDaoLocal {
 
     boolean saveRePwn(BnkPwnPawnMaster bppm, double paymentValue) throws SQLException, NullPointerException, NoResultException;
 
+    public int getId(String typeId);
+
 }

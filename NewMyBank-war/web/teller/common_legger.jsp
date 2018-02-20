@@ -294,25 +294,25 @@
                                                 <div class="form-group" style="margin-top: -9px">                                               
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් අංකය :</label>
                                                     <div class="col-md-4" >
-                                                        <input required id="act1Accno" name="act1Accno" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="act1Accno" name="act1Accno" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                     <label class="control-label col-sm-2 input-sm ">සටහන් අංකය :</label>
                                                     <div class="col-md-3" >
-                                                        <input required id="nnoteNo" name="nnoteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="nnoteNo" name="nnoteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
 
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act1SubAcc" id="act1SubAcc">
+                                                        <input onkeyup="" data="validate" data-type="letterSS" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act1SubAcc" id="act1SubAcc">
                                                     </div>
 
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
                                                     <label class="control-label col-sm-3 input-sm  ">ගිණුම් විස්තරය(Eng) :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des1" id="des1">
+                                                        <input onkeyup="" data="validate" data-type="letterS"required type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des1" id="des1">
                                                     </div>
                                                 </div>
 
@@ -430,25 +430,25 @@
                                                 <div class="form-group" style="margin-top: -9px">                                               
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් අංකය :</label>
                                                     <div class="col-md-4" >
-                                                        <input required id="act2Acc" name="act2Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="act2Acc" name="act2Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                     <label class="control-label col-sm-2 input-sm ">සටහන් අංකය :</label>
                                                     <div class="col-md-3" >
-                                                        <input required id="n2noteNo" name="n2noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="n2noteNo" name="n2noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
 
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act2SubAcc" id="act2SubAcc">
+                                                        <input onkeyup="" data="validate" data-type="letterSS" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act2SubAcc" id="act2SubAcc">
                                                     </div>
 
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය(Eng) :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des2" id="des2">
+                                                        <input onkeyup="" required data="validate" data-type="letterS"type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des2" id="des2">
                                                     </div>
                                                 </div>
 
@@ -576,25 +576,25 @@
                                                 <div class="form-group" style="margin-top: -9px">                                               
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් අංකය :</label>
                                                     <div class="col-md-4" >
-                                                        <input required id="act3Acc" name="act3Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="act3Acc" name="act3Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                     <label class="control-label col-sm-2 input-sm ">සටහන් අංකය :</label>
                                                     <div class="col-md-3" >
-                                                        <input required id="n3noteNo" name="n3noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                        <input required data="validate" data-type="number" id="n3noteNo" name="n3noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
 
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act3SubAcc" id="act3SubAcc">
+                                                        <input onkeyup="" required data="validate" data-type="letterSS" type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act3SubAcc" id="act3SubAcc">
                                                     </div>
 
                                                 </div>
                                                 <div class="form-group" style="margin-top: -9px">
                                                     <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය(Eng) :</label>
                                                     <div class="col-md-9">
-                                                        <input onkeyup="" required type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des3" id="des3">
+                                                        <input onkeyup="" required data="validate" data-type="letterS" type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des3" id="des3">
                                                     </div>
                                                 </div>
 
@@ -645,12 +645,12 @@
                                                     <th>උප ගිණුම් විස්තරය</th>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="number" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="number" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="letterS" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="letterS" data="validate" data-type="letterS" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="letterS" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
+                                                    <td><input type="text" data="validate" data-type="letterS" class="form-control input-sm" placeholder="" style="font-size:large;"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -908,25 +908,25 @@
                                             <div class="form-group" style="margin-top: -9px">                                               
                                                 <label class="control-label col-sm-3 input-sm ">ගිණුම් අංකය :</label>
                                                 <div class="col-md-4" >
-                                                    <input required id="act4Acc" name="act4Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                    <input required data="validate" data-type="number" id="act4Acc" name="act4Acc" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                 </div>
                                                 <label class="control-label col-sm-2 input-sm ">සටහන් අංකය :</label>
                                                 <div class="col-md-3" >
-                                                    <input required id="n4noteNo" name="n4noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
+                                                    <input required data="validate" data-type="number" id="n4noteNo" name="n4noteNo" type="text" class="form-control input-sm" placeholder="" style="font-size:small;">
                                                 </div>
                                             </div>
                                             <div class="form-group" style="margin-top: -9px">
 
                                                 <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය :</label>
                                                 <div class="col-md-9">
-                                                    <input onkeyup="" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act4SubAcc" id="act4SubAcc">
+                                                    <input onkeyup="" data="validate" data-type="letterSS" required type="text" class=" convertSinhalaAmali form-control input-sm" placeholder="" style="font-size:medium;" name="act4SubAcc" id="act4SubAcc">
                                                 </div>
 
                                             </div>
                                             <div class="form-group" style="margin-top: -9px">
                                                 <label class="control-label col-sm-3 input-sm ">ගිණුම් විස්තරය(Eng) :</label>
                                                 <div class="col-md-9">
-                                                    <input onkeyup="" required type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des4" id="des4">
+                                                    <input onkeyup="" required data="validate" data-type="letterS" type="text" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="" style="font-size:small;" name="des4" id="des4">
                                                 </div>
                                             </div>
 
@@ -1558,5 +1558,5 @@
 
 
     </script>
-
+<script src="../js/validate.js" type="text/javascript"></script>
 </html>

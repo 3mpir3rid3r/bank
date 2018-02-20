@@ -324,4 +324,10 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
         List<BnkRefBankBranch> bankBranchs = createQuery.getResultList();
         return bankBranchs;
     }
+
+    @Override
+    public int getId(String typeId) {
+        System.out.println("AAAAAAAAAAA");
+        return 0;
+    }
 }
