@@ -5,12 +5,9 @@
  */
 package com.nbs.controller.get.pawning;
 
-import com.nbs.dao.BnkLonLoanMasterDaoLocal;
 import com.nbs.dao.BnkPwnPawnMasterDaoLocal;
-import com.nbs.model.BnkRefBankBranch;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,10 +37,9 @@ public class getPwnTiktNumber extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-//            List<BnkRefBankBranch> id = bnkPwnPawnMasterDao.getBnkBranch();
-            List id = bnkPwnPawnMasterDao.getId(request.getParameter("type"));
+            int id = bnkPwnPawnMasterDao.getId();
             System.out.println(id);
-//            out.print(id);
+            out.print(id);
         }
     }
 

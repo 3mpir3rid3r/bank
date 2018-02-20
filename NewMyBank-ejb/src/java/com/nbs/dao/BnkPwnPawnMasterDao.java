@@ -325,4 +325,12 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
         return bankBranchs;
     }
 
+    @Override
+    public int getId() {
+        String jpql = "SELECT b FROM BnkPwnPawnMaster b";
+        Query createQuery = em.createQuery(jpql);
+        List<BnkRefBankBranch> bankBranchs = createQuery.getResultList();
+        return bankBranchs.size() + 1;
+    }
+
 }
