@@ -139,7 +139,7 @@
                     alert = Alerts.warningAlert("Something Wrong", "You miss some Fields", "");
                 } else if ("saved".equals(mg)) {
                     alert = Alerts.successAlert("success", "Successfully saved");
-                    String cCashValueString=new originalNumToLetter().getNumber("1299866");
+                    String cCashValueString=new originalNumToLetter().getNumber(request.getParameter("cCashValueString").toString());
                     response.sendRedirect("../marksGraph.jsp?rep_id=3&nPwnMasterID="+request.getParameter("nPwnMasterID").toString()+"&cCashValueString="+cCashValueString);
                 } else if ("updated".equals(mg)) {
                     alert = Alerts.successAlert("success", "Customer Successfully updated");

@@ -52,6 +52,7 @@ public class PawningMasterServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             int redirectorCount = 0;
             int pkOfMaster=0;
+            double nTotMkrtValue=0.0;
             
             request.getSession().setAttribute("pawntypecombo", bnkPwnPawnMasterDao.getBnkPwnPawnTypes());
             request.getSession().setAttribute("RefArticlcombo", bnkPwnPawnMasterDao.getBnkPwnRefArticls());
@@ -211,7 +212,7 @@ public class PawningMasterServlet extends HttpServlet {
                             nTotAdvAmount = Double.parseDouble(request.getParameter("nTotAdvAmount").replaceAll(",", ""));
                         }
                         String cRemrks = request.getParameter("cRemrks");
-                        double nTotMkrtValue = 0.0;
+                        nTotMkrtValue = 0.0;
                         if (request.getParameter("nTotMkrtValue") != null && request.getParameter("nTotMkrtValue").length() > 0) {
                             nTotMkrtValue = Double.parseDouble(request.getParameter("nTotMkrtValue").replaceAll(",", ""));
                         }
@@ -330,6 +331,7 @@ public class PawningMasterServlet extends HttpServlet {
 //	String v_cAuthOfficer 
 //	String v_cInputBy                     
                         pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
+                        System.out.println("yyyyyyy idd ="+pkOfMaster);
 
                         List<CrDrTable> cdts = (List<CrDrTable>) request.getSession().getAttribute("tlist");
                         List<BnkPwnPawnMasterArticles> articleses = new ArrayList<>();
@@ -363,7 +365,7 @@ public class PawningMasterServlet extends HttpServlet {
                 }
             }
             if (redirectorCount == 2) {
-                response.sendRedirect("pawning/pawning_master.jsp?mg=saved&nPwnMasterID="+pkOfMaster);
+                response.sendRedirect("pawning/pawning_master.jsp?mg=saved&nPwnMasterID="+pkOfMaster+"&cCashValueString="+(int)nTotMkrtValue);
                 
             } else if (redirectorCount == 0) {
                 response.sendRedirect("pawning/pawning_master.jsp");
