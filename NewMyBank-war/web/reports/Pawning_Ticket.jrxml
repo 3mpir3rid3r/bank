@@ -4,16 +4,14 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="240"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-	<parameter name="cUserName" class="java.lang.String"/>
 	<parameter name="cCashValueString" class="java.lang.String"/>
 	<parameter name="nPwnMasterID" class="java.lang.Integer"/>
-	<parameter name="nSubSectionID" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[call ssp_bnk_Rep_Pawning_Ticket($P{nPwnMasterID},$P{nSubSectionID});]]>
+		<![CDATA[call ssp_bnk_Rep_Pawning_Ticket($P{nPwnMasterID});]]>
 	</queryString>
 	<field name="nPwnMasterID" class="java.lang.Long"/>
 	<field name="v_cSubSectionNameSin" class="java.lang.String"/>
@@ -33,6 +31,7 @@
 	<field name="nTotAssessedValue" class="java.math.BigDecimal"/>
 	<field name="nTotMkrtValue" class="java.math.BigDecimal"/>
 	<field name="tPwnTime" class="java.sql.Time"/>
+	<field name="cAddBy" class="java.lang.String"/>
 	<field name="cPwnArticlName" class="java.lang.String"/>
 	<field name="cCaratType" class="java.lang.String"/>
 	<background>
@@ -61,7 +60,7 @@
 				<textElement>
 					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{cUserName}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAddBy}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="487" y="67" width="100" height="16"/>
@@ -264,7 +263,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{cUserName}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAddBy}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="248" y="492" width="220" height="71"/>
