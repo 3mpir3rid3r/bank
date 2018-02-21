@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -51,7 +51,7 @@
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="393" y="46" width="194" height="16"/>
 				<textElement>
-					<font fontName="AMALEE" size="11" isBold="false" pdfFontName="Helvetica"/>
+					<font fontName="AA Amali" size="11" isBold="false" pdfFontName="Helvetica"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{v_cSubSectionNameSin}]]></textFieldExpression>
 			</textField>
