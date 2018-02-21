@@ -65,47 +65,47 @@ public class NewCustomerServlet extends HttpServlet {
 //
 //            String email1 = "", email2 = "";
 //
-//            custcat = request.getParameter("custcat");
-//            title = request.getParameter("title");
-//            usedname = request.getParameter("usedname");
-//            initials = request.getParameter("initials");
-//            lastname = request.getParameter("lastname");
-//            fullname = request.getParameter("fullname");
-//            gender = request.getParameter("male");
-//            birthday = request.getParameter("birthday");
+//            custcat = request.getParameter("custcat").replaceAll(",", "") ;
+//            title = request.getParameter("title").replaceAll(",", "") ;
+//            usedname = request.getParameter("usedname").replaceAll(",", "") ;
+//            initials = request.getParameter("initials").replaceAll(",", "") ;
+//            lastname = request.getParameter("lastname").replaceAll(",", "") ;
+//            fullname = request.getParameter("fullname").replaceAll(",", "") ;
+//            gender = request.getParameter("male").replaceAll(",", "") ;
+//            birthday = request.getParameter("birthday").replaceAll(",", "") ;
 //
-//            nic = request.getParameter("nic");
-//            issueDate = request.getParameter("issueddate");
-//            civil_status = request.getParameter("civil_status");
-//            nationality = request.getParameter("nationality");
-//            religon = request.getParameter("religon");
-//            starting_date = request.getParameter("starting_date");
-//            mother_sername = request.getParameter("mother_sername");
+//            nic = request.getParameter("nic").replaceAll(",", "") ;
+//            issueDate = request.getParameter("issueddate").replaceAll(",", "") ;
+//            civil_status = request.getParameter("civil_status").replaceAll(",", "") ;
+//            nationality = request.getParameter("nationality").replaceAll(",", "") ;
+//            religon = request.getParameter("religon").replaceAll(",", "") ;
+//            starting_date = request.getParameter("starting_date").replaceAll(",", "") ;
+//            mother_sername = request.getParameter("mother_sername").replaceAll(",", "") ;
 //
 //            //per address
-//            per_address1 = request.getParameter("per_address1");
-//            per_address2 = request.getParameter("per_address2");
-//            per_address3 = request.getParameter("per_address3");
-//            per_address4 = request.getParameter("per_address4");
-//            phone_no1 = request.getParameter("phone_no1");
-//            email1 = request.getParameter("email1");
+//            per_address1 = request.getParameter("per_address1").replaceAll(",", "") ;
+//            per_address2 = request.getParameter("per_address2").replaceAll(",", "") ;
+//            per_address3 = request.getParameter("per_address3").replaceAll(",", "") ;
+//            per_address4 = request.getParameter("per_address4").replaceAll(",", "") ;
+//            phone_no1 = request.getParameter("phone_no1").replaceAll(",", "") ;
+//            email1 = request.getParameter("email1").replaceAll(",", "") ;
 //
 //            //other address
-//            other_address1 = request.getParameter("other_address1");
-//            other_address2 = request.getParameter("other_address2");
-//            other_address3 = request.getParameter("other_address3");
-//            other_address4 = request.getParameter("other_address4");
-//            email2 = request.getParameter("email2");
-//            phone_no2 = request.getParameter("phone_no2");
+//            other_address1 = request.getParameter("other_address1").replaceAll(",", "") ;
+//            other_address2 = request.getParameter("other_address2").replaceAll(",", "") ;
+//            other_address3 = request.getParameter("other_address3").replaceAll(",", "") ;
+//            other_address4 = request.getParameter("other_address4").replaceAll(",", "") ;
+//            email2 = request.getParameter("email2").replaceAll(",", "") ;
+//            phone_no2 = request.getParameter("phone_no2").replaceAll(",", "") ;
 //
 //            //saamajika thorathuru
-//            member_num = request.getParameter("member_no");
-//            group_name = request.getParameter("group_name");
-//            position = request.getParameter("position");
-//            state = request.getParameter("state");
-//            member_date = request.getParameter("member_date");
-//            member_value = request.getParameter("member_value");
-//            coop_name = request.getParameter("coop_name");
+//            member_num = request.getParameter("member_no").replaceAll(",", "") ;
+//            group_name = request.getParameter("group_name").replaceAll(",", "") ;
+//            position = request.getParameter("position").replaceAll(",", "") ;
+//            state = request.getParameter("state").replaceAll(",", "") ;
+//            member_date = request.getParameter("member_date").replaceAll(",", "") ;
+//            member_value = request.getParameter("member_value").replaceAll(",", "") ;
+//            coop_name = request.getParameter("coop_name").replaceAll(",", "") ;
 //
 //            CustomerSaveEntity cse = new CustomerSaveEntity();
 //            System.out.println(coop_name + "cccccccccccc");
@@ -231,7 +231,7 @@ public class NewCustomerServlet extends HttpServlet {
 //                        + "&phone_no2=" + phone_no2 + "&member_num=" + member_num + "&group_name=" + group_name + "&position=" + position + "&state=" + state + "&member_date=" + member_date + "&member_value=" + member_value + "&coop_name=" + coop_name);
 //            } else {
 //
-//                String primaryKey =  request.getParameter("pk");
+//                String primaryKey =  request.getParameter("pk").replaceAll(",", "") ;
 //                System.out.println("pk"+primaryKey);
 //                int custId = Integer.parseInt(primaryKey);
 //                if (custId == 0) {
@@ -293,48 +293,48 @@ public class NewCustomerServlet extends HttpServlet {
 
             String v_cPEmail = "", v_cBEmail = "", v_cFullNameAma = "", v_cPictureFileName = "";
 
-            v_nCustomerCategoryID = request.getParameter("nCustomerCategoryID");
-            v_nTitleID = request.getParameter("nTitleID");
-            v_cUseName = request.getParameter("cUseName");
-            v_cInitials = request.getParameter("cInitials");
-            v_cLastName = request.getParameter("cLastName");
-            v_cFullName = request.getParameter("cFullName");
-            v_cFullNameAma = request.getParameter("cFullNameSin");
-            v_bFeMale = request.getParameter("bFeMale");
-            v_dDateOfBirth = request.getParameter("dDateOfBirth");
-            v_cPictureFileName = request.getParameter("userImage");
-            v_cNICNo = request.getParameter("cNICNo");
-            v_dNICIssuedDate = request.getParameter("issueddate");
-            v_nCivilStatusID = request.getParameter("nCivilStatusID");
-            v_nNationalityID = request.getParameter("nNationalityID");
-            v_nReligionID = request.getParameter("nReligionID");
-            v_dJoineDate = request.getParameter("dJoineDate");
-            v_cMotherMadName = request.getParameter("cMotherMadName");
+            v_nCustomerCategoryID = request.getParameter("nCustomerCategoryID").replaceAll(",", "");
+            v_nTitleID = request.getParameter("nTitleID").replaceAll(",", "");
+            v_cUseName = request.getParameter("cUseName").replaceAll(",", "");
+            v_cInitials = request.getParameter("cInitials").replaceAll(",", "");
+            v_cLastName = request.getParameter("cLastName").replaceAll(",", "");
+            v_cFullName = request.getParameter("cFullName").replaceAll(",", "");
+            v_cFullNameAma = request.getParameter("cFullNameSin").replaceAll(",", "");
+            v_bFeMale = request.getParameter("bFeMale").replaceAll(",", "");
+            v_dDateOfBirth = request.getParameter("dDateOfBirth").replaceAll(",", "");
+            v_cPictureFileName = request.getParameter("userImage").replaceAll(",", "");
+            v_cNICNo = request.getParameter("cNICNo").replaceAll(",", "");
+            v_dNICIssuedDate = request.getParameter("issueddate").replaceAll(",", "");
+            v_nCivilStatusID = request.getParameter("nCivilStatusID").replaceAll(",", "");
+            v_nNationalityID = request.getParameter("nNationalityID").replaceAll(",", "");
+            v_nReligionID = request.getParameter("nReligionID").replaceAll(",", "");
+            v_dJoineDate = request.getParameter("dJoineDate").replaceAll(",", "");
+            v_cMotherMadName = request.getParameter("cMotherMadName").replaceAll(",", "");
 
             //per address
-            v_cPAddLine1 = request.getParameter("cPAddLine1");
-            v_cPAddLine2 = request.getParameter("cPAddLine2");
-            v_cPAddLine3 = request.getParameter("cPAddLine3");
-            v_cPAddLine4 = request.getParameter("cPAddLine4");
-            v_cPTelNo1 = request.getParameter("cPTelNo1");
-            v_cPEmail = request.getParameter("cPEmail");
+            v_cPAddLine1 = request.getParameter("cPAddLine1").replaceAll(",", "");
+            v_cPAddLine2 = request.getParameter("cPAddLine2").replaceAll(",", "");
+            v_cPAddLine3 = request.getParameter("cPAddLine3").replaceAll(",", "");
+            v_cPAddLine4 = request.getParameter("cPAddLine4").replaceAll(",", "");
+            v_cPTelNo1 = request.getParameter("cPTelNo1").replaceAll(",", "");
+            v_cPEmail = request.getParameter("cPEmail").replaceAll(",", "");
 
             //other address
-            v_cBAddLine1 = request.getParameter("cBAddLine1");
-            v_cBAddLine2 = request.getParameter("cBAddLine2");
-            v_cBAddLine3 = request.getParameter("cBAddLine3");
-            v_cBAddLine4 = request.getParameter("cBAddLine4");
-            v_cBEmail = request.getParameter("cBEmail");
-            v_cBTelNo1 = request.getParameter("cBTelNo1");
+            v_cBAddLine1 = request.getParameter("cBAddLine1").replaceAll(",", "");
+            v_cBAddLine2 = request.getParameter("cBAddLine2").replaceAll(",", "");
+            v_cBAddLine3 = request.getParameter("cBAddLine3").replaceAll(",", "");
+            v_cBAddLine4 = request.getParameter("cBAddLine4").replaceAll(",", "");
+            v_cBEmail = request.getParameter("cBEmail").replaceAll(",", "");
+            v_cBTelNo1 = request.getParameter("cBTelNo1").replaceAll(",", "");
 
             //saamajika thorathuru
-            v_cMemberShipNo = request.getParameter("cMemberShipNo");
-            v_nMemAreaGroupID = request.getParameter("nMemAreaGroupID");
-            v_nMemPositionID = request.getParameter("nMemPositionID");
-            v_nMemStatusID = request.getParameter("nMemStatusID");
-            v_dMemberShipDate = request.getParameter("dMemberShipDate");
-            v_nMemberShipFee = request.getParameter("nMemberShipFee");
-            v_nMemAreaID = request.getParameter("nMemAreaID");
+            v_cMemberShipNo = request.getParameter("cMemberShipNo").replaceAll(",", "");
+            v_nMemAreaGroupID = request.getParameter("nMemAreaGroupID").replaceAll(",", "");
+            v_nMemPositionID = request.getParameter("nMemPositionID").replaceAll(",", "");
+            v_nMemStatusID = request.getParameter("nMemStatusID").replaceAll(",", "");
+            v_dMemberShipDate = request.getParameter("dMemberShipDate").replaceAll(",", "");
+            v_nMemberShipFee = request.getParameter("nMemberShipFee").replaceAll(",", "");
+            v_nMemAreaID = request.getParameter("nMemAreaID").replaceAll(",", "");
 
             CustomerSaveEntity cse = new CustomerSaveEntity();
             if ("0".equals(v_nCustomerCategoryID)) {
@@ -460,7 +460,7 @@ public class NewCustomerServlet extends HttpServlet {
 
                 GenUser genUser = (GenUser) request.getSession().getAttribute("user");
 
-                String primaryKey = request.getParameter("pk");
+                String primaryKey = request.getParameter("pk").replaceAll(",", "");
                 System.out.println("pk" + v_dJoineDate);
                 Long custId = Long.parseLong(primaryKey);
                 if (custId == 0) {
