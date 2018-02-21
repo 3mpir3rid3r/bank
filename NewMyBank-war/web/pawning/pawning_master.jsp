@@ -451,11 +451,11 @@
                                                         <div class="form-group">
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 1 :</label>
                                                             <div class="col-md-4">
-                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" data="validate" data-type="number"/>
+                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" minlength="10" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" data="validate" data-type="number"/>
                                                             </div> 
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 2 :</label>
                                                             <div class="col-md-4">
-                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" data="validate" data-type="number" />
+                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" minlength="10" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" data="validate" data-type="number" />
                                                             </div> 
                                                         </div> 
                                                     </div>
