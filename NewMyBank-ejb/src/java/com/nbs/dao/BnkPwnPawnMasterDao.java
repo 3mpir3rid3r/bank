@@ -90,7 +90,7 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
 
             try {
 
-                CallableStatement cs = connection.prepareCall("{call ssp_bnk_Insert_Pwn_PawnMaster(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? )}");
+                CallableStatement cs = connection.prepareCall("{call ssp_bnk_Insert_Pwn_PawnMaster(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? ,?)}");
 //            CallableStatement cs = con.getConnection().prepareCall("{call ssp_bnk_Insert_Pwn_PawnMaster(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?)}");
                 cs.setLong(1, 0L);
 
@@ -164,11 +164,11 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
                 cs.setString(40, "");
 
                 cs.setString(41, b.getCInputBy());
-//                cs.setString(42, b.getCPictureFileName());
+                cs.setString(42, b.getCPictureFileName());
 //                cs.setString(43, b.getCPictureFileName());
                 cs.executeQuery();
 
-                pk = cs.getInt(42);
+                pk = cs.getInt(43);
                 System.out.println(pk + "Save");
             } catch (Exception ex) {
                 ex.printStackTrace();

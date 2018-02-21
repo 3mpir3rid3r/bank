@@ -40,7 +40,7 @@
             rep_name="Pawning_Ticket.jrxml";
             params = new HashMap();
             params.put("nPwnMasterID", Integer.parseInt(request.getParameter("nPwnMasterID").toString()));
-            params.put("cCashValueString",request.getParameter("cCashValueString").toString());
+            params.put("cCashValueString","dfddfdfdf");//request.getParameter("cCashValueString").toString()
         }
         
         
