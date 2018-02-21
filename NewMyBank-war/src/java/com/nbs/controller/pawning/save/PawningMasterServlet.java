@@ -320,7 +320,7 @@ public class PawningMasterServlet extends HttpServlet {
                         pm.setDLastIntPayDate(lastPayDate);
 
                         GenUser genUser = (GenUser) request.getSession().getAttribute("user");
-                        System.out.println(genUser.getCUserName()+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                        
                         pm.setCInputBy(genUser.getCUserName());
                         pm.setNPwnIntCatID(1);
                         pm.setNInsuredAmount(BigDecimal.ZERO);
