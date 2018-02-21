@@ -122,6 +122,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "BnkPwnPawnMaster.findByCOutAuditBy", query = "SELECT b FROM BnkPwnPawnMaster b WHERE b.cOutAuditBy = :cOutAuditBy")})
 public class BnkPwnPawnMaster implements Serializable {
 
+    @Size(max = 100)
+    @Column(name = "cPictureFileName")
+    private String cPictureFileName;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -1146,6 +1150,14 @@ public class BnkPwnPawnMaster implements Serializable {
     @Override
     public String toString() {
         return "com.nbs.model.common.BnkPwnPawnMaster[ nPwnMasterID=" + nPwnMasterID + " ]";
+    }
+
+    public String getCPictureFileName() {
+        return cPictureFileName;
+    }
+
+    public void setCPictureFileName(String cPictureFileName) {
+        this.cPictureFileName = cPictureFileName;
     }
     
 }

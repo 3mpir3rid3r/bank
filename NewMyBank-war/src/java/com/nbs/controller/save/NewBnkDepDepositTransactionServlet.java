@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author mmh
  */
 public class NewBnkDepDepositTransactionServlet extends HttpServlet {
-    
+
     @EJB
     private BnkTransactionsDaoLocal bnkTransactionsDao;
 
@@ -36,7 +36,7 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         BnkDepDepositTransaction bddt = new BnkDepDepositTransaction();
         boolean check = false;
-        
+
         String nDepTrnIDString = "0";
         Long nDepTrnID = Long.parseLong(nDepTrnIDString);
         bddt.setNDepTrnID(nDepTrnID);
@@ -52,9 +52,9 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         String nTellerIDString = "1";
         int nTellerID = Integer.parseInt(nTellerIDString);
         bddt.setNTellerID(nTellerID);
-        
+
         ActSectionsSub bankBranch = (ActSectionsSub) request.getSession().getAttribute("branch");
-        if (request.getSession().getAttribute("branch") == null) { 
+        if (request.getSession().getAttribute("branch") == null) {
             //
         } else {
             int nBankBranchIDTrn = bankBranch.getNSubSectionID();
@@ -99,7 +99,7 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
 
         BigDecimal nPaymentVal = null;
         String nPaymentValString = request.getParameter("nPaymentVal");
-        if (nPaymentValString.isEmpty()) {
+        if (nPaymentValString.isEmpty() || nPaymentValString.trim().equals("0")) {
             check = true;
         } else {
             nPaymentVal = BigDecimal.valueOf(Double.parseDouble(nPaymentValString.replaceAll(",", "")));
@@ -115,8 +115,8 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         } else if (moneyDepType.equals("2")) {
             VFindDatabnkDepDepositMaster depDepositMaster = (VFindDatabnkDepDepositMaster) request.getSession().getAttribute("depDepositMaster");
             String nAvailableBalance = String.valueOf(depDepositMaster.getNAvailableBalance());
-            if ( Double.parseDouble(String.valueOf(nPaymentVal)) > Double.parseDouble(nAvailableBalance) ) {
-               response.sendRedirect("teller/money_saving.jsp?moneyDepType=2");
+            if (Double.parseDouble(String.valueOf(nPaymentVal)) > Double.parseDouble(nAvailableBalance)) {
+                response.sendRedirect("teller/money_saving.jsp?moneyDepType=2");
             } else {
                 String nGLTrnIDString = "101";
                 int nGLTrnID = Integer.parseInt(nGLTrnIDString);
@@ -135,14 +135,14 @@ public class NewBnkDepDepositTransactionServlet extends HttpServlet {
         userString = genUser.getCUserName();
         bddt.setCAddBy(userString);
         bddt.setNTellerID(genUser.getNUserID());
-        
+
         if (check) {
             request.getSession().setAttribute("bddt", bddt);
             response.sendRedirect("teller/money_saving.jsp?successMsg=0&moneyDepType" + moneyDepType);
         } else {
-            
-            int i=bnkTransactionsDao.insertBnkDepDepositTransaction(bddt);
-            bddt.setNDepTrnID(Long.parseLong(i+""));
+
+            int i = bnkTransactionsDao.insertBnkDepDepositTransaction(bddt);
+            bddt.setNDepTrnID(Long.parseLong(i + ""));
             request.getSession().setAttribute("bddt", bddt);
 //            request.getSession().removeAttribute("depDepositMaster");
             response.sendRedirect("teller/money_saving.jsp?successMsg=1&moneyDepType" + moneyDepType);

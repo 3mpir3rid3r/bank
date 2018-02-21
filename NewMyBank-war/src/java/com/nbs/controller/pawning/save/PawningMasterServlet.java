@@ -175,17 +175,17 @@ public class PawningMasterServlet extends HttpServlet {
 
                         String BnkPwnPawnTypesID = request.getParameter("BnkPwnPawnTypesID");
                         boolean PWN = Boolean.getBoolean(request.getParameter("PWN"));
-                        String nActualInt = request.getParameter("nActualInt");
-                        String cNICNo = request.getParameter("cNICNo");
-                        String dNICIssuedDate = request.getParameter("dNICIssuedDate");
-                        String cFullName = request.getParameter("cFullName");
-                        String cPAddLine1 = request.getParameter("cPAddLine1");
-                        String cPAddLine2 = request.getParameter("cPAddLine2");
-                        String cPAddLine3 = request.getParameter("cPAddLine3");
-                        String cPAddLine4 = request.getParameter("cPAddLine4");
-                        String cPTelNo1 = request.getParameter("cPTelNo1");
-                        String cBTelNo1 = request.getParameter("cBTelNo1");
-                        String cPEmail = request.getParameter("cPEmail");
+                        String nActualInt = request.getParameter("nActualInt").replaceAll(",", "");
+                        String cNICNo = request.getParameter("cNICNo").replaceAll(",", "");
+                        String dNICIssuedDate = request.getParameter("dNICIssuedDate").replaceAll(",", "");
+                        String cFullName = request.getParameter("cFullName").replaceAll(",", "");
+                        String cPAddLine1 = request.getParameter("cPAddLine1").replaceAll(",", "");
+                        String cPAddLine2 = request.getParameter("cPAddLine2").replaceAll(",", "");
+                        String cPAddLine3 = request.getParameter("cPAddLine3").replaceAll(",", "");
+                        String cPAddLine4 = request.getParameter("cPAddLine4").replaceAll(",", "");
+                        String cPTelNo1 = request.getParameter("cPTelNo1").replaceAll(",", "");
+                        String cBTelNo1 = request.getParameter("cBTelNo1").replaceAll(",", "");
+                        String cPictureFileName = request.getParameter("userImage");
 
                         double nOneGramAssessedValue = 0.0;
                         if (request.getParameter("nOneGramAssessedValue") != null && request.getParameter("nOneGramAssessedValue").length() > 0) {
@@ -323,13 +323,13 @@ public class PawningMasterServlet extends HttpServlet {
                         pm.setCInputBy(genUser.getCUserName());
                         pm.setNPwnIntCatID(1);
                         pm.setNInsuredAmount(BigDecimal.ZERO);
-
+                        pm.setCPictureFileName(cPictureFileName);
 //	String v_cPurpose 
 //	String v_cValuer 
 //	String v_cAuthOfficer 
 //	String v_cInputBy                     
                         int pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
-                               
+
                         List<CrDrTable> cdts = (List<CrDrTable>) request.getSession().getAttribute("tlist");
                         List<BnkPwnPawnMasterArticles> articleses = new ArrayList<>();
                         BnkPwnPawnMasterArticles articles;
@@ -358,7 +358,6 @@ public class PawningMasterServlet extends HttpServlet {
                         if (pkOfMaster != 0) {
                             redirectorCount = 2;
                         }
-                        FileUtils.moveFile(new File(getServletContext().getRealPath("/images/customer") + "/" + request.getParameter("userImage")), new File(getServletContext().getRealPath("/images/customer") + "/" + cNICNo + ".png"));
                     }
                 }
             }
