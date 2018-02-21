@@ -30,4 +30,7 @@ public class JDBC {
         }
         return con;
     }
+    public static void main(String[] args) {
+        new JDBC().getConnection();
+    }
 }

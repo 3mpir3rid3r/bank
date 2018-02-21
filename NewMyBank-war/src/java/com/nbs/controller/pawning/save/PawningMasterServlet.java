@@ -189,7 +189,7 @@ public class PawningMasterServlet extends HttpServlet {
 
                         double nOneGramAssessedValue = 0.0;
                         if (request.getParameter("nOneGramAssessedValue") != null && request.getParameter("nOneGramAssessedValue").length() > 0) {
-                            nOneGramAssessedValue = Double.parseDouble(request.getParameter("nOneGramAssessedValue"));
+                            nOneGramAssessedValue = Double.parseDouble(request.getParameter("nOneGramAssessedValue").replaceAll(",", ""));
                         }
 
                         String cReceiptNo = request.getParameter("cReceiptNo");
@@ -197,26 +197,26 @@ public class PawningMasterServlet extends HttpServlet {
                         double nTotWgtArt = 0.0;
 
                         if (request.getParameter("nTotWgtArt") != null && request.getParameter("nTotWgtArt").length() > 0) {
-                            nTotWgtArt = Double.parseDouble(request.getParameter("nTotWgtArt"));
+                            nTotWgtArt = Double.parseDouble(request.getParameter("nTotWgtArt").replaceAll(",", ""));
                         }
 
                         double nTotWgtGold = 0.0;
                         if (request.getParameter("nTotWgtGold") != null && request.getParameter("nTotWgtGold").length() > 0) {
-                            nTotWgtGold = Double.parseDouble(request.getParameter("nTotWgtGold"));
+                            nTotWgtGold = Double.parseDouble(request.getParameter("nTotWgtGold").replaceAll(",", ""));
                         }
 
                         double nTotAdvAmount = 0.0;
                         if (request.getParameter("nTotAdvAmount") != null && request.getParameter("nTotAdvAmount").length() > 0) {
-                            nTotAdvAmount = Double.parseDouble(request.getParameter("nTotAdvAmount"));
+                            nTotAdvAmount = Double.parseDouble(request.getParameter("nTotAdvAmount").replaceAll(",", ""));
                         }
                         String cRemrks = request.getParameter("cRemrks");
                         double nTotMkrtValue = 0.0;
                         if (request.getParameter("nTotMkrtValue") != null && request.getParameter("nTotMkrtValue").length() > 0) {
-                            nTotMkrtValue = Double.parseDouble(request.getParameter("nTotMkrtValue"));
+                            nTotMkrtValue = Double.parseDouble(request.getParameter("nTotMkrtValue").replaceAll(",", ""));
                         }
                         double nAgreedInt = 0.0;
                         if (request.getParameter("nAgreedInt") != null && request.getParameter("nAgreedInt").length() > 0) {
-                            nAgreedInt = Double.parseDouble(request.getParameter("nAgreedInt"));
+                            nAgreedInt = Double.parseDouble(request.getParameter("nAgreedInt").replaceAll(",", ""));
 
                         }
                         short nPwnPeriodTypeID = 0;

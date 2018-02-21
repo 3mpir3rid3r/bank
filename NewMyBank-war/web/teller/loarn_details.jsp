@@ -1212,7 +1212,7 @@
     <script src="../js/bootbox.js" type="text/javascript"></script>
     <script src="../js/bootbox.min.js" type="text/javascript"></script>
     <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-
+    <script src="../js/validate.js" type="text/javascript"></script>
     <script type="text/javascript">
 
                                         var nLonTypeIDHid = document.getElementById("nLonTypeIDHid").value;

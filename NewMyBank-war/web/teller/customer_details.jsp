@@ -987,6 +987,11 @@
                                             return false;
                                         }
                                     }
+                                    $('[type="reset"]').on('click', function () {
+                                        $($('*[type="text"]')).each(function () {
+                                            $(this).val("");
+                                        });
+                                    });
     </script>
     <div id="myCam" class="modal fade">
         <div class="modal-dialog">

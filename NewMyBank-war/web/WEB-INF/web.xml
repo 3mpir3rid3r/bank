@@ -332,6 +332,10 @@
         <servlet-name>LoanPatnerDetailsServlet</servlet-name>
         <servlet-class>com.nbs.controller.get.LoanPatnerDetailsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getPwnTiktNumber</servlet-name>
+        <servlet-class>com.nbs.controller.get.pawning.getPwnTiktNumber</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ImageServlet</servlet-name>
         <url-pattern>/servlets/image</url-pattern>
@@ -663,6 +667,10 @@
     <servlet-mapping>
         <servlet-name>LoanPatnerDetailsServlet</servlet-name>
         <url-pattern>/LoanPatnerDetailsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getPwnTiktNumber</servlet-name>
+        <url-pattern>/getPwnTiktNumber</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

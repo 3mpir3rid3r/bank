@@ -325,8 +325,8 @@
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <label  class="control-label" id="fontSize"></label>
-                                                                <select required="" class="form-control input-sm" id="BnkPwnPawnTypesID" name="BnkPwnPawnTypesID">
-                                                                    <option value="" style="display:none;"></option>
+                                                                <select required class="form-control input-sm" id="BnkPwnPawnTypesID" name="BnkPwnPawnTypesID" onchange="setTicketID()">
+                                                                    <option value="0" style="display:none;"></option>
 
                                                                     <% List<BnkPwnPawnTypes> list = (List<BnkPwnPawnTypes>) request.getSession().getAttribute("pawntypecombo");
                                                                         if (list != null) {
@@ -348,7 +348,7 @@
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <label  class="control-label" id="fontSize"></label>
-                                                                <input class="form-control input-sm convertSinhalaIskolaPotha" placeholder="උකස් කුයිතාන්සි අංකය" type="text" disabled="">
+                                                                <input id="ticketNumber" class="form-control input-sm convertSinhalaIskolaPotha" placeholder="උකස් කුයිතාන්සි අංකය" type="text" disabled="">
                                                             </div><div class="col-lg-3">
                                                                 <label  class="control-label" id="fontSize"></label>
                                                                 <input class="form-control input-sm convertSinhalaIskolaPotha" type="date" value="<%= session.getAttribute("storeLoggedDate")%>" name="currentDate" id="currentDate">
@@ -451,11 +451,11 @@
                                                         <div class="form-group">
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 1 :</label>
                                                             <div class="col-md-4">
-                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" data="validate" data-type="number"/>
+                                                                <input required type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cPTelNo1" minlength="10" maxlength="10"  min="0"  name="cPTelNo1"  placeholder="දුරකතන අංකය 1" value="<%=cPTelNo1%>" data="validate" data-type="number"/>
                                                             </div> 
                                                             <label class="col-sm-2 input-sm text-right">දුරකතන අංකය 2 :</label>
                                                             <div class="col-md-4">
-                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" data="validate" data-type="number" />
+                                                                <input type="text" class="form-control input-sm col-lg-6 convertSinhalaIskolaPotha " id="cBTelNo1" minlength="10" maxlength="10"  min="0" name="cBTelNo1"  placeholder="දුරකතන අංකය 2" value="<%=cBTelNo1%>" data="validate" data-type="number" />
                                                             </div> 
                                                         </div> 
                                                     </div>
@@ -1353,6 +1353,12 @@
                     error: function (msg) {
                         alert("Failed to upload file");
                     }
+                });
+            }
+            function setTicketID() {
+                var val = $("#BnkPwnPawnTypesID").val();
+                $.post("../getPwnTiktNumber?type=" + val, function (data) {
+                    $("#ticketNumber").val(data);
                 });
             }
         </script>
