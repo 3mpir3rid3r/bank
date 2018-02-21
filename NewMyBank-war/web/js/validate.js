@@ -44,7 +44,7 @@ $(document).ready(function () {
         container: 'body'
     });
 });
-$("*[data=validate]").keydown(function (e) {
+$('*[data="validate"]').keydown(function (e) {
     var type = $(this).attr("data-type");
     switch (type) {
         case "letterS":
@@ -55,6 +55,8 @@ $("*[data=validate]").keydown(function (e) {
             }
             break;
         case "birthday":
+            break;
+        case "upperCase":
             break;
         default :
             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 || (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode >= 35 && e.keyCode <= 39)) {
@@ -80,13 +82,16 @@ $("*[data=validate]").keydown(function (e) {
     }
 
 });
-$("*[data=validate]").keyup(function () {
+$('*[data="validate"]').keyup(function () {
     var type = $(this).attr("data-type");
     switch (type) {
         case "decimal":
             $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
             break;
         case "letterS":
+            $(this).val($(this).val().toString().toUpperCase());
+            break;
+        case "upperCase":
             $(this).val($(this).val().toString().toUpperCase());
             break;
         case "birthday":

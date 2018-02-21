@@ -434,21 +434,21 @@
                                                         <div class="form-group">
                                                             <label class="col-sm-2 input-sm text-right">ලිපිනය 1 :</label>
                                                             <div class="col-md-4">
-                                                                <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine1" name="cPAddLine1" placeholder="ලිපිනය 1" value="<%=cPAddLine1%>"/>
+                                                                <input  required type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine1" name="cPAddLine1" placeholder="ලිපිනය 1" value="<%=cPAddLine1%>" data="validate" data-type="upperCase"/>
                                                             </div> 
                                                             <label class="col-sm-2 input-sm text-right">ලිපිනය 2 :</label>
                                                             <div class="col-md-4">
-                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine2" name="cPAddLine2" placeholder="ලිපිනය 2" value="<%=cPAddLine2%>"/>
+                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine2" name="cPAddLine2" placeholder="ලිපිනය 2" value="<%=cPAddLine2%>" data="validate" data-type="upperCase"/>
                                                             </div> 
                                                         </div> <br> 
                                                         <div class="form-group">
                                                             <label class="col-sm-2 input-sm text-right">ලිපිනය 3 :</label>
                                                             <div class="col-md-4">
-                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine3" name="cPAddLine3" placeholder="ලිපිනය 3" value="<%=cPAddLine3%>"/>
+                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine3" name="cPAddLine3" placeholder="ලිපිනය 3" value="<%=cPAddLine3%>" data="validate" data-type="upperCase"/>
                                                             </div> 
                                                             <label class="col-sm-2 input-sm text-right">ලිපිනය 4 :</label>
                                                             <div class="col-md-4">
-                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine4" name="cPAddLine4" placeholder="ලිපිනය 4" value="<%=cPAddLine4%>"/>
+                                                                <input  type="text" class="form-control input-sm col-lg-4 convertSinhalaIskolaPotha" id="cPAddLine4" name="cPAddLine4" placeholder="ලිපිනය 4" value="<%=cPAddLine4%>" data="validate" data-type="upperCase"/>
                                                             </div> 
                                                         </div> <br> 
                                                         <div class="form-group">
