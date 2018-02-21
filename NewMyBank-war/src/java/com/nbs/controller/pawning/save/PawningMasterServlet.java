@@ -13,7 +13,6 @@ import com.nbs.model.ActSectionsSub;
 import com.nbs.model.BnkPwnPawnMaster;
 import com.nbs.model.BnkPwnPawnMasterArticles;
 import com.nbs.model.GenUser;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -29,7 +28,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.io.FileUtils;
 
 /**
  *
@@ -322,10 +320,12 @@ public class PawningMasterServlet extends HttpServlet {
                         pm.setDLastIntPayDate(lastPayDate);
 
                         GenUser genUser = (GenUser) request.getSession().getAttribute("user");
+                        System.out.println(genUser.getCUserName()+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                         pm.setCInputBy(genUser.getCUserName());
                         pm.setNPwnIntCatID(1);
                         pm.setNInsuredAmount(BigDecimal.ZERO);
                         pm.setCPictureFileName(cPictureFileName);
+                        pm.setCAddBy(cNICNo);
 //	String v_cPurpose 
 //	String v_cValuer 
 //	String v_cAuthOfficer 

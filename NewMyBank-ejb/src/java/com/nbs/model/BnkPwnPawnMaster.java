@@ -123,6 +123,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class BnkPwnPawnMaster implements Serializable {
 
     @Size(max = 100)
+    @Column(name = "cAddBy")
+    private String cAddBy;
+    @Column(name = "dAddDate")
+    @Temporal(TemporalType.DATE)
+    private Date dAddDate;
+
+    @Size(max = 100)
     @Column(name = "cPictureFileName")
     private String cPictureFileName;
 
@@ -1158,6 +1165,22 @@ public class BnkPwnPawnMaster implements Serializable {
 
     public void setCPictureFileName(String cPictureFileName) {
         this.cPictureFileName = cPictureFileName;
+    }
+
+    public String getCAddBy() {
+        return cAddBy;
+    }
+
+    public void setCAddBy(String cAddBy) {
+        this.cAddBy = cAddBy;
+    }
+
+    public Date getDAddDate() {
+        return dAddDate;
+    }
+
+    public void setDAddDate(Date dAddDate) {
+        this.dAddDate = dAddDate;
     }
     
 }

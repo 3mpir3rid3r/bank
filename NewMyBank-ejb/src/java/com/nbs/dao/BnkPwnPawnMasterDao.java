@@ -164,6 +164,8 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
                 cs.setString(40, "");
 
                 cs.setString(41, b.getCInputBy());
+//                cs.setString(42, b.getCPictureFileName());
+//                cs.setString(43, b.getCPictureFileName());
                 cs.executeQuery();
 
                 pk = cs.getInt(42);
