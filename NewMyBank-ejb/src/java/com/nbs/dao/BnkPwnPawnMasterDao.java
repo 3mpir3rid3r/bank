@@ -165,10 +165,10 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
 
                 cs.setString(41, b.getCInputBy());
                 cs.setString(42, b.getCPictureFileName());
-                cs.setString(43, b.getCPictureFileName());
+//                cs.setString(43, b.getCPictureFileName());
                 cs.executeQuery();
 
-                pk = cs.getInt(44);
+                pk = cs.getInt(43);
                 System.out.println(pk + "Save");
             } catch (SQLException ex) {
                 Logger.getLogger(BnkPwnPawnMasterDao.class.getName()).log(Level.SEVERE, null, ex);
