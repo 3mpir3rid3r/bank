@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pawning_Ticket" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="cCashValueString" class="java.lang.String"/>
+	<parameter name="nPwnMasterID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[call ssp_bnk_Rep_Pawning_Ticket($P{nPwnMasterID});]]>
+	</queryString>
+	<field name="nPwnMasterID" class="java.lang.Long"/>
+	<field name="v_cSubSectionNameSin" class="java.lang.String"/>
+	<field name="v_cTelNo1" class="java.lang.String"/>
+	<field name="dPwnDate" class="java.sql.Date"/>
+	<field name="cPwnTicketNo" class="java.lang.String"/>
+	<field name="cFullName" class="java.lang.String"/>
+	<field name="cInitials" class="java.lang.String"/>
+	<field name="cLastName" class="java.lang.String"/>
+	<field name="cIDNo" class="java.lang.String"/>
+	<field name="cPAddLine1" class="java.lang.String"/>
+	<field name="cPAddLine2" class="java.lang.String"/>
+	<field name="cPAddLine3" class="java.lang.String"/>
+	<field name="cPAddLine4" class="java.lang.String"/>
+	<field name="nTotWgtArt" class="java.math.BigDecimal"/>
+	<field name="nTotWgtGold" class="java.math.BigDecimal"/>
+	<field name="nTotAssessedValue" class="java.math.BigDecimal"/>
+	<field name="nTotMkrtValue" class="java.math.BigDecimal"/>
+	<field name="tPwnTime" class="java.sql.Time"/>
+	<field name="cAddBy" class="java.lang.String"/>
+	<field name="cPwnArticlName" class="java.lang.String"/>
+	<field name="cCaratType" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="792" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="393" y="46" width="194" height="16"/>
+				<textElement>
+					<font fontName="AA Amali" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{v_cSubSectionNameSin}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="394" y="67" width="88" height="16"/>
+				<textElement>
+					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAddBy}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="487" y="67" width="100" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{v_cTelNo1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="444" y="95" width="100" height="18"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPwnTicketNo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yy" isBlankWhenNull="false">
+				<reportElement key="textField" x="26" y="98" width="100" height="18"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{dPwnDate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a" isBlankWhenNull="false">
+				<reportElement key="textField" x="249" y="96" width="100" height="18"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{tPwnTime}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="27" y="144" width="215" height="15"/>
+				<textElement>
+					<font fontName="Courier New" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPAddLine1}+','+$F{cPAddLine2}+',']]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="27" y="160" width="215" height="15"/>
+				<textElement>
+					<font fontName="Courier New" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPAddLine3}+','+$F{cPAddLine4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="27" y="195" width="215" height="18"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cIDNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="481" y="127" width="91" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{v_cTelNo1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="481" y="163" width="91" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cCaratType}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="481" y="201" width="91" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotWgtArt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="481" y="238" width="91" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotWgtGold}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="481" y="275" width="91" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotAssessedValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="482" y="311" width="90" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotMkrtValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="27" y="237" width="371" height="92"/>
+				<textElement>
+					<font fontName="Iskoola Pota" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPwnArticlName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="false">
+				<reportElement key="textField" x="285" y="587" width="100" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{dPwnDate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a" isBlankWhenNull="false">
+				<reportElement key="textField" x="436" y="586" width="100" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{tPwnTime}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="52" y="492" width="184" height="15"/>
+				<textElement>
+					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cFullName}+' '+$F{cLastName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="53" y="510" width="183" height="15"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPAddLine1}+','+$F{cPAddLine2}+',']]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="52" y="526" width="184" height="15"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPAddLine3}+','+$F{cPAddLine4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="52" y="543" width="184" height="15"/>
+				<textElement>
+					<font fontName="Courier New" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cIDNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" x="477" y="512" width="56" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<text><![CDATA[  Tot Wgt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="477" y="530" width="56" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<text><![CDATA[Gold Wgt]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="544" y="513" width="55" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotWgtArt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="544" y="530" width="55" height="16"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotWgtGold}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="470" y="635" width="100" height="18"/>
+				<textElement>
+					<font fontName="Courier New" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotMkrtValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="36" y="353" width="447" height="18"/>
+				<textElement>
+					<font fontName="Courier New" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{cCashValueString}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="66" y="635" width="387" height="18"/>
+				<textElement>
+					<font fontName="Courier New" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{cCashValueString}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="52" y="563" width="167" height="16"/>
+				<textElement>
+					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPwnTicketNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="499" y="494" width="100" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAddBy}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="248" y="492" width="220" height="71"/>
+				<textElement>
+					<font fontName="Iskoola Pota" size="11" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPwnArticlName}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-2" x="402" y="309" width="0" height="0"/>
+			</subreport>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="27" y="128" width="336" height="15"/>
+				<textElement>
+					<font fontName="Courier New" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cFullName}+' '+$F{cLastName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="76" y="616" width="100" height="18"/>
+				<textElement>
+					<font fontName="Courier New" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nTotMkrtValue}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

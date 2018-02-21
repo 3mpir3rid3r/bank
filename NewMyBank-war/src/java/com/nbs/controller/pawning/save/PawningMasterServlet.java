@@ -49,7 +49,8 @@ public class PawningMasterServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int redirectorCount = 0;
-
+            int pkOfMaster=0;
+            
             request.getSession().setAttribute("pawntypecombo", bnkPwnPawnMasterDao.getBnkPwnPawnTypes());
             request.getSession().setAttribute("RefArticlcombo", bnkPwnPawnMasterDao.getBnkPwnRefArticls());
             request.getSession().setAttribute("RefCarateValuescombo", bnkPwnPawnMasterDao.getBnkPwnRefCarateValues());
@@ -328,7 +329,7 @@ public class PawningMasterServlet extends HttpServlet {
 //	String v_cValuer 
 //	String v_cAuthOfficer 
 //	String v_cInputBy                     
-                        int pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
+                        pkOfMaster = bnkPwnPawnMasterDao.saveBnkPwnPawnMasterSP(pm);
 
                         List<CrDrTable> cdts = (List<CrDrTable>) request.getSession().getAttribute("tlist");
                         List<BnkPwnPawnMasterArticles> articleses = new ArrayList<>();
@@ -362,8 +363,8 @@ public class PawningMasterServlet extends HttpServlet {
                 }
             }
             if (redirectorCount == 2) {
-                response.sendRedirect("pawning/pawning_master.jsp?mg=saved");
-
+                response.sendRedirect("pawning/pawning_master.jsp?mg=saved&nPwnMasterID="+pkOfMaster);
+                
             } else if (redirectorCount == 0) {
                 response.sendRedirect("pawning/pawning_master.jsp");
             }

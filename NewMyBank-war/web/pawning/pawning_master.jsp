@@ -138,6 +138,7 @@
                     alert = Alerts.warningAlert("Something Wrong", "You miss some Fields", "");
                 } else if ("saved".equals(mg)) {
                     alert = Alerts.successAlert("success", "Successfully saved");
+                    response.sendRedirect("../marksGraph.jsp?rep_id=3&nPwnMasterID="+request.getParameter("nPwnMasterID").toString());
                 } else if ("updated".equals(mg)) {
                     alert = Alerts.successAlert("success", "Customer Successfully updated");
                 }

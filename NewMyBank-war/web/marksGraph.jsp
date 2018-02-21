@@ -36,6 +36,11 @@
             rep_name="Cash_Withdrawal_Slip.jrxml";
             params = new HashMap();
             params.put("DepTrnID", Integer.parseInt(request.getParameter("nDepTrnID").toString()));
+        }else if(rep_id==3){
+            rep_name="Pawning_Ticket.jrxml";
+            params = new HashMap();
+            params.put("nPwnMasterID", Integer.parseInt(request.getParameter("nPwnMasterID").toString()));
+            params.put("cCashValueString", "Hundread thousand");
         }
         
         
