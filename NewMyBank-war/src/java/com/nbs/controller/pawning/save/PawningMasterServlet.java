@@ -363,7 +363,7 @@ public class PawningMasterServlet extends HttpServlet {
             }
             if (redirectorCount == 2) {
                 response.sendRedirect("pawning/pawning_master.jsp?mg=saved");
-
+                
             } else if (redirectorCount == 0) {
                 response.sendRedirect("pawning/pawning_master.jsp");
             }
