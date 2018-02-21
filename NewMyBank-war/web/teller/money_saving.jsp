@@ -99,16 +99,16 @@
             String cReceiptNo = "";
             String cReceiptNo2 = "";
             String nPaymentVal = "";
-            long nDepTrnID=0;
+            long nDepTrnID = 0;
 
             String bankType = "";
 
-            System.out.println("depooooosite transsss "+request.getSession().getAttribute("bddt"));
+            System.out.println("depooooosite transsss " + request.getSession().getAttribute("bddt"));
             if (request.getSession().getAttribute("bddt") != null) {
 
                 BnkDepDepositTransaction bddt = (BnkDepDepositTransaction) request.getSession().getAttribute("bddt");
-                nDepTrnID=bddt.getNDepTrnID();
-                
+                nDepTrnID = bddt.getNDepTrnID();
+
                 if (bddt.getDDepositDate() != null) {
                     dDepositDate = dateFormat.format(bddt.getDDepositDate());
                 }
@@ -145,7 +145,6 @@
 
             String nDepMFID = "";
 
-            
             if (request.getSession().getAttribute("depDepositMaster") != null) {
                 VFindDatabnkDepDepositMaster depDepositMaster = (VFindDatabnkDepDepositMaster) request.getSession().getAttribute("depDepositMaster");
                 cCIFNo = depDepositMaster.getCCIFNo();
@@ -224,7 +223,7 @@
                                                     <div class="col-sm-8">
                                                         <div class="input-group">
                                                             <input type="hidden" name="accountValue" id="accountValue" value="1" />
-                                                            
+
                                                             <input type="text" class="form-control text-right convertSinhalaIskolaPotha" style="font-size: larger;font-weight: bolder" autocomplete="off" placeholder="ගිණුම් අංකය" maxlength="15" onkeyup="changeAccountNumber()" name="accountNumber" id="accountNumber" value="<%=cOurAccountNo%>">
                                                             <span class="input-group-btn">
                                                                 <button class="btn btn-info btn-flat" type="submit"><i class="fa fa-search"></i></button>
@@ -404,8 +403,8 @@
                         <!--./messageview money saving-->
 
                         <!--./Risit previwer-->
-                        
-                        
+
+
                         <div id="risitPriviwer" class="col-md-9 bg-pad bg-top">
                             <div class="panel box box-info bg-color bg-subheight">
                                 <div class="box-header">
@@ -418,27 +417,27 @@
                                         <div class="col-lg-12" style="height: 272px;">
                                             <div class="box box-solid" style="height: 272px;background-color: black" id="savingsReport">
                                                 <!--<embed width="100%" height="100%" name="plugin" src="http://localhost:8080/NewMyBank-war/TestServlet" type="application/pdf">-->
-                                               
+
                                                 <!--<embed width="100%" height="100%" name="plugin" src="../reports/savingsReport.pdf" type="application/pdf">-->
-                                                
+
                                                 <!--                                                                                                <object style="width:100%;" data="/home/mmh/savingsReport.pdf#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf">
                                                                                                 <embed src="/home/mmh/savingsReport.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf" />
                                                                                                 </object>-->
-                                                
-                                                <iframe id="frm" src="../marksGraph.jsp?rep_id=<% if(id==1){%>1<%}else{%>2<%}%>&nDepTrnID=<%= nDepTrnID%>" frameborder="0" width="100%" style="height: 272px;"></iframe>
-                                                
-                                                
+
+                                                <iframe id="frm" src="../marksGraph.jsp?rep_id=<% if (id == 1) {%>1<%} else {%>2<%}%>&nDepTrnID=<%= nDepTrnID%>" frameborder="0" width="100%" style="height: 272px;"></iframe>
+
+
                                                 <!--                                                <object style="width:100%;" data="http://localhost:8080/NewMyBank-war/TestServlet" type="application/pdf">
                                                                                                     <embed src="http://localhost:8080/NewMyBank-war/TestServlet" type="application/pdf" />
                                                                                                 </object>-->
-                                                
-                                                
-                                                
-                                                
+
+
+
+
                                                 <%
-                                              Connection conn = null;
-    try {
-        //Connecting to the MySQL database
+                                                    Connection conn = null;
+                                                    try {
+                                                        //Connecting to the MySQL database
 
 //        Class.forName("com.mysql.jdbc.Driver");
 //        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nbsERP_Kurunegala?user=root&password=123");
@@ -454,15 +453,13 @@
 //
 //        //Exporting the report as a PDF
 //        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
-
-    
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        if (conn != null) {
-            conn.close();
-        }
-    }
+                                                    } catch (Exception e) {
+                                                        e.printStackTrace();
+                                                    } finally {
+                                                        if (conn != null) {
+                                                            conn.close();
+                                                        }
+                                                    }
                                                 %>
                                             </div>
                                         </div>
@@ -475,9 +472,9 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
-                        
+
+
+
                         <!--./Risit previwer-->
 
                         <!--./messageview risit printing-->
@@ -715,8 +712,8 @@
                                             var nPaymentVal = document.getElementById("nPaymentVal");
                                             var nAvailableBalance = document.getElementById("nAvailableBalance");
                                             var mDepId = document.getElementById("mDepId").value;
-                                            
-                                            if(nAccountNo==""){
+
+                                            if (nAccountNo == "") {
                                                 bootbox.alert("<b>ගිණුම් අංකය ඇතුලත් කරන්න.</b>", function () {
                                                 });
                                             } else if (cReceiptNo.value.length === 0) {
@@ -726,7 +723,7 @@
                                                 bootbox.alert("<b>මුදල පුරවන්න</b>", function () {
                                                 });
                                             } else if (mDepId === "2") {
-                                                if (parseFloat(nPaymentVal.value.toString().replace(',','')) > parseFloat(nAvailableBalance.value.toString().replace(',',''))) {
+                                                if (parseFloat(nPaymentVal.value.toString().replace(',', '')) > parseFloat(nAvailableBalance.value.toString().replace(',', '')) || nPaymentVal.toString().trim() == "0") {
                                                     bootbox.alert("<b>මෙම ගණුදෙණුව සිදු කිරීමට ප්‍රමාණවත් ශේෂයක් නොමැත.ගිණුම නැවත පරීක්ෂා කරන්න.</b>", function () {
                                                     });
                                                 } else {
@@ -744,13 +741,14 @@
                                                 });
                                             }
                                         }
-                                        
-                                        $('#optionsRadios1').on("cahange",function (){
+
+                                        $('#optionsRadios1').on("cahange", function () {
                                             alert();
                                         })
-                                        
-                                        function checkRadio(){alert("2323")
-                                            alert("okk "+idRadio)
+
+                                        function checkRadio() {
+                                            alert("2323")
+                                            alert("okk " + idRadio)
                                         }
                                         //---------------------------------
     </script>
