@@ -170,8 +170,8 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
 
                 pk = cs.getInt(42);
                 System.out.println(pk + "Save");
-            } catch (SQLException ex) {
-                Logger.getLogger(BnkPwnPawnMasterDao.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
             return pk;
         } finally {
