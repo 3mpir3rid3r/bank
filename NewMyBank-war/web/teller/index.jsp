@@ -390,7 +390,6 @@
                                                                 var accNumLabel = document.getElementById("accNumLabel");
                                                                 var accountNumber = document.getElementById("accountNumber");
                                                                 var accountValue = document.getElementById("accountValue");
-                                                                //alert(accountValue.value);
                                                                 var oldName = accNumLabel.innerHTML;
                                                                 switch (e.keyCode)
                                                                 {
@@ -424,8 +423,11 @@
                                                                     accountValue.setAttribute("value", "5");
                                                                     accountNumber.setAttribute("placeholder", "සාමාජික අංකය");
                                                                     accountNumber.setAttribute("maxlength", "10");
-                                                                } else {
-                                                                    //accountNumber.style.backgroundColor = "red";
+                                                                } else if(accountValue.value === "5") {
+                                                                    accNumLabel.innerHTML = "<h4><strong>සාමාජික අංකය</strong></h4>";
+                                                                    accountValue.setAttribute("value", "5");
+                                                                    accountNumber.setAttribute("placeholder", "සාමාජික අංකය");
+                                                                    accountNumber.setAttribute("maxlength", "10");
                                                                 }
                                                             }
 

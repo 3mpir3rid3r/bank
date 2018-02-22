@@ -114,15 +114,17 @@
                                         </form>
                                         <div class="col-md-12 bg-top" style="overflow: auto">
                                             <table class="table table-bordered table-hover" id="mem_sea_table">
-                                                <tr style="background-color: #5bc0de">
-                                                    <th class="text-center" width="50px">ID</th>
-                                                    <th class="text-center" width="50px">CIF No</th>
-                                                    <th class="text-center" width="90px">Old CIF</th>
-                                                    <th class="text-center" width="300px">Full Name</th>
-                                                    <th class="text-center" width="300px">NIC</th>
-                                                    <th class="text-center">Address</th>
-                                                    <th class="text-center"></th>
-                                                </tr>
+                                                <thead style="background-color: #97dff5">
+                                                    <tr>
+                                                        <th class="text-center" width="50px">ID</th>
+                                                        <th class="text-center" width="70px">CIF No</th>
+                                                        <th class="text-center" width="90px">Old CIF</th>
+                                                        <th class="text-center" width="300px">Full Name</th>
+                                                        <th class="text-center" width="300px">NIC</th>
+                                                        <th class="text-center">Address</th>
+                                                        <th class="text-center"></th>
+                                                    </tr>
+                                                </thead>
                                                 <tbody>
                                                     <%
                                                         try {
@@ -132,53 +134,53 @@
                                                     %>
                                                     <tr>
                                                         <td ><%=b.getNCustomerID()%></td>
-                                                        <td style="font-size: 16px;"><%=b.getCCIFNo()%></td>
+                                                        <td style="font-size: 16px; color: #068025;"><%=b.getCCIFNo()%></td>
                                                         <td style="font-size: 16px;"><%=b.getCCIFNoOld()%></td>
-                                                        <td style="font-size: 16px;"><%=b.getCFullName()%></td>
+                                                        <td style="font-size: 16px; color: #0472c3;"><%=b.getCFullName()%></td>
                                                         <td style="font-size: 16px;"><%=b.getCNICNo()%></td>
-                                                        <td style="font-size: 16px;"><%=b.getCPAddLine1() + "," + b.getCPAddLine2() + "," + b.getCPAddLine3() + "," + b.getCPAddLine4()%></td>
+                                                        <td style="font-size: 16px; color: #cc6600;"><%=b.getCPAddLine1() + "," + b.getCPAddLine2() + "," + b.getCPAddLine3() + "," + b.getCPAddLine4()%></td>
                                                         <td class="text-center">
                                                             <%
                                                                 if (tellerIndexKey.equals("2")) {
                                                             %>
-                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=2&accountNumber=<%=Security.encrypt(b.getCCIFNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=2&accountNumber=<%=Security.encrypt(b.getCCIFNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("3")) {
                                                             %>
-                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=3&accountNumber=<%=Security.encrypt(b.getCNICNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=3&accountNumber=<%=Security.encrypt(b.getCNICNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("5")) {
                                                             %>
-                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=5&accountNumber=<%=Security.encrypt(b.getCNICNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=5&accountNumber=<%=Security.encrypt(b.getCNICNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("sDInputCust")) {
                                                             %>
-                                                            <a href="../SavingDetailsGetMasterDetilsServlet?tellerIndexKey=sDInputCust&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../SavingDetailsGetMasterDetilsServlet?tellerIndexKey=sDInputCust&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("custCIFID")) {
                                                             %>
-                                                            <a href="../SavingDetailsGetMasterDetilsServlet?tellerIndexKey=custCIFID&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../SavingDetailsGetMasterDetilsServlet?tellerIndexKey=custCIFID&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
 
                                                             } else if (tellerIndexKey.equals("custCIFIDLoan")) {
                                                             %>
-                                                            <a href="../LoanDetailsGetMasterDetilsServlet?tellerIndexKey=custCIFIDLoan&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../LoanDetailsGetMasterDetilsServlet?tellerIndexKey=custCIFIDLoan&masterID=<%=Security.encrypt(String.valueOf(b.getNCustomerID()))%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("loanGarnter")) {
                                                             %>
-                                                            <a href="../LoanDetailsServlet?checkGarenterType=customer&accMifNumer=<%=Security.encrypt(b.getCCIFNo())%>&loanGarnterName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../LoanDetailsServlet?checkGarenterType=customer&accMifNumer=<%=Security.encrypt(b.getCCIFNo())%>&loanGarnterName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("creditor")) {
                                                             %>
-                                                            <a href="<%=redirect%>?cid=<%=Security.encrypt(b.getNCustomerID() + "")%>&cname=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="<%=redirect%>?cid=<%=Security.encrypt(b.getNCustomerID() + "")%>&cname=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("loanpatner")) {
                                                             %>
-                                                            <a href="../LoanPatnerDetailsServlet?id=<%=b.getNCustomerID()%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../LoanPatnerDetailsServlet?id=<%=b.getNCustomerID()%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else {
                                                             %>
-                                                            <a href="../LoadCustomerComboServlet?id=<%=b.getNCustomerID()%>" class="btn btn-default btn-xs">update</a>
+                                                            <a href="../LoadCustomerComboServlet?id=<%=b.getNCustomerID()%>" class="btn btn-primary btn-xs">update</a>
                                                             <%
                                                                 }
                                                             %>

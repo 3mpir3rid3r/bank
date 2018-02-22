@@ -108,7 +108,7 @@
                                                     <div class="input-group col-lg-12">
                                                         <span class="input-group-addon"><input checked type="checkbox" name="allcustomers"> All Customers</span>
                                                         <span class="input-group-addon"><%=branchName%></span>
-                                                        <input id="key" placeholder="New Acc Number" type="text" class="form-control" name="searchText" value="<%=key%>">
+                                                        <input id="key" type="text" class="form-control" name="searchText" value="<%=key%>">
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-default" type="submit"><span class="fa fa-search"></span>Search</button>
                                                         </span>
@@ -210,7 +210,6 @@
                         </div>
                     </div>
                 </section>
-                <input id="accNumberType" type="hidden" name="accNumberType" value="" readonly="readonly" />
             </aside>
             <!--..............................-->
         </div>
@@ -218,17 +217,5 @@
         <script src="../js/jquery.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-        <script>
-            $('#key').keyup(function (e) {
-                if (e.keyCode == 37) {
-                    $(this).attr("placeholder", "New Acc Number");
-                    $("#accNumberType").val("1");
-                } else if (e.keyCode == 39) {
-                    $(this).attr("placeholder", "Old Acc Number");
-                    $("#accNumberType").val("2");
-                }
-            });
-
-        </script>
     </body>
 </html>
