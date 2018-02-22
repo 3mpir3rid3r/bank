@@ -1290,7 +1290,7 @@
                 var imageDataURL = canvasServer.toDataURL('image/png');
                 $.post('../saveImageServlet', imageDataURL, function (responseText) {
                     if (responseText !== "fail") {
-                        document.getElementById('pic').value = responseText;
+                         $('#pic').val(responseText);
                         alert("File has been uploaded successfully");
                     } else {
                         alert("Failed to upload file");

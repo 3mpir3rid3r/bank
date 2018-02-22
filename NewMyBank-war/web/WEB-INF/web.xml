@@ -309,10 +309,6 @@
         <servlet-class>com.nbs.controller.common.BackupDBServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>saveImageServlet</servlet-name>
-        <servlet-class>com.nbs.controller.save.saveImageServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>nicUpload</servlet-name>
         <servlet-class>com.nbs.controller.save.nicUpload</servlet-class>
     </servlet>
@@ -335,6 +331,10 @@
     <servlet>
         <servlet-name>getPwnTiktNumber</servlet-name>
         <servlet-class>com.nbs.controller.get.pawning.getPwnTiktNumber</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>saveImageServlet</servlet-name>
+        <servlet-class>com.nbs.controller.save.saveImageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ImageServlet</servlet-name>
@@ -645,10 +645,6 @@
         <url-pattern>/BackupDBServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>saveImageServlet</servlet-name>
-        <url-pattern>/saveImageServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>nicUpload</servlet-name>
         <url-pattern>/nicUpload</url-pattern>
     </servlet-mapping>
@@ -671,6 +667,10 @@
     <servlet-mapping>
         <servlet-name>getPwnTiktNumber</servlet-name>
         <url-pattern>/getPwnTiktNumber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>saveImageServlet</servlet-name>
+        <url-pattern>/saveImageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

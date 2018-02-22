@@ -42,7 +42,7 @@ $(document).ready(function () {
         $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
     });
     $('*[data-line*="line-"]').each(function () {
-        if ($(this).attr("data-line") === "line-1") {
+        if ($(this).attr("data-line") === "line-1" || $(this).val() !== "") {
             return;
         }
         $(this).attr("disabled", "");

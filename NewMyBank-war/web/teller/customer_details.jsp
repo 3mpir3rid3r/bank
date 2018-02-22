@@ -190,7 +190,7 @@
                 <%=alert%>
                 <!--./page content-->
                 <section class="content">
-                    <form class="form-horizontal" action="../NewCustomerServlet" method="post" name="customer" onsubmit="return send();">
+                    <form class="form-horizontal" action="../NewCustomerServlet" method="post" name="customer" >
                         <input type="hidden" value="<%=pk%>" name="pk">
                         <div class="row bg-top">
                             <div class="col-md-9 bg-pad" >
@@ -698,6 +698,8 @@
                                             if (iNSp.length > 0) {
                                                 fullName = "";
                                                 $.each(iNSp, function (index) {
+                                                    if (index === iNSp.length - 1)
+                                                        return  false;
                                                     fullName += iNSp[index].charAt(0) + " ";
                                                 });
                                             }
@@ -968,24 +970,28 @@
 //                                    var context = canvas.getContext('2d');
 
                                     function send() {
-
                                         var canvasServer = document.getElementById("canvas");
                                         var context = canvasServer.getContext("2d");
                                         var imageDataURL = canvasServer.toDataURL('image/png');
-                                        if (imageDataURL !== null) {
-                                            $.post('../saveImageServlet', imageDataURL, function (responseText) {
-                                                document.getElementById('pic').value = responseText;
-                                                return true;
-                                            });
-                                        } else {
-                                            return false;
-                                        }
+                                        $.post('../saveImageServlet', imageDataURL, function (responseText) {
+                                            if (responseText !== "fail") {
+                                                $('#pic').val(responseText);
+                                                if (responseText === "fail") {
+                                                    alert("Failed to upload file");
+                                                } else {
+                                                    alert("File has been uploaded successfully");
+                                                }
+                                            } else {
+                                                alert("Failed to upload file");
+                                            }
+                                        });
                                     }
                                     $('[type="reset"]').on('click', function () {
                                         $($('*[type="text"]')).each(function () {
                                             $(this).val("");
                                         });
                                     });
+
     </script>
     <div id="myCam" class="modal fade">
         <div class="modal-dialog">
@@ -996,7 +1002,7 @@
                 </div>
                 <div class="modal-body " style="padding: 5px;">
                     <div class="row">
-                        <center><video id="video" height="240" width="325" autoplay style="margin: 0px ;border: 10px #333 solid;border-radius: 5px;"></video></center> 
+                        <center><video id="video" height="240" width="325" autoplay style="margin: 0px ;border: 2px #333 solid;border-radius: 5px;"></video></center> 
                     </div>
                     <div class="row">
                         <center><canvas id="canvas" height="240" width="325" ></canvas></center> 
@@ -1006,7 +1012,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal"  >Close</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" onclick="send()">Save & Close</button>
                 </div>
             </div>
         </div>

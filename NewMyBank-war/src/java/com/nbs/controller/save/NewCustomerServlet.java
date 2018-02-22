@@ -417,7 +417,6 @@ public class NewCustomerServlet extends HttpServlet {
                         dateVareable[i] = "0001-01-01";
                     }
                 }
-
                 if (custId == 0) {
                     BnkCustomerMaster bcm = new BnkCustomerMaster(custId);
                     ActSectionsSub bankBranch = (ActSectionsSub) request.getSession().getAttribute("branch");

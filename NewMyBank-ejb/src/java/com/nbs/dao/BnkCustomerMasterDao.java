@@ -5,7 +5,6 @@
  */
 package com.nbs.dao;
 
-
 import com.nbs.model.BnkCustomerMaster;
 import com.nbs.model.BnkRefCustomerCategory;
 import com.nbs.model.BnkRefMemberAreas;
@@ -41,9 +40,10 @@ import javax.sql.DataSource;
  */
 @Stateless
 public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
+
     @Resource(name = "con")
     private DataSource con;
-    
+
     @PersistenceContext
     private EntityManager em;
 
@@ -65,7 +65,7 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
 
     @Override
     public BnkCustomerMaster getCustomerDetails(int customerId) {
-        
+
         BnkCustomerMaster bcm = new BnkCustomerMaster();
         Connection connection = jdbc.getConnection();
         try {
@@ -73,15 +73,12 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
 //            callableStatement.setInt(1, customerId);
 //            callableStatement.executeQuery();
 //            ResultSet rs = callableStatement.getResultSet();
-            
-            
-            
+
             Query q = em.createNativeQuery("{call ssp_bnk_DisplayData_CustomerMaster(?)}", BnkCustomerMaster.class);
             q.setParameter(1, customerId);
-            List<BnkCustomerMaster>l= q.getResultList();
-            bcm=l.get(0);
-            
-            
+            List<BnkCustomerMaster> l = q.getResultList();
+            bcm = l.get(0);
+
 //            while (rs.next()) {
 //                System.out.println("454545454545545454545454   ");
 //                bcm.setNCustomerID(rs.getLong(1));
@@ -131,7 +128,6 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
 //                bcm.setCSignatureFileName(rs.getString(45));
 //                bcm.setCSigPath2(rs.getString(46));
 //                bcm.setCSigPath3(rs.getString(47));
-
 //                0720742372
 //                Query q = em.createNamedQuery("BnkCustomerMaster.findByNBankBranchID",BnkCustomerMaster.class);
 //                q.setParameter("nBankBranchID", customerId);
@@ -143,7 +139,7 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
         }
         return bcm;
     }
-    
+
     @Override
     public BnkCustomerMaster getBnkCustomerMaster(BigInteger nCustomerID) {
         BnkCustomerMaster bnkCustomerMaster = (BnkCustomerMaster) em.createNamedQuery("BnkCustomerMaster.findByNCustomerID").setParameter("nCustomerID", nCustomerID).getSingleResult();
@@ -159,7 +155,7 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
             if (rs.next()) {
                 Long l = rs.getLong("nCustomerID");
                 return l;
-            }else{
+            } else {
                 return 0L;
             }
         } catch (SQLException ex) {
@@ -177,7 +173,7 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
             if (rs.next()) {
                 Long l = rs.getLong("nCustomerID");
                 return l;
-            }else{
+            } else {
                 return 0L;
             }
         } catch (SQLException ex) {
@@ -195,7 +191,7 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
             if (rs.next()) {
                 Long l = rs.getLong("nCustomerID");
                 return l;
-            }else{
+            } else {
                 return 0L;
             }
         } catch (SQLException ex) {
@@ -211,42 +207,42 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
 
     @Override
     public List<GenRefCustomerTittle> getGenRefCustomerTittle() {
-        return em.createNamedQuery("GenRefCustomerTittle.findAll",GenRefCustomerTittle.class).getResultList();
+        return em.createNamedQuery("GenRefCustomerTittle.findAll", GenRefCustomerTittle.class).getResultList();
     }
 
     @Override
     public List<GenRefNationality> getGenRefNationality() {
-        return em.createNamedQuery("GenRefNationality.findAll",GenRefNationality.class).getResultList();
+        return em.createNamedQuery("GenRefNationality.findAll", GenRefNationality.class).getResultList();
     }
 
     @Override
     public List<GenRefReligion> getGenRefReligion() {
-       return em.createNamedQuery("GenRefReligion.findAll",GenRefReligion.class).getResultList();
+        return em.createNamedQuery("GenRefReligion.findAll", GenRefReligion.class).getResultList();
     }
 
     @Override
     public List<BnkRefMemberAreas> getBnkRefMemberAreas() {
-        return em.createNamedQuery("BnkRefMemberAreas.findAll",BnkRefMemberAreas.class).getResultList();
+        return em.createNamedQuery("BnkRefMemberAreas.findAll", BnkRefMemberAreas.class).getResultList();
     }
 
     @Override
     public List<BnkRefMemberPosition> getBnkRefMemberPosition() {
-        return em.createNamedQuery("BnkRefMemberPosition.findAll",BnkRefMemberPosition.class).getResultList();
+        return em.createNamedQuery("BnkRefMemberPosition.findAll", BnkRefMemberPosition.class).getResultList();
     }
 
     @Override
     public List<BnkRefMemberStatus> getBnkRefMemberStatus() {
-        return em.createNamedQuery("BnkRefMemberStatus.findAll",BnkRefMemberStatus.class).getResultList();
+        return em.createNamedQuery("BnkRefMemberStatus.findAll", BnkRefMemberStatus.class).getResultList();
     }
 
     @Override
     public List<BnkRefMemberAreasGroups> getBnkRefMemberAreasGroups() {
-        return em.createNamedQuery("BnkRefMemberAreasGroups.findAll",BnkRefMemberAreasGroups.class).getResultList();
+        return em.createNamedQuery("BnkRefMemberAreasGroups.findAll", BnkRefMemberAreasGroups.class).getResultList();
     }
 
     @Override
     public List<GenRefCivilStatus> getGenRefCivilStatus() {
-        return em.createNamedQuery("GenRefCivilStatus.findAll",GenRefCivilStatus.class).getResultList();
+        return em.createNamedQuery("GenRefCivilStatus.findAll", GenRefCivilStatus.class).getResultList();
     }
 
     @Override
@@ -316,11 +312,11 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
             callableStatement.setShort(42, bcm.getNMemPositionID());
 //        callableStatement.setString(42, "1");
             callableStatement.setBigDecimal(43, bcm.getNMemberShipFee());
-            callableStatement.setString(44, "");
+            callableStatement.setString(44, bcm.getCPictureFileName());
             callableStatement.setString(45, "");
             callableStatement.setString(46, "");
             callableStatement.setString(47, "");
-            
+
             callableStatement.setString(48, bcm.getCAddBy());
 
             callableStatement.executeQuery();
@@ -328,11 +324,11 @@ public class BnkCustomerMasterDao implements BnkCustomerMasterDaoLocalrLocal {
         } catch (SQLException e) {
             System.out.println(e);
         }
-    
+
     }
 
     @Override
     public BnkCustomerMaster getCustomerDetailsUsingID(long custId) {
-       return em.find(BnkCustomerMaster.class, custId);
+        return em.find(BnkCustomerMaster.class, custId);
     }
 }
