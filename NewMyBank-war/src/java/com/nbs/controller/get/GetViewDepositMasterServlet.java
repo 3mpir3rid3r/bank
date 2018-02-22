@@ -6,7 +6,6 @@
 package com.nbs.controller.get;
 
 import com.nbs.dao.BnkDepDepositMasterDaoLocal;
-import com.nbs.model.BnkDepDepositMaster;
 import com.nbs.model.VFindDatabnkDepDepositMaster;
 import java.io.IOException;
 import java.io.PrintWriter;

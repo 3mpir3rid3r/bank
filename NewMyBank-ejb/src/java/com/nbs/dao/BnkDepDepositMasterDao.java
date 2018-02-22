@@ -30,6 +30,7 @@ import javax.sql.DataSource;
  */
 @Stateless
 public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
+
     @Resource(name = "con")
     private DataSource con;
 
@@ -101,9 +102,7 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
         List<VFindDatabnkDepDepositMaster> bddms = null;
         try {
             Query q = em.createNativeQuery("{call ssp_bnk_FindData_Dep_Deposit_Master(?,?)}", VFindDatabnkDepDepositMaster.class);
-            q.setParameter(1, 1);
-//            q.setParameter(1, branchId);
-//            q.setParameter(2, 0);
+            q.setParameter(1, branchId);
             q.setParameter(2, key);
             bddms = q.getResultList();
         } catch (Exception e) {
@@ -126,7 +125,7 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
             if (rs.next()) {
                 BigInteger bd = BigInteger.valueOf(rs.getLong("nCustomerID"));
                 return bd;
-            }else{
+            } else {
                 return BigInteger.ZERO;
             }
         } catch (SQLException ex) {
@@ -134,7 +133,7 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
             return BigInteger.ZERO;
         }
     }
-    
+
     @Override
     public long getBnkDepDepositMasterNDepMFID(String cOurAccountNo) {
         try {
@@ -142,9 +141,9 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT nDepMFID FROM bnk_Dep_Deposit_Master WHERE cOurAccountNo =" + cOurAccountNo);
             if (rs.next()) {
-                long l =rs.getLong("nDepMFID");
+                long l = rs.getLong("nDepMFID");
                 return l;
-            }else{
+            } else {
                 return 0L;
             }
         } catch (SQLException ex) {
@@ -152,7 +151,7 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
             return 0L;
         }
     }
-    
+
 //    @Override
 //    public VFindDatabnkDepDepositMaster getNameBalanceBnkDepDepositMasterByNDepMFID(long nRecoverByDepMFID) {
 //        try {
@@ -170,7 +169,6 @@ public class BnkDepDepositMasterDao implements BnkDepDepositMasterDaoLocal {
 //            return 0L;
 //        }
 //    }
-
     @Override
     public VFindDatabnkDepDepositMaster getAllBnkDepDepositMasterByNDepMFID(long nDepMFID) {
         return (VFindDatabnkDepDepositMaster) em.createNamedQuery("VFindDatabnkDepDepositMaster.findByNDepMFID").setParameter("nDepMFID", nDepMFID).getSingleResult();

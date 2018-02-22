@@ -127,8 +127,7 @@ public class BnkLonLoanMasterDao implements BnkLonLoanMasterDaoLocal {
     public List<VFindDatabnkLonLoanMaster> getLoanMasterView(int branchId, String key) {
         List<VFindDatabnkLonLoanMaster> vfdllms = new ArrayList<>();
         Query q = em.createNativeQuery("{call ssp_bnk_FindData_Lon_Loan_Master(?,?)}", VFindDatabnkLonLoanMaster.class);
-        q.setParameter(1, 1);
-//        q.setParameter(1, branchId);
+        q.setParameter(1, branchId);
         q.setParameter(2, key);
         vfdllms = q.getResultList();
         return vfdllms;
