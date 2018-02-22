@@ -20,9 +20,9 @@
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/newCss.css" rel="stylesheet" type="text/css"/>
         <link href="../font/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="../font/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/newCss.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript">
             <%
                 if (request.getSession().getAttribute("journalHd") == null) {

@@ -22,9 +22,9 @@
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/newCss.css" rel="stylesheet" type="text/css"/>
         <link href="../font/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="../font/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/newCss.css" rel="stylesheet" type="text/css"/>
         <style type="text/css">
             /*---------------------------------------------------------------------*/
             div.zTreeDemoBackground {width:auto;height:auto;text-align:left;}
@@ -44,11 +44,8 @@
                 height:120px;                
             }
             .table-bordered>tr>td{
-                border: 1px solid #807b7b;
-            }
-            tbody>tr:hover{
-                background-color: #ccffcc !important;
-            }
+                border: 1px solid black;
+            }syd
         </style>
 
     </head>
@@ -111,7 +108,7 @@
                                                     <div class="input-group col-lg-12">
                                                         <span class="input-group-addon"><input checked type="checkbox" name="allcustomers"> All Customers</span>
                                                         <span class="input-group-addon"><%=branchName%></span>
-                                                        <input type="text" class="form-control" name="searchText" value="<%=key%>">
+                                                        <input id="key" placeholder="New Acc Number" type="text" class="form-control" name="searchText" value="<%=key%>">
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-default" type="submit"><span class="fa fa-search"></span>Search</button>
                                                         </span>
@@ -213,6 +210,7 @@
                         </div>
                     </div>
                 </section>
+                <input id="accNumberType" type="hidden" name="accNumberType" value="" readonly="readonly" />
             </aside>
             <!--..............................-->
         </div>
@@ -220,5 +218,17 @@
         <script src="../js/jquery.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
+        <script>
+            $('#key').keyup(function (e) {
+                if (e.keyCode == 37) {
+                    $(this).attr("placeholder", "New Acc Number");
+                    $("#accNumberType").val("1");
+                } else if (e.keyCode == 39) {
+                    $(this).attr("placeholder", "Old Acc Number");
+                    $("#accNumberType").val("2");
+                }
+            });
+
+        </script>
     </body>
 </html>

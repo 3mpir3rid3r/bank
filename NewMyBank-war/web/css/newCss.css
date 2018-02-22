@@ -85,3 +85,10 @@ label.text-right {
 .info-box-more {
     display:block
 }
+
+tbody>tr{
+    background-color: white !important;
+}
+tbody>tr:hover{
+    background-color: #ccffcc !important;
+}

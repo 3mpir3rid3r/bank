@@ -287,7 +287,7 @@
                                                             <%if (request.getSession().getAttribute("view") != null) {%>
                                                             <input required="" type="text" class="form-control text-right" style="font-size: larger;font-weight: bold" autocomplete="off" placeholder="ගිණුම් අංකය" maxlength="9" name="accountNumber" id="accountNumber" value="<%=cOurAccountNo%>" onkeyup="changeAccountNumber();">
                                                             <%} else {%>
-                                                            <input required="" type="text" class="form-control text-right" style="font-size: larger;font-weight: bold" autocomplete="off" placeholder="පා.ලි අංකය" maxlength="9" name="accountNumber" id="accountNumber" value="<%=cCIFNo%>" onkeyup="changeAccountNumber();">
+                                                            <input type="text" class="form-control text-right" style="font-size: larger;font-weight: bold" autocomplete="off" placeholder="පා.ලි අංකය" maxlength="9" name="accountNumber" id="accountNumber" value="<%=cCIFNo%>" onkeyup="changeAccountNumber();">
                                                             <%}%>
                                                             <span class="input-group-btn">
                                                                 <button class="btn btn-info btn-flat" type="submit"><i class="fa fa-search"></i></button>
