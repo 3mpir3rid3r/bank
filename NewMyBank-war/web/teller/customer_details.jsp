@@ -110,7 +110,6 @@
             String custIdString = request.getParameter("id");
             int custId = Integer.parseInt(custIdString);
             pk = custId + "";
-            System.out.println(pk + "ABs mmm");
             BnkCustomerMaster b = null;
             if (request.getSession().getAttribute("aCustomer") != null) {
                 b = (BnkCustomerMaster) request.getSession().getAttribute("aCustomer");

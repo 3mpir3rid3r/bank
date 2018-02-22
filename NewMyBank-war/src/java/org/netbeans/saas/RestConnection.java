@@ -68,7 +68,7 @@ public class RestConnection {
             conn.setDefaultUseCaches(false);
             conn.setAllowUserInteraction(true);
             
-            SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
+            SimpleDateFormat format = new SimpleDateFormat("EEE, dd MM yyyy HH:mm:ss z");
             date = format.format(new Date());
             conn.setRequestProperty("Date", date);
         } catch (Exception ex) {

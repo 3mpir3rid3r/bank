@@ -5,10 +5,12 @@
  */
 package com.nbs.controller.get;
 
-import com.nbs.common.Security;
 import com.nbs.dao.BnkCustomerMasterDaoLocalrLocal;
+import com.nbs.model.BnkCustomerMaster;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,24 +30,27 @@ public class LoadCustomerComboServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             if (request.getSession().getAttribute("BnkRefCustomerCategory") == null) {
-            request.getSession().setAttribute("BnkRefCustomerCategory", bnkCustomerMasterDao.getBnkRefCustomerCategory());
-            request.getSession().setAttribute("GenRefCustomerTittle", bnkCustomerMasterDao.getGenRefCustomerTittle());
-            request.getSession().setAttribute("GenRefNationality", bnkCustomerMasterDao.getGenRefNationality());
-            request.getSession().setAttribute("GenRefReligion", bnkCustomerMasterDao.getGenRefReligion());
-            request.getSession().setAttribute("BnkRefMemberAreas", bnkCustomerMasterDao.getBnkRefMemberAreas());
-            request.getSession().setAttribute("BnkRefMemberPosition", bnkCustomerMasterDao.getBnkRefMemberPosition());
-            request.getSession().setAttribute("BnkRefMemberStatus", bnkCustomerMasterDao.getBnkRefMemberStatus());
-            request.getSession().setAttribute("BnkRefMemberAreasGroups", bnkCustomerMasterDao.getBnkRefMemberAreasGroups());
-            request.getSession().setAttribute("GenRefCivilStatus", bnkCustomerMasterDao.getGenRefCivilStatus());
+                request.getSession().setAttribute("BnkRefCustomerCategory", bnkCustomerMasterDao.getBnkRefCustomerCategory());
+                request.getSession().setAttribute("GenRefCustomerTittle", bnkCustomerMasterDao.getGenRefCustomerTittle());
+                request.getSession().setAttribute("GenRefNationality", bnkCustomerMasterDao.getGenRefNationality());
+                request.getSession().setAttribute("GenRefReligion", bnkCustomerMasterDao.getGenRefReligion());
+                request.getSession().setAttribute("BnkRefMemberAreas", bnkCustomerMasterDao.getBnkRefMemberAreas());
+                request.getSession().setAttribute("BnkRefMemberPosition", bnkCustomerMasterDao.getBnkRefMemberPosition());
+                request.getSession().setAttribute("BnkRefMemberStatus", bnkCustomerMasterDao.getBnkRefMemberStatus());
+                request.getSession().setAttribute("BnkRefMemberAreasGroups", bnkCustomerMasterDao.getBnkRefMemberAreasGroups());
+                request.getSession().setAttribute("GenRefCivilStatus", bnkCustomerMasterDao.getGenRefCivilStatus());
             }
             String id = "";
             if (request.getParameter("id") != null) {
                 id = request.getParameter("id");
-                System.out.println(id);
-                 int nCustomerId = Integer.parseInt(id);
-                request.getSession().setAttribute("aCustomer", bnkCustomerMasterDao.getCustomerDetails(nCustomerId));
+                int nCustomerId = Integer.parseInt(id);
+                BnkCustomerMaster l = bnkCustomerMasterDao.getCustomerDetails(nCustomerId);
+                if (l.getDDateOfBirth() == null || "".equals(l.getDDateOfBirth().toString())) {
+                    l.setDDateOfBirth(new Date());
+                }
+                request.getSession().setAttribute("aCustomer", l);
                 response.sendRedirect("teller/customer_details.jsp?id=" + id);
             } else {
                 response.sendRedirect("teller/customer_details.jsp");
