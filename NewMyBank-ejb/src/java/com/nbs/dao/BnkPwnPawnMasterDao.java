@@ -17,6 +17,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -165,7 +166,7 @@ public class BnkPwnPawnMasterDao implements BnkPwnPawnMasterDaoLocal {
 
                 cs.setString(41, b.getCInputBy());
                 cs.setString(42, b.getCPictureFileName());
-//                cs.setString(43, b.getCPictureFileName());
+                
                 cs.executeQuery();
 
                 pk = cs.getInt(43);

@@ -40,12 +40,13 @@
             rep_name="Pawning_Ticket.jrxml";
             params = new HashMap();
             params.put("nPwnMasterID", Integer.parseInt(request.getParameter("nPwnMasterID").toString()));
-            params.put("cCashValueString","dfddfdfdf");//request.getParameter("cCashValueString").toString()
+            params.put("cCashValueString",request.getParameter("cCashValueString").toString());
         }
         
         
         Class.forName("com.mysql.jdbc.Driver");//nbsERP_Dankotuwa
-        conn = DriverManager.getConnection("jdbc:mysql://192.168.1.249:3306/nbsERP_Dankotuwa?user=root&password=123");
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.1.250:3306/nbsERP_Bnk_Wariyapola?user=root&password=123");
+//        conn = DriverManager.getConnection("jdbc:mysql://192.168.1.249:3306/nbsERP_Dankotuwa?user=root&password=123");
 
         //Loading Jasper Report File from Local file system
         

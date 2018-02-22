@@ -12,8 +12,10 @@
         <property name="databaseName" value="nbsERP_Dankotuwa"/>
         <property name="User" value="root"/>
         <property name="Password" value="123"/>
-        <property name="URL" value="jdbc:mysql://192.168.1.249:3306/nbsERP_Dankotuwa?zeroDateTimeBehavior=convertToNull"/>
+        <property name="URL" value="jdbc:mysql://192.168.1.250:3306/nbsERP_Bnk_Wariyapola?zeroDateTimeBehavior=convertToNull"/>
+        <!--        <property name="URL" value="jdbc:mysql://192.168.1.249:3306/nbsERP_Dankotuwa?zeroDateTimeBehavior=convertToNull"/>-->
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="jdbc/nbsERP_Dankotuwa" object-type="user" pool-name="mysql_nbsERP_Dankotuwa_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="wariyapola" object-type="user" pool-name="mysql_nbsERP_Dankotuwa_rootPool"/>
 </resources>
