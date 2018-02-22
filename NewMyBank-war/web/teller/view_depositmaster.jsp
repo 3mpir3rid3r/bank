@@ -43,6 +43,12 @@
             .bg-searchheight{
                 height:120px;                
             }
+            .table-bordered>tr>td{
+                border: 1px solid #807b7b;
+            }
+            tbody>tr:hover{
+                background-color: #ccffcc !important;
+            }
         </style>
 
     </head>
@@ -116,7 +122,7 @@
                                         </form>
                                         <div class="col-md-12 bg-top">
                                             <table class="table table-bordered table-hover table-style">
-                                                <thead style="background-color: #5bc0de">
+                                                <thead style="background-color: #97dff5">
                                                     <tr>
                                                         <th class="text-center" width="50px">ID</th>
                                                         <th class="text-center" width="100px">Our Acc No</th>
@@ -135,55 +141,55 @@
                                                                 List<VFindDatabnkDepDepositMaster> bcms = (AbstractList<VFindDatabnkDepDepositMaster>) request.getSession().getAttribute("view2");
                                                                 for (VFindDatabnkDepDepositMaster b : bcms) {
                                                     %>
-                                                    <tr>
+                                                    <tr style="background-color: white">
                                                         <td style="font-size: 12px;"><%=b.getNDepMFID()%></td>
-                                                        <td style="font-size: 12px;"><%=b.getCOurAccountNo()%></td>
+                                                        <td style="font-size: 12px; color: #068025;"><%=b.getCOurAccountNo()%></td>
                                                         <td style="font-size: 12px;"><%=b.getCOldAccountNo()%></td>
-                                                        <td style="font-size: 12px;"><%=b.getCCIFNo()%></td>
+                                                        <td style="font-size: 12px; color: #ca31da;"><%=b.getCCIFNo()%></td>
                                                         <td style="font-size: 12px;"><%=b.getCSysCode()%></td>
-                                                        <td style="font-size: 12px;"><%=b.getCFullName()%></td>
-                                                        <td style="font-size: 12px;" class="text-right"><fmt:formatNumber minFractionDigits="2" maxFractionDigits="2"  pattern="##,###.##" type="" value="<%=b.getNCurBookBalance()%>"/></td>
+                                                        <td style="font-size: 12px; color: #0472c3;"><%=b.getCFullName()%></td>
+                                                        <td style="font-size: 12px; color: #7b3400;" class="text-right"><fmt:formatNumber minFractionDigits="2" maxFractionDigits="2"  pattern="##,###.##" type="" value="<%=b.getNCurBookBalance()%>"/></td>
                                                         <td class="text-center">
                                                             <%
                                                                 if (tellerIndexKey.equals("1")) {
                                                             %>
-                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=1&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterDepositLoanDetailsServlet?identityEncript=1&accountValue=1&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("moneySaving")) {
                                                             %>
-                                                            <a href="../GetterMoneyTransactionServelet?identityEncript=1&searchingType=1&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterMoneyTransactionServelet?identityEncript=1&searchingType=1&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("moneyWidth")) {
                                                             %>
-                                                            <a href="../GetterMoneyTransactionServelet?identityEncript=1&searchingType=2&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterMoneyTransactionServelet?identityEncript=1&searchingType=2&accountNumber=<%=Security.encrypt(b.getCOurAccountNo())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("mTCR")) {
                                                             %>
-                                                            <a href="../GetterOneDepositDetailServlet?tellerIndexKey=mTCR&nDepMFID=<%=Security.encrypt(b.getNDepMFID() + "")%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterOneDepositDetailServlet?tellerIndexKey=mTCR&nDepMFID=<%=Security.encrypt(b.getNDepMFID() + "")%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("mTBR")) {
                                                             %>
-                                                            <a href="../GetterOneDepositDetailServlet?tellerIndexKey=mTBR&nDepMFID=<%=Security.encrypt(b.getNDepMFID() + "")%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../GetterOneDepositDetailServlet?tellerIndexKey=mTBR&nDepMFID=<%=Security.encrypt(b.getNDepMFID() + "")%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("loanGarnter")) {
                                                             %>
-                                                            <a href="../LoanDetailsServlet?checkGarenterType=deposit&accMifNumer=<%=Security.encrypt(String.valueOf(b.getNDepMFID()))%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="../LoanDetailsServlet?checkGarenterType=deposit&accMifNumer=<%=Security.encrypt(String.valueOf(b.getNDepMFID()))%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("dailyCollection")) {
                                                             %>
-                                                            <a href="daily_collection.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="daily_collection.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("savingsCrBr")) {
                                                             %>
-                                                            <a href="savings_CrDr.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="savings_CrDr.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%
                                                             } else if (tellerIndexKey.equals("getSavingDetail")) {
                                                             %>
-                                                            <a href="saving_detail.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="saving_detail.jsp?index=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%} else if (tellerIndexKey.equals("getSavingDetail1")) {%>
-                                                            <a href="saving_detail.jsp?index1=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo1=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName1=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-default btn-xs">Select</a>
+                                                            <a href="saving_detail.jsp?index1=<%=Security.encrypt(b.getNDepMFID() + "")%> &accNo1=<%=Security.encrypt(b.getCOurAccountNo())%>&cFullName1=<%=Security.encrypt(b.getCFullName())%>" class="btn btn-primary btn-xs">Select</a>
                                                             <%} else {%>
-                                                            <a href="#" class="btn btn-default btn-xs">update</a>
+                                                            <a href="#" class="btn btn-primary btn-xs">update</a>
                                                             <%
                                                                 }
                                                             %> 
