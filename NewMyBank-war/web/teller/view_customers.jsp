@@ -94,7 +94,8 @@
                     <div class="row bg-top" style="margin-bottom:-20px">
                         <div class="col-md-12">
                             <div class="box box-info bg-color" style="margin-bottom:10px">
-                                <div class="box-body"><div class="row">
+                                <div class="box-body">
+                                    <div class="row">
                                         <form id="search" action="../GetViewCustomerServlet?tellerIndexKey=<%=tellerIndexKey%>" method="post">
                                             <div class="col-md-12">  
                                                 <div class="form-group">
@@ -111,7 +112,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <div class="col-md-12 bg-top">
+                                        <div class="col-md-12 bg-top" style="overflow: auto">
                                             <table class="table table-bordered table-hover" id="mem_sea_table">
                                                 <tr style="background-color: #5bc0de">
                                                     <th class="text-center" width="50px">ID</th>

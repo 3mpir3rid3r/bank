@@ -255,14 +255,13 @@
                                                         </select>
                                                     </div>                                                        
                                                     <div class="col-md-8">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" onkeyup="conUperCase('cUseName');" data="validate" data-type="letterS">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" ata="validate" data-type="letterS">
                                                     </div>
                                                 </div>   
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම :</label>
                                                     <div class="col-md-10">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%=cFullName%>" onclick="this.style.borderColor = ''" onkeyup="conUperCase('cFullName');
-                                                                breakDownFullName(this);" data="validate" data-type="letterS">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%=cFullName%>" onclick="this.style.borderColor = ''"                                                                breakDownFullName(this);" data="validate" data-type="letterS">
                                                     </div> 
                                                 </div> 
                                                 <div class="form-group bg-top">
@@ -345,7 +344,7 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right">ජා.හැ.අංකය :</label>
                                             <div class="col-md-3" style="padding-right: 5px;">
-                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" onkeyup="conUperCase('cNICNo');" data="validate" data-type="birthday">
+                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" a="validate" data-type="birthday">
                                             </div>
                                             <label class="col-sm-2 input-sm text-right" style="padding-left: 5px;">උපන් දිනය :</label>
                                             <div class="col-md-4">
@@ -430,7 +429,7 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right">මවගේ වාසගම :</label>
                                             <div class="col-md-9">
-                                                <input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="<%=cMotherMadName%>" onkeyup="conUperCase('cMotherMadName');" data="validate" data-type="letterS">
+                                                <input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cMotherMadName" id="cMotherMadName" value="<%=cMotherMadName%>"  data="validate" data-type="letterS">
                                             </div>
                                         </div> 
                                     </div>
@@ -448,22 +447,22 @@
                                             <table>
                                                 <tr>
                                                     <td style="width: 175px"><label class="control-label input-sm">ලිපිනය 1</label></td>
-                                                    <td style="width: 650px"><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine1" id="cPAddLine1" value="<%=cPAddLine1%>" onkeyup="conUperCase('cPAddLine1');"></td>
+                                                    <td style="width: 650px"><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine1" id="cPAddLine1" value="<%=cPAddLine1%>"  data="validate" data-type="address" data-line="line-1"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 2</label></td>
-                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine2" id="cPAddLine2" value="<%=cPAddLine2%>" onkeyup="conUperCase('cPAddLine2');"></td>
+                                                    <td><input required class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine2" id="cPAddLine2" value="<%=cPAddLine2%>"  data="validate" data-type="address" data-line="line-2"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 3</label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" value="<%=cPAddLine3%>" onkeyup="conUperCase('cPAddLine3');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" value="<%=cPAddLine3%>"  data="validate" data-type="address" data-line="line-3"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
-                                                    <td><label class="control-label input-sm">ලිපිනය 4</label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine4" id="cPAddLine4" value="<%=cPAddLine4%>" onkeyup="conUperCase('cPAddLine4');"></td>
+                                                    <td><label class="control-label input-sm">ලිපිනය 4</label></td> 
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine4" id="cPAddLine4" value="<%=cPAddLine4%>"  data="validate" data-type="address" data-line="line-4" ></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
@@ -481,22 +480,22 @@
                                             <table>
                                                 <tr>
                                                     <td style="width: 175px"><label class="control-label input-sm">ලිපිනය 1</label></td>
-                                                    <td style="width: 650px"><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine1" id="cBAddLine1" value="<%=cBAddLine1%>" onkeyup="conUperCase('cBAddLine1');"></td>
+                                                    <td style="width: 650px"><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine1" id="cBAddLine1" value="<%=cBAddLine1%>" data="validate" data-type="address" data-line="line-1"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 2</label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine2" id="cBAddLine2" value="<%=cBAddLine2%>" onkeyup="conUperCase('cBAddLine2');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine2" id="cBAddLine2" value="<%=cBAddLine2%>" data="validate" data-type="address" data-line="line-2"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 3</label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine3" id="cBAddLine3" value="<%=cBAddLine3%>" onkeyup="conUperCase('cBAddLine3');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine3" id="cBAddLine3" value="<%=cBAddLine3%>" data="validate" data-type="address" data-line="line-3"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>
                                                     <td><label class="control-label input-sm">ලිපිනය 4</label></td>
-                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine4" id="cBAddLine4" value="<%=cBAddLine4%>" onkeyup="conUperCase('cBAddLine4');"></td>
+                                                    <td><input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cBAddLine4" id="cBAddLine4" value="<%=cBAddLine4%>" data="validate" data-type="address" data-line="line-4"></td>
                                                 </tr>
                                                 <tr style="height: 5px;"></tr>
                                                 <tr>

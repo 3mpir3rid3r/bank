@@ -135,25 +135,25 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-4  ">ස්ථීර ලිපිනය 1 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine1" id="cPAddLine1" required="">
+                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine1" id="cPAddLine1" required="" data="validate" data-type="address" data-line="line-1">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4  ">ස්ථීර ලිපිනය 2 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine2" id="cPAddLine2" required="">
+                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine2" id="cPAddLine2" required="" data="validate" data-type="address" data-line="line-2">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4  ">ස්ථීර ලිපිනය 3 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" required="">
+                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" name="cPAddLine3" id="cPAddLine3" required="" data="validate" data-type="address" data-line="line-3">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">
                                                     <label class="control-label col-sm-4  ">ස්ථීර ලිපිනය 4 :</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="cPAddLine4" name="cPAddLine4" required="">
+                                                        <input class="form-control input-sm convertSinhalaIskolaPotha" type="text" id="cPAddLine4" name="cPAddLine4" required="" data="validate" data-type="address" data-line="line-4">
                                                     </div>
                                                 </div>
                                                 <div class="form-group" style="margin-top: -10px;">

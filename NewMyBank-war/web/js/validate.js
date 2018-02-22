@@ -37,6 +37,12 @@ $(document).ready(function () {
     $('*[data-type="decimal"]').each(function () {
         $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
     });
+    $('*[data-line*="line-"]').each(function () {
+        if ($(this).attr("data-line") === "line-1") {
+            return;
+        }
+        $(this).attr("disabled", "");
+    });
     $('[data-toggle="popover"]').popover({
         placement: 'bottom',
         trigger: 'focus',
@@ -57,6 +63,8 @@ $('*[data="validate"]').keydown(function (e) {
         case "birthday":
             break;
         case "upperCase":
+            break;
+        case "address":
             break;
         default :
             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 || (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode >= 35 && e.keyCode <= 39)) {
@@ -88,9 +96,15 @@ $('*[data="validate"]').keyup(function () {
         case "decimal":
             $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
             break;
+        case "address":
+            var line = $(this).attr("data-line");
+            if ($(this).val() !== "" || $(this).val() !== null) {
+                $('[data-line="line-' + (parseInt(line.toString().split("-")[1]) + 1) + '"]').removeAttr("disabled");
+            } else {
+                alert(1);
+                $('[data-line="line-' + (parseInt(line.toString().split("-")[1]) + 1) + '"]').attr("disabled", "");
+            }
         case "letterS":
-            $(this).val($(this).val().toString().toUpperCase());
-            break;
         case "upperCase":
             $(this).val($(this).val().toString().toUpperCase());
             break;
