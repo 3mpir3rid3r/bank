@@ -114,7 +114,6 @@
             if (request.getSession().getAttribute("aCustomer") != null) {
                 b = (BnkCustomerMaster) request.getSession().getAttribute("aCustomer");
             }
-            System.out.println(b.getDDateOfBirth() + "As");
             if (b != null) {
                 SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
                 mf = b.getBFeMale();
@@ -157,10 +156,7 @@
             }
         }
 
-        System.out.println(
-                "pkjsp" + pk);
-        request.getSession()
-                .removeAttribute("aCustomer");
+        request.getSession().removeAttribute("aCustomer");
     %>
     <body class="skin-blue  pace-done fixed">
 
@@ -254,13 +250,13 @@
                                                         </select>
                                                     </div>                                                        
                                                     <div class="col-md-8">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" ata="validate" data-type="letterS">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cUseName" id="cUseName" value="<%=cUseName%>" onclick="this.style.borderColor = ''" data="validate" data-type="letterS">
                                                     </div>
                                                 </div>   
                                                 <div class="form-group bg-top">
                                                     <label class="col-sm-2 input-sm text-right">සම්පූර්ණ නම :</label>
                                                     <div class="col-md-10">
-                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%=cFullName%>" onclick="this.style.borderColor = ''"                                                                breakDownFullName(this);" data="validate" data-type="letterS">
+                                                        <input required type="text" class="form-control input-sm convertSinhalaIskolaPotha" name="cFullName" id="cFullName" value="<%=cFullName%>" onclick="this.style.borderColor = ''"  data="validate" data-type="letterS">
                                                     </div> 
                                                 </div> 
                                                 <div class="form-group bg-top">
@@ -343,7 +339,7 @@
                                         <div class="form-group bg-top">
                                             <label class="col-sm-3 input-sm text-right">ජා.හැ.අංකය :</label>
                                             <div class="col-md-3" style="padding-right: 5px;">
-                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="" a="validate" data-type="birthday">
+                                                <input required class="form-control input-sm text-right convertSinhalaIskolaPotha" placeholder="000000000V" type="text" name="cNICNo" id="cNICNo" value="<%=cNICNo%>" data="validate" data-type="birthday">
                                             </div>
                                             <label class="col-sm-2 input-sm text-right" style="padding-left: 5px;">උපන් දිනය :</label>
                                             <div class="col-md-4">
@@ -694,21 +690,21 @@
                                         });
                                     }, false);
                                     //---------------------------------
-                                    function breakDownFullName(e) {
+
+                                    $('#cFullName').keyup(function (e) {
                                         if (e.keyCode !== 32) {
-                                            var fullName = document.getElementById("cFullName").value;
+                                            var fullName = $(this).val();
                                             var iNSp = fullName.split(" ");
                                             if (iNSp.length > 0) {
                                                 fullName = "";
-                                                var i;
-                                                for (i = 0; i < iNSp.length - 1; i++) {
-                                                    fullName += iNSp[i].charAt(0) + " ";
-                                                }
+                                                $.each(iNSp, function (index) {
+                                                    fullName += iNSp[index].charAt(0) + " ";
+                                                });
                                             }
-                                            document.getElementById("cInitials").value = fullName;
-                                            document.getElementById("cLastName").value = iNSp[iNSp.length - 1];
+                                            $("#cInitials").val(fullName);
+                                            $("#cLastName").val(iNSp[iNSp.length - 1]);
                                         }
-                                    }
+                                    });
                                     //---------SUBMIT FUNCTION-----------
                                     function validateCustomer1(cForm) {
                                         var bool = new Boolean();

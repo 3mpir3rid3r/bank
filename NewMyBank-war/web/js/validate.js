@@ -14,6 +14,9 @@ $("*[required]").focusout(function () {
         $(this).attr("style", "border-bottom-color: '';");
     }
 });
+$('*[data-type="birthday"]').focus(function () {
+    calBday($(this));
+});
 $(document).ready(function () {
     $("*[required]").each(function () {
         if ($.trim($(this).val()) !== "") {
@@ -33,6 +36,7 @@ $(document).ready(function () {
         $(this).attr("data-toggle", "popover");
         $(this).attr("title", "BirthDay Calculator");
         $(this).attr("data-content", "B'day is..");
+        $(this).attr("maxlength", "12");
     });
     $('*[data-type="decimal"]').each(function () {
         $(this).val(numberWithCommas($(this).val().toString().split(",").join("")));
@@ -109,28 +113,7 @@ $('*[data="validate"]').keyup(function () {
             $(this).val($(this).val().toString().toUpperCase());
             break;
         case "birthday":
-            var elem = $(this);
-            var cNICNo = elem.val();
-            if (cNICNo.length === 11) {
-                cNICNo = cNICNo.toString().substring(2);
-                cNICNo = cNICNo + "v";
-            }
-            if (cNICNo === "") {
-                var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
-                popover.setContent();
-            } else if (!isNaN(cNICNo.substr(0, 8)) && (cNICNo.charAt(9) === "v" || cNICNo.charAt(9) === "V")) {
-                url = "../NicGenarator";
-                var a = "asd";
-                $.post(url,
-                        {nicNo: cNICNo},
-                        function (res) {
-                            var popover = elem.attr('data-content', res).data('bs.popover');
-                            popover.setContent();
-                        });
-            } else {
-                var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
-                popover.setContent();
-            }
+            calBday($(this));
             break;
     }
 
@@ -145,4 +128,28 @@ function numberWithCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
-} 
+}
+
+function calBday(elem) {
+    var cNICNo = elem.val();
+    if (cNICNo.length === 12) {
+        cNICNo = cNICNo.toString().substring(2);
+        cNICNo = cNICNo.slice(0, -1) + "v";
+    }
+    if (cNICNo === "") {
+        var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
+        popover.setContent();
+    } else if (!isNaN(cNICNo.substr(0, 8)) && (cNICNo.charAt(9) === "v" || cNICNo.charAt(9) === "V")) {
+        url = "../NicGenarator";
+        var a = "asd";
+        $.post(url,
+                {nicNo: cNICNo},
+                function (res) {
+                    var popover = elem.attr('data-content', res).data('bs.popover');
+                    popover.setContent();
+                });
+    } else {
+        var popover = elem.attr('data-content', "B'day is..").data('bs.popover');
+        popover.setContent();
+    }
+}

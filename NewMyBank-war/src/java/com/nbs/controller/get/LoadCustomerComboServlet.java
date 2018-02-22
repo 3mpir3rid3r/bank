@@ -44,11 +44,21 @@ public class LoadCustomerComboServlet extends HttpServlet {
             }
             String id = "";
             if (request.getParameter("id") != null) {
+                Date d = new Date();
                 id = request.getParameter("id");
                 int nCustomerId = Integer.parseInt(id);
                 BnkCustomerMaster l = bnkCustomerMasterDao.getCustomerDetails(nCustomerId);
                 if (l.getDDateOfBirth() == null || "".equals(l.getDDateOfBirth().toString())) {
-                    l.setDDateOfBirth(new Date());
+                    l.setDDateOfBirth(d);
+                }
+                if (l.getDMemberShipDate() == null || "".equals(l.getDMemberShipDate().toString())) {
+                    l.setDMemberShipDate(d);
+                }
+                if (l.getDJoineDate() == null || "".equals(l.getDJoineDate().toString())) {
+                    l.setDJoineDate(d);
+                }
+                if (l.getDNICIssuedDate() == null || "".equals(l.getDNICIssuedDate().toString())) {
+                    l.setDNICIssuedDate(d);
                 }
                 request.getSession().setAttribute("aCustomer", l);
                 response.sendRedirect("teller/customer_details.jsp?id=" + id);
