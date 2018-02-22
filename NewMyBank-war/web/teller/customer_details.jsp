@@ -104,7 +104,7 @@
         String cBAddLine1 = "", cBAddLine2 = "", cBAddLine3 = "", cBAddLine4 = "", cBTelNo1 = "";
         String member_num = "";
         BigDecimal nMemberShipFee = BigDecimal.ZERO;
-        String cPEmail = "", cBEmail = "", picture = "icon";
+        String cPEmail = "", cBEmail = "", picture = "icon.png";
 
         if (request.getParameter("id") != null) {
             String custIdString = request.getParameter("id");
@@ -304,7 +304,7 @@
                                                     <div class="col-md-12">
                                                         <!--<canvas id="canvas" style="width: 120px;height: 130px"></canvas>-->
                                                         <center>
-                                                            <input type="image" id="userImage" class="img-thumbnail" src="../images/customer/<%=picture%>.png" style="width: 170px;height: 150px">
+                                                            <input type="image" id="userImage" class="img-thumbnail" src="../images/customer/<%=picture%>" style="width: 170px;height: 150px">
                                                         </center>
                                                     </div>
                                                 </div>

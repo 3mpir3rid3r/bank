@@ -409,7 +409,7 @@ public class NewCustomerServlet extends HttpServlet {
 
                 String primaryKey = request.getParameter("pk");
                 Long custId = Long.parseLong(primaryKey);
-
+                System.out.println(v_cPictureFileName+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 //repalce null date values
                 String dateVareable[] = {v_dNICIssuedDate, v_dDateOfBirth, v_dJoineDate, v_dMemberShipDate};
                 for (int i = 0; i < dateVareable.length; i++) {
